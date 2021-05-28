@@ -1,0 +1,4 @@
+/.vscode
+/mandelbrot_omp
+/mandelbrot_pth
+/mandelbrot_seq
