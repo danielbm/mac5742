@@ -1,0 +1,210 @@
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 16 1' (10 runs):
+
+              0.44 msec task-clock                #    0.499 CPUs utilized            ( +-  3.39% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.119 M/sec                    ( +-  0.55% )
+           816,249      cycles                    #    1.845 GHz                      ( +-  2.22% )  (96.45%)
+           533,091      stalled-cycles-frontend   #   65.31% frontend cycles idle     ( +-  2.31% )
+           415,944      stalled-cycles-backend    #   50.96% backend cycles idle      ( +-  2.75% )
+           554,172      instructions              #    0.68  insn per cycle         
+                                                  #    0.96  stalled cycles per insn  ( +-  0.35% )
+           114,034      branches                  #  257.777 M/sec                    ( +-  0.33% )
+     <not counted>      branch-misses                                                 ( +- 66.86% )  (3.55%)
+
+         0.0008865 +- 0.0000281 seconds time elapsed  ( +-  3.17% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 32 1' (10 runs):
+
+              0.44 msec task-clock                #    0.487 CPUs utilized            ( +-  6.08% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.119 M/sec                    ( +-  0.71% )
+           805,979      cycles                    #    1.818 GHz                      ( +-  0.88% )
+           529,600      stalled-cycles-frontend   #   65.71% frontend cycles idle     ( +-  1.22% )
+           412,429      stalled-cycles-backend    #   51.17% backend cycles idle      ( +-  1.53% )
+           551,690      instructions              #    0.68  insn per cycle         
+                                                  #    0.96  stalled cycles per insn  ( +-  0.57% )
+           113,675      branches                  #  256.432 M/sec                    ( +-  0.50% )
+     <not counted>      branch-misses                                                 (0.00%)
+
+         0.0009107 +- 0.0000527 seconds time elapsed  ( +-  5.78% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 64 1' (10 runs):
+
+              0.53 msec task-clock                #    0.509 CPUs utilized            ( +-  8.16% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.099 M/sec                    ( +-  0.41% )
+           751,903      cycles                    #    1.418 GHz                      ( +-  4.94% )  (82.24%)
+           525,281      stalled-cycles-frontend   #   69.86% frontend cycles idle     ( +-  1.77% )
+           409,016      stalled-cycles-backend    #   54.40% backend cycles idle      ( +-  2.11% )
+           552,709      instructions              #    0.74  insn per cycle         
+                                                  #    0.95  stalled cycles per insn  ( +-  0.50% )
+           113,903      branches                  #  214.861 M/sec                    ( +-  0.43% )
+     <not counted>      branch-misses                                                 ( +- 68.82% )  (17.76%)
+
+         0.0010413 +- 0.0000768 seconds time elapsed  ( +-  7.37% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 128 1' (10 runs):
+
+              0.44 msec task-clock                #    0.496 CPUs utilized            ( +-  2.55% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.119 M/sec                    ( +-  0.41% )
+           739,753      cycles                    #    1.673 GHz                      ( +-  8.25% )  (90.57%)
+           524,296      stalled-cycles-frontend   #   70.87% frontend cycles idle     ( +-  1.24% )
+           408,595      stalled-cycles-backend    #   55.23% backend cycles idle      ( +-  1.52% )
+           552,819      instructions              #    0.75  insn per cycle         
+                                                  #    0.95  stalled cycles per insn  ( +-  0.49% )
+           113,970      branches                  #  257.691 M/sec                    ( +-  0.41% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (9.43%)
+
+         0.0008916 +- 0.0000211 seconds time elapsed  ( +-  2.37% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 256 1' (10 runs):
+
+              0.46 msec task-clock                #    0.493 CPUs utilized            ( +-  2.57% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.116 M/sec                    ( +-  0.61% )
+           801,386      cycles                    #    1.754 GHz                      ( +-  0.84% )
+           525,777      stalled-cycles-frontend   #   65.61% frontend cycles idle     ( +-  1.28% )
+           410,076      stalled-cycles-backend    #   51.17% backend cycles idle      ( +-  1.62% )
+           551,948      instructions              #    0.69  insn per cycle         
+                                                  #    0.95  stalled cycles per insn  ( +-  0.54% )
+           113,771      branches                  #  249.065 M/sec                    ( +-  0.48% )
+     <not counted>      branch-misses                                                 (0.00%)
+
+         0.0009262 +- 0.0000216 seconds time elapsed  ( +-  2.34% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 512 1' (10 runs):
+
+              0.47 msec task-clock                #    0.485 CPUs utilized            ( +-  5.05% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                52      page-faults               #    0.110 M/sec                    ( +-  0.50% )
+           798,247      cycles                    #    1.683 GHz                      ( +-  1.31% )  (92.69%)
+           525,770      stalled-cycles-frontend   #   65.87% frontend cycles idle     ( +-  1.27% )
+           409,733      stalled-cycles-backend    #   51.33% backend cycles idle      ( +-  1.51% )
+           556,565      instructions              #    0.70  insn per cycle         
+                                                  #    0.94  stalled cycles per insn  ( +-  0.69% )
+           114,502      branches                  #  241.430 M/sec                    ( +-  0.63% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (7.31%)
+
+         0.0009786 +- 0.0000434 seconds time elapsed  ( +-  4.43% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 1024 1' (10 runs):
+
+              0.54 msec task-clock                #    0.508 CPUs utilized            ( +-  2.81% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.098 M/sec                    ( +-  0.47% )
+           813,688      cycles                    #    1.504 GHz                      ( +-  0.90% )  (89.22%)
+           536,024      stalled-cycles-frontend   #   65.88% frontend cycles idle     ( +-  1.10% )
+           419,728      stalled-cycles-backend    #   51.58% backend cycles idle      ( +-  1.33% )
+           550,081      instructions              #    0.68  insn per cycle         
+                                                  #    0.97  stalled cycles per insn  ( +-  0.46% )
+           113,349      branches                  #  209.493 M/sec                    ( +-  0.38% )
+     <not counted>      branch-misses                                                 ( +- 66.89% )  (10.78%)
+
+         0.0010655 +- 0.0000308 seconds time elapsed  ( +-  2.89% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 2048 1' (10 runs):
+
+              0.40 msec task-clock                #    0.504 CPUs utilized            ( +-  3.08% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.132 M/sec                    ( +-  0.62% )
+           811,913      cycles                    #    2.035 GHz                      ( +-  1.16% )  (96.62%)
+           537,864      stalled-cycles-frontend   #   66.25% frontend cycles idle     ( +-  2.03% )
+           419,621      stalled-cycles-backend    #   51.68% backend cycles idle      ( +-  2.42% )
+           555,732      instructions              #    0.68  insn per cycle         
+                                                  #    0.97  stalled cycles per insn  ( +-  0.61% )
+           114,616      branches                  #  287.274 M/sec                    ( +-  0.53% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (3.38%)
+
+         0.0007917 +- 0.0000200 seconds time elapsed  ( +-  2.53% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 4096 1' (10 runs):
+
+              0.44 msec task-clock                #    0.494 CPUs utilized            ( +-  8.03% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.121 M/sec                    ( +-  0.67% )
+           815,652      cycles                    #    1.850 GHz                      ( +-  1.72% )  (93.29%)
+           539,465      stalled-cycles-frontend   #   66.14% frontend cycles idle     ( +-  2.53% )
+           421,882      stalled-cycles-backend    #   51.72% backend cycles idle      ( +-  3.02% )
+           557,326      instructions              #    0.68  insn per cycle         
+                                                  #    0.97  stalled cycles per insn  ( +-  0.63% )
+           114,925      branches                  #  260.648 M/sec                    ( +-  0.60% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (6.71%)
+
+         0.0008919 +- 0.0000650 seconds time elapsed  ( +-  7.29% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq -0.8 -0.7 0.05 0.15 8192 1' (10 runs):
+
+              0.47 msec task-clock                #    0.505 CPUs utilized            ( +-  3.41% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.114 M/sec                    ( +-  0.77% )
+           819,801      cycles                    #    1.758 GHz                      ( +-  1.40% )  (94.32%)
+           537,284      stalled-cycles-frontend   #   65.54% frontend cycles idle     ( +-  1.72% )
+           420,398      stalled-cycles-backend    #   51.28% backend cycles idle      ( +-  2.02% )
+           557,329      instructions              #    0.68  insn per cycle         
+                                                  #    0.96  stalled cycles per insn  ( +-  0.44% )
+           114,776      branches                  #  246.083 M/sec                    ( +-  0.38% )
+     <not counted>      branch-misses                                                 ( +- 74.66% )  (5.68%)
+
+         0.0009231 +- 0.0000243 seconds time elapsed  ( +-  2.64% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog

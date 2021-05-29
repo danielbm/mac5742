@@ -1,0 +1,1196 @@
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 1' (10 runs):
+
+              0.95 msec task-clock                #    0.517 CPUs utilized            ( +-  4.00% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.070 M/sec                    ( +-  0.64% )
+         1,319,915      cycles                    #    1.396 GHz                      ( +-  1.22% )  (98.77%)
+           869,257      stalled-cycles-frontend   #   65.86% frontend cycles idle     ( +-  1.73% )
+           695,294      stalled-cycles-backend    #   52.68% backend cycles idle      ( +-  2.08% )
+           838,584      instructions              #    0.64  insn per cycle         
+                                                  #    1.04  stalled cycles per insn  ( +-  0.56% )
+           177,164      branches                  #  187.316 M/sec                    ( +-  0.47% )
+               557      branch-misses             #    0.31% of all branches          ( +-100.00% )  (1.23%)
+
+          0.001828 +- 0.000348 seconds time elapsed  ( +- 19.03% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 2' (10 runs):
+
+              0.64 msec task-clock                #    0.639 CPUs utilized            ( +-  5.40% )
+                 1      context-switches          #    0.002 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.106 M/sec                    ( +-  1.00% )
+         1,506,208      cycles                    #    2.336 GHz                      ( +-  6.10% )  (65.65%)
+         1,048,501      stalled-cycles-frontend   #   69.61% frontend cycles idle     ( +-  2.03% )
+           847,263      stalled-cycles-backend    #   56.25% backend cycles idle      ( +-  2.37% )
+           902,498      instructions              #    0.60  insn per cycle         
+                                                  #    1.16  stalled cycles per insn  ( +-  0.90% )
+           190,781      branches                  #  295.865 M/sec                    ( +-  0.79% )
+             4,389      branch-misses             #    2.30% of all branches          ( +- 35.44% )  (34.35%)
+
+         0.0010095 +- 0.0000461 seconds time elapsed  ( +-  4.57% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 4' (10 runs):
+
+              1.32 msec task-clock                #    0.713 CPUs utilized            ( +-  4.80% )
+                 1      context-switches          #    0.909 K/sec                    ( +- 11.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                71      page-faults               #    0.054 M/sec                    ( +-  0.63% )
+         1,781,225      cycles                    #    1.350 GHz                      ( +-  5.28% )  (91.78%)
+         1,214,884      stalled-cycles-frontend   #   68.20% frontend cycles idle     ( +-  6.53% )
+           959,005      stalled-cycles-backend    #   53.84% backend cycles idle      ( +-  6.69% )
+         1,046,802      instructions              #    0.59  insn per cycle         
+                                                  #    1.16  stalled cycles per insn  ( +-  2.13% )
+           220,571      branches                  #  167.168 M/sec                    ( +-  1.87% )
+     <not counted>      branch-misses                                                 ( +- 66.95% )  (8.22%)
+
+         0.0018510 +- 0.0000661 seconds time elapsed  ( +-  3.57% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 8' (10 runs):
+
+              1.21 msec task-clock                #    0.800 CPUs utilized            ( +-  1.19% )
+                 3      context-switches          #    0.002 M/sec                    ( +-  5.66% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                81      page-faults               #    0.067 M/sec                    ( +-  0.64% )
+         2,426,854      cycles                    #    2.007 GHz                      ( +-  4.93% )  (82.02%)
+         1,566,212      stalled-cycles-frontend   #   64.54% frontend cycles idle     ( +-  1.22% )
+         1,223,946      stalled-cycles-backend    #   50.43% backend cycles idle      ( +-  1.56% )
+         1,325,705      instructions              #    0.55  insn per cycle         
+                                                  #    1.18  stalled cycles per insn  ( +-  0.63% )
+           279,679      branches                  #  231.348 M/sec                    ( +-  0.58% )
+     <not counted>      branch-misses                                                 ( +- 51.90% )  (17.98%)
+
+         0.0015105 +- 0.0000192 seconds time elapsed  ( +-  1.27% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 16' (10 runs):
+
+              2.10 msec task-clock                #    0.910 CPUs utilized            ( +-  4.10% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 15.37% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.046 M/sec                    ( +-  0.52% )
+         3,281,188      cycles                    #    1.559 GHz                      ( +-  1.11% )  (99.71%)
+         2,269,086      stalled-cycles-frontend   #   69.15% frontend cycles idle     ( +-  1.39% )
+         1,739,612      stalled-cycles-backend    #   53.02% backend cycles idle      ( +-  1.71% )
+         1,885,785      instructions              #    0.57  insn per cycle         
+                                                  #    1.20  stalled cycles per insn  ( +-  0.36% )
+           397,434      branches                  #  188.862 M/sec                    ( +-  0.33% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (0.29%)
+
+         0.0023118 +- 0.0000895 seconds time elapsed  ( +-  3.87% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 16 32' (10 runs):
+
+              4.22 msec task-clock                #    1.042 CPUs utilized            ( +-  4.24% )
+                 5      context-switches          #    0.001 M/sec                    ( +- 21.29% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.031 M/sec                    ( +-  0.28% )
+         5,729,480      cycles                    #    1.358 GHz                      ( +-  3.68% )  (67.77%)
+         3,967,887      stalled-cycles-frontend   #   69.25% frontend cycles idle     ( +-  4.49% )
+         3,031,219      stalled-cycles-backend    #   52.91% backend cycles idle      ( +-  4.88% )
+         3,038,824      instructions              #    0.53  insn per cycle         
+                                                  #    1.31  stalled cycles per insn  ( +-  1.58% )
+           639,495      branches                  #  151.610 M/sec                    ( +-  1.40% )
+             9,957      branch-misses             #    1.56% of all branches          ( +- 24.12% )  (32.23%)
+
+          0.004046 +- 0.000156 seconds time elapsed  ( +-  3.85% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 1' (10 runs):
+
+              0.68 msec task-clock                #    0.601 CPUs utilized            ( +-  1.48% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.097 M/sec                    ( +-  0.93% )
+         1,283,075      cycles                    #    1.878 GHz                      ( +-  2.77% )  (83.18%)
+           871,198      stalled-cycles-frontend   #   67.90% frontend cycles idle     ( +-  1.94% )
+           696,770      stalled-cycles-backend    #   54.30% backend cycles idle      ( +-  2.30% )
+           837,720      instructions              #    0.65  insn per cycle         
+                                                  #    1.04  stalled cycles per insn  ( +-  0.64% )
+           176,795      branches                  #  258.820 M/sec                    ( +-  0.61% )
+     <not counted>      branch-misses                                                 ( +- 66.73% )  (16.82%)
+
+         0.0011373 +- 0.0000139 seconds time elapsed  ( +-  1.22% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 2' (10 runs):
+
+              0.74 msec task-clock                #    0.642 CPUs utilized            ( +-  3.93% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.091 M/sec                    ( +-  0.80% )
+         1,476,996      cycles                    #    1.985 GHz                      ( +-  2.03% )  (95.96%)
+           984,034      stalled-cycles-frontend   #   66.62% frontend cycles idle     ( +-  2.68% )
+           786,752      stalled-cycles-backend    #   53.27% backend cycles idle      ( +-  3.19% )
+           901,465      instructions              #    0.61  insn per cycle         
+                                                  #    1.09  stalled cycles per insn  ( +-  0.43% )
+           190,223      branches                  #  255.666 M/sec                    ( +-  0.36% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (4.04%)
+
+         0.0011583 +- 0.0000426 seconds time elapsed  ( +-  3.68% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 4' (10 runs):
+
+              1.05 msec task-clock                #    0.717 CPUs utilized            ( +-  7.34% )
+                 2      context-switches          #    0.002 M/sec                    ( +- 24.12% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                73      page-faults               #    0.069 M/sec                    ( +-  0.88% )
+         1,799,372      cycles                    #    1.715 GHz                      ( +-  2.41% )  (81.63%)
+         1,197,731      stalled-cycles-frontend   #   66.56% frontend cycles idle     ( +-  1.76% )
+           951,507      stalled-cycles-backend    #   52.88% backend cycles idle      ( +-  2.06% )
+         1,047,800      instructions              #    0.58  insn per cycle         
+                                                  #    1.14  stalled cycles per insn  ( +-  0.58% )
+           220,956      branches                  #  210.539 M/sec                    ( +-  0.50% )
+     <not counted>      branch-misses                                                 ( +- 66.67% )  (18.37%)
+
+         0.0014632 +- 0.0000889 seconds time elapsed  ( +-  6.08% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 8' (10 runs):
+
+              1.39 msec task-clock                #    0.833 CPUs utilized            ( +- 10.37% )
+                 4      context-switches          #    0.003 M/sec                    ( +- 16.42% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                80      page-faults               #    0.058 M/sec                    ( +-  0.60% )
+         2,713,591      cycles                    #    1.959 GHz                      ( +- 10.18% )  (68.07%)
+         1,783,424      stalled-cycles-frontend   #   65.72% frontend cycles idle     ( +- 11.37% )
+         1,407,510      stalled-cycles-backend    #   51.87% backend cycles idle      ( +- 12.07% )
+         1,371,225      instructions              #    0.51  insn per cycle         
+                                                  #    1.30  stalled cycles per insn  ( +-  3.42% )
+           288,216      branches                  #  208.097 M/sec                    ( +-  3.04% )
+     <not counted>      branch-misses                                                 ( +- 42.45% )  (31.93%)
+
+          0.001663 +- 0.000136 seconds time elapsed  ( +-  8.16% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 16' (10 runs):
+
+              1.33 msec task-clock                #    0.957 CPUs utilized            ( +-  2.88% )
+                 6      context-switches          #    0.004 M/sec                    ( +- 22.04% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.073 M/sec                    ( +-  0.52% )
+         3,686,008      cycles                    #    2.761 GHz                      ( +-  3.65% )  (74.98%)
+         2,598,952      stalled-cycles-frontend   #   70.51% frontend cycles idle     ( +-  2.95% )
+         2,054,458      stalled-cycles-backend    #   55.74% backend cycles idle      ( +-  3.40% )
+         1,903,044      instructions              #    0.52  insn per cycle         
+                                                  #    1.37  stalled cycles per insn  ( +-  0.67% )
+           401,830      branches                  #  301.026 M/sec                    ( +-  0.72% )
+     <not counted>      branch-misses                                                 ( +- 42.62% )  (25.02%)
+
+         0.0013950 +- 0.0000316 seconds time elapsed  ( +-  2.26% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 32 32' (10 runs):
+
+              3.44 msec task-clock                #    1.041 CPUs utilized            ( +-  3.47% )
+                 4      context-switches          #    0.001 M/sec                    ( +- 19.66% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.038 M/sec                    ( +-  0.51% )
+         5,878,770      cycles                    #    1.709 GHz                      ( +-  3.97% )  (65.32%)
+         4,058,724      stalled-cycles-frontend   #   69.04% frontend cycles idle     ( +-  5.12% )
+         3,093,400      stalled-cycles-backend    #   52.62% backend cycles idle      ( +-  5.54% )
+         3,090,529      instructions              #    0.53  insn per cycle         
+                                                  #    1.31  stalled cycles per insn  ( +-  2.09% )
+           649,291      branches                  #  188.754 M/sec                    ( +-  1.86% )
+     <not counted>      branch-misses                                                 ( +- 22.72% )  (34.68%)
+
+          0.003305 +- 0.000107 seconds time elapsed  ( +-  3.23% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 1' (10 runs):
+
+              0.67 msec task-clock                #    0.617 CPUs utilized            ( +-  8.50% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.100 M/sec                    ( +-  0.77% )
+         1,476,950      cycles                    #    2.211 GHz                      ( +-  8.90% )  (90.10%)
+         1,005,172      stalled-cycles-frontend   #   68.06% frontend cycles idle     ( +- 11.56% )
+           813,571      stalled-cycles-backend    #   55.08% backend cycles idle      ( +- 12.32% )
+           863,459      instructions              #    0.58  insn per cycle         
+                                                  #    1.16  stalled cycles per insn  ( +-  2.51% )
+           181,927      branches                  #  272.397 M/sec                    ( +-  2.20% )
+     <not counted>      branch-misses                                                 ( +- 66.70% )  (9.90%)
+
+         0.0010826 +- 0.0000793 seconds time elapsed  ( +-  7.32% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 2' (10 runs):
+
+              0.95 msec task-clock                #    0.656 CPUs utilized            ( +-  1.19% )
+                 1      context-switches          #    0.001 M/sec                    ( +- 11.75% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                69      page-faults               #    0.072 M/sec                    ( +-  0.74% )
+         1,494,055      cycles                    #    1.574 GHz                      ( +-  0.98% )  (95.44%)
+           997,931      stalled-cycles-frontend   #   66.79% frontend cycles idle     ( +-  1.23% )
+           797,809      stalled-cycles-backend    #   53.40% backend cycles idle      ( +-  1.45% )
+           908,638      instructions              #    0.61  insn per cycle         
+                                                  #    1.10  stalled cycles per insn  ( +-  0.56% )
+           191,719      branches                  #  201.949 M/sec                    ( +-  0.49% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (4.56%)
+
+         0.0014466 +- 0.0000187 seconds time elapsed  ( +-  1.29% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 4' (10 runs):
+
+              0.99 msec task-clock                #    0.710 CPUs utilized            ( +-  5.31% )
+                 1      context-switches          #    0.001 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.073 M/sec                    ( +-  0.56% )
+         1,736,497      cycles                    #    1.761 GHz                      ( +-  1.47% )  (87.20%)
+         1,165,179      stalled-cycles-frontend   #   67.10% frontend cycles idle     ( +-  1.54% )
+           922,176      stalled-cycles-backend    #   53.11% backend cycles idle      ( +-  1.86% )
+         1,030,650      instructions              #    0.59  insn per cycle         
+                                                  #    1.13  stalled cycles per insn  ( +-  0.54% )
+           217,321      branches                  #  220.424 M/sec                    ( +-  0.49% )
+     <not counted>      branch-misses                                                 ( +- 66.77% )  (12.80%)
+
+         0.0013882 +- 0.0000747 seconds time elapsed  ( +-  5.38% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 8' (10 runs):
+
+              1.86 msec task-clock                #    0.826 CPUs utilized            ( +-  7.93% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 17.34% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                81      page-faults               #    0.043 M/sec                    ( +-  0.56% )
+         2,584,931      cycles                    #    1.392 GHz                      ( +- 10.50% )  (71.65%)
+         1,721,416      stalled-cycles-frontend   #   66.59% frontend cycles idle     ( +-  9.73% )
+         1,342,718      stalled-cycles-backend    #   51.94% backend cycles idle      ( +- 10.06% )
+         1,377,549      instructions              #    0.53  insn per cycle         
+                                                  #    1.25  stalled cycles per insn  ( +-  3.39% )
+           289,813      branches                  #  156.069 M/sec                    ( +-  3.02% )
+     <not counted>      branch-misses                                                 ( +- 41.70% )  (28.35%)
+
+          0.002248 +- 0.000135 seconds time elapsed  ( +-  6.00% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 16' (10 runs):
+
+              1.88 msec task-clock                #    0.926 CPUs utilized            ( +-  3.34% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 24.54% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.051 M/sec                    ( +-  0.49% )
+         3,332,987      cycles                    #    1.775 GHz                      ( +-  2.17% )  (94.43%)
+         2,305,723      stalled-cycles-frontend   #   69.18% frontend cycles idle     ( +-  2.75% )
+         1,773,752      stalled-cycles-backend    #   53.22% backend cycles idle      ( +-  3.26% )
+         1,880,552      instructions              #    0.56  insn per cycle         
+                                                  #    1.23  stalled cycles per insn  ( +-  0.50% )
+           396,972      branches                  #  211.384 M/sec                    ( +-  0.52% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (5.57%)
+
+         0.0020283 +- 0.0000311 seconds time elapsed  ( +-  1.53% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 64 32' (10 runs):
+
+              4.02 msec task-clock                #    1.045 CPUs utilized            ( +-  5.76% )
+                 4      context-switches          #    0.001 M/sec                    ( +- 19.63% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.032 M/sec                    ( +-  0.35% )
+         5,859,971      cycles                    #    1.458 GHz                      ( +-  4.45% )  (72.20%)
+         4,083,487      stalled-cycles-frontend   #   69.68% frontend cycles idle     ( +-  5.20% )
+         3,116,760      stalled-cycles-backend    #   53.19% backend cycles idle      ( +-  5.58% )
+         3,091,707      instructions              #    0.53  insn per cycle         
+                                                  #    1.32  stalled cycles per insn  ( +-  2.01% )
+           649,981      branches                  #  161.686 M/sec                    ( +-  1.78% )
+             8,119      branch-misses             #    1.25% of all branches          ( +- 29.17% )  (27.80%)
+
+          0.003845 +- 0.000202 seconds time elapsed  ( +-  5.27% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 1' (10 runs):
+
+              0.69 msec task-clock                #    0.598 CPUs utilized            ( +-  4.09% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.097 M/sec                    ( +-  0.67% )
+         1,313,801      cycles                    #    1.894 GHz                      ( +-  1.11% )  (99.58%)
+           861,401      stalled-cycles-frontend   #   65.57% frontend cycles idle     ( +-  1.51% )
+           687,415      stalled-cycles-backend    #   52.32% backend cycles idle      ( +-  1.79% )
+           841,366      instructions              #    0.64  insn per cycle         
+                                                  #    1.02  stalled cycles per insn  ( +-  0.48% )
+           177,702      branches                  #  256.116 M/sec                    ( +-  0.43% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (0.42%)
+
+         0.0011601 +- 0.0000500 seconds time elapsed  ( +-  4.31% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 2' (10 runs):
+
+              0.75 msec task-clock                #    0.644 CPUs utilized            ( +-  1.85% )
+                 1      context-switches          #    0.001 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.091 M/sec                    ( +-  0.61% )
+         1,478,829      cycles                    #    1.964 GHz                      ( +-  2.29% )  (90.55%)
+           972,123      stalled-cycles-frontend   #   65.74% frontend cycles idle     ( +-  1.63% )
+           776,673      stalled-cycles-backend    #   52.52% backend cycles idle      ( +-  1.98% )
+           898,003      instructions              #    0.61  insn per cycle         
+                                                  #    1.08  stalled cycles per insn  ( +-  0.43% )
+           189,533      branches                  #  251.722 M/sec                    ( +-  0.38% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (9.45%)
+
+         0.0011686 +- 0.0000223 seconds time elapsed  ( +-  1.91% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 4' (10 runs):
+
+              1.15 msec task-clock                #    0.745 CPUs utilized            ( +- 11.45% )
+                 2      context-switches          #    0.002 M/sec                    ( +- 27.68% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                73      page-faults               #    0.064 M/sec                    ( +-  0.80% )
+         1,985,524      cycles                    #    1.733 GHz                      ( +-  9.44% )  (69.91%)
+         1,373,939      stalled-cycles-frontend   #   69.20% frontend cycles idle     ( +- 13.89% )
+         1,097,653      stalled-cycles-backend    #   55.28% backend cycles idle      ( +- 14.50% )
+         1,083,174      instructions              #    0.55  insn per cycle         
+                                                  #    1.27  stalled cycles per insn  ( +-  4.00% )
+           227,560      branches                  #  198.584 M/sec                    ( +-  3.52% )
+     <not counted>      branch-misses                                                 ( +- 42.01% )  (30.09%)
+
+          0.001537 +- 0.000132 seconds time elapsed  ( +-  8.56% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 8' (10 runs):
+
+              1.35 msec task-clock                #    0.814 CPUs utilized            ( +-  6.22% )
+                 4      context-switches          #    0.003 M/sec                    ( +-  9.71% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                80      page-faults               #    0.059 M/sec                    ( +-  0.78% )
+         2,360,576      cycles                    #    1.744 GHz                      ( +-  2.01% )  (93.39%)
+         1,616,942      stalled-cycles-frontend   #   68.50% frontend cycles idle     ( +-  2.38% )
+         1,269,962      stalled-cycles-backend    #   53.80% backend cycles idle      ( +-  2.77% )
+         1,333,743      instructions              #    0.57  insn per cycle         
+                                                  #    1.21  stalled cycles per insn  ( +-  0.51% )
+           281,833      branches                  #  208.221 M/sec                    ( +-  0.52% )
+     <not counted>      branch-misses                                                 ( +- 51.17% )  (6.61%)
+
+         0.0016624 +- 0.0000880 seconds time elapsed  ( +-  5.30% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 16' (10 runs):
+
+              1.89 msec task-clock                #    0.924 CPUs utilized            ( +-  3.02% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 17.61% )
+                 0      cpu-migrations            #    0.053 K/sec                    ( +-100.00% )
+                97      page-faults               #    0.051 M/sec                    ( +-  0.54% )
+         3,417,844      cycles                    #    1.812 GHz                      ( +-  1.45% )  (80.62%)
+         2,327,340      stalled-cycles-frontend   #   68.09% frontend cycles idle     ( +-  1.24% )
+         1,794,829      stalled-cycles-backend    #   52.51% backend cycles idle      ( +-  1.53% )
+         1,881,704      instructions              #    0.55  insn per cycle         
+                                                  #    1.24  stalled cycles per insn  ( +-  0.34% )
+           396,995      branches                  #  210.455 M/sec                    ( +-  0.31% )
+             5,947      branch-misses             #    1.50% of all branches          ( +- 34.87% )  (19.38%)
+
+         0.0020425 +- 0.0000641 seconds time elapsed  ( +-  3.14% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 128 32' (10 runs):
+
+              3.74 msec task-clock                #    1.051 CPUs utilized            ( +-  9.90% )
+                 6      context-switches          #    0.002 M/sec                    ( +- 30.50% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.035 M/sec                    ( +-  0.32% )
+         6,054,422      cycles                    #    1.620 GHz                      ( +-  4.45% )  (53.97%)
+         4,136,125      stalled-cycles-frontend   #   68.32% frontend cycles idle     ( +-  4.88% )
+         3,162,019      stalled-cycles-backend    #   52.23% backend cycles idle      ( +-  4.97% )
+         3,092,533      instructions              #    0.51  insn per cycle         
+                                                  #    1.34  stalled cycles per insn  ( +-  2.15% )
+           650,582      branches                  #  174.055 M/sec                    ( +-  1.94% )
+            12,499      branch-misses             #    1.92% of all branches          ( +- 19.45% )  (46.03%)
+
+          0.003556 +- 0.000336 seconds time elapsed  ( +-  9.44% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 1' (10 runs):
+
+              0.81 msec task-clock                #    0.602 CPUs utilized            ( +-  8.58% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.082 M/sec                    ( +-  0.74% )
+         1,334,691      cycles                    #    1.650 GHz                      ( +-  2.53% )  (91.09%)
+           864,677      stalled-cycles-frontend   #   64.78% frontend cycles idle     ( +-  2.06% )
+           690,704      stalled-cycles-backend    #   51.75% backend cycles idle      ( +-  2.40% )
+           837,379      instructions              #    0.63  insn per cycle         
+                                                  #    1.03  stalled cycles per insn  ( +-  0.57% )
+           176,897      branches                  #  218.749 M/sec                    ( +-  0.52% )
+     <not counted>      branch-misses                                                 ( +- 66.77% )  (8.91%)
+
+          0.001344 +- 0.000108 seconds time elapsed  ( +-  8.03% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 2' (10 runs):
+
+              0.80 msec task-clock                #    0.617 CPUs utilized            ( +-  2.47% )
+                 1      context-switches          #    0.001 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.085 M/sec                    ( +-  0.85% )
+         1,448,937      cycles                    #    1.818 GHz                      ( +-  1.40% )  (96.60%)
+           955,943      stalled-cycles-frontend   #   65.98% frontend cycles idle     ( +-  1.68% )
+           758,830      stalled-cycles-backend    #   52.37% backend cycles idle      ( +-  2.00% )
+           906,038      instructions              #    0.63  insn per cycle         
+                                                  #    1.06  stalled cycles per insn  ( +-  0.49% )
+           191,063      branches                  #  239.782 M/sec                    ( +-  0.45% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (3.40%)
+
+         0.0012912 +- 0.0000798 seconds time elapsed  ( +-  6.18% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 4' (10 runs):
+
+              0.93 msec task-clock                #    0.714 CPUs utilized            ( +-  3.20% )
+                 2      context-switches          #    0.002 M/sec                    ( +- 32.10% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.078 M/sec                    ( +-  0.69% )
+         1,726,828      cycles                    #    1.863 GHz                      ( +-  1.77% )  (95.56%)
+         1,155,999      stalled-cycles-frontend   #   66.94% frontend cycles idle     ( +-  1.91% )
+           913,337      stalled-cycles-backend    #   52.89% backend cycles idle      ( +-  2.24% )
+         1,029,338      instructions              #    0.60  insn per cycle         
+                                                  #    1.12  stalled cycles per insn  ( +-  0.91% )
+           217,520      branches                  #  234.719 M/sec                    ( +-  0.90% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (4.44%)
+
+         0.0012986 +- 0.0000391 seconds time elapsed  ( +-  3.01% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 8' (10 runs):
+
+              1.25 msec task-clock                #    0.819 CPUs utilized            ( +-  1.70% )
+                 4      context-switches          #    0.003 M/sec                    ( +- 13.65% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                81      page-faults               #    0.064 M/sec                    ( +-  0.67% )
+         2,367,672      cycles                    #    1.887 GHz                      ( +-  2.36% )  (83.71%)
+         1,592,784      stalled-cycles-frontend   #   67.27% frontend cycles idle     ( +-  1.98% )
+         1,246,357      stalled-cycles-backend    #   52.64% backend cycles idle      ( +-  2.37% )
+         1,329,714      instructions              #    0.56  insn per cycle         
+                                                  #    1.20  stalled cycles per insn  ( +-  0.45% )
+           280,887      branches                  #  223.836 M/sec                    ( +-  0.44% )
+     <not counted>      branch-misses                                                 ( +- 51.73% )  (16.29%)
+
+         0.0015314 +- 0.0000201 seconds time elapsed  ( +-  1.31% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 16' (10 runs):
+
+              1.91 msec task-clock                #    0.936 CPUs utilized            ( +-  8.12% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 16.44% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.051 M/sec                    ( +-  0.70% )
+         3,319,074      cycles                    #    1.734 GHz                      ( +- 13.23% )  (81.57%)
+         2,537,729      stalled-cycles-frontend   #   76.46% frontend cycles idle     ( +-  8.29% )
+         1,978,248      stalled-cycles-backend    #   59.60% backend cycles idle      ( +-  9.01% )
+         1,917,693      instructions              #    0.58  insn per cycle         
+                                                  #    1.32  stalled cycles per insn  ( +-  2.38% )
+           403,331      branches                  #  210.723 M/sec                    ( +-  2.11% )
+     <not counted>      branch-misses                                                 ( +- 41.66% )  (18.43%)
+
+          0.002045 +- 0.000143 seconds time elapsed  ( +-  6.99% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 256 32' (10 runs):
+
+              3.71 msec task-clock                #    1.037 CPUs utilized            ( +-  4.00% )
+                 4      context-switches          #    0.998 K/sec                    ( +- 22.45% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.035 M/sec                    ( +-  0.36% )
+         5,399,465      cycles                    #    1.457 GHz                      ( +-  1.74% )  (77.45%)
+         3,703,839      stalled-cycles-frontend   #   68.60% frontend cycles idle     ( +-  1.37% )
+         2,809,245      stalled-cycles-backend    #   52.03% backend cycles idle      ( +-  1.62% )
+         2,979,576      instructions              #    0.55  insn per cycle         
+                                                  #    1.24  stalled cycles per insn  ( +-  0.25% )
+           627,921      branches                  #  169.391 M/sec                    ( +-  0.26% )
+     <not counted>      branch-misses                                                 ( +- 29.43% )  (22.55%)
+
+          0.003576 +- 0.000116 seconds time elapsed  ( +-  3.25% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 1' (10 runs):
+
+              0.76 msec task-clock                #    0.598 CPUs utilized            ( +-  6.01% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.087 M/sec                    ( +-  0.75% )
+         1,331,514      cycles                    #    1.755 GHz                      ( +-  1.82% )  (90.43%)
+           877,154      stalled-cycles-frontend   #   65.88% frontend cycles idle     ( +-  2.14% )
+           703,564      stalled-cycles-backend    #   52.84% backend cycles idle      ( +-  2.61% )
+           833,406      instructions              #    0.63  insn per cycle         
+                                                  #    1.05  stalled cycles per insn  ( +-  0.64% )
+           176,327      branches                  #  232.386 M/sec                    ( +-  0.54% )
+     <not counted>      branch-misses                                                 ( +- 69.24% )  (9.57%)
+
+         0.0012695 +- 0.0000776 seconds time elapsed  ( +-  6.12% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 2' (10 runs):
+
+              0.74 msec task-clock                #    0.640 CPUs utilized            ( +-  2.11% )
+                 1      context-switches          #    0.001 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.092 M/sec                    ( +-  0.87% )
+         1,450,473      cycles                    #    1.956 GHz                      ( +-  2.75% )  (92.48%)
+           946,965      stalled-cycles-frontend   #   65.29% frontend cycles idle     ( +-  2.09% )
+           750,474      stalled-cycles-backend    #   51.74% backend cycles idle      ( +-  2.44% )
+           906,571      instructions              #    0.63  insn per cycle         
+                                                  #    1.04  stalled cycles per insn  ( +-  0.88% )
+           191,112      branches                  #  257.742 M/sec                    ( +-  0.77% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (7.52%)
+
+         0.0011589 +- 0.0000221 seconds time elapsed  ( +-  1.90% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 4' (10 runs):
+
+              1.08 msec task-clock                #    0.704 CPUs utilized            ( +-  5.77% )
+                 2      context-switches          #    0.001 M/sec                    ( +- 31.18% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.066 M/sec                    ( +-  0.63% )
+         1,730,668      cycles                    #    1.604 GHz                      ( +-  3.45% )  (81.26%)
+         1,133,067      stalled-cycles-frontend   #   65.47% frontend cycles idle     ( +-  2.13% )
+           891,670      stalled-cycles-backend    #   51.52% backend cycles idle      ( +-  2.58% )
+         1,026,975      instructions              #    0.59  insn per cycle         
+                                                  #    1.10  stalled cycles per insn  ( +-  0.59% )
+           216,866      branches                  #  200.985 M/sec                    ( +-  0.55% )
+     <not counted>      branch-misses                                                 ( +- 52.25% )  (18.74%)
+
+         0.0015323 +- 0.0000776 seconds time elapsed  ( +-  5.06% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 8' (10 runs):
+
+              1.51 msec task-clock                #    0.854 CPUs utilized            ( +- 18.15% )
+                 3      context-switches          #    0.002 M/sec                    ( +- 12.82% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                81      page-faults               #    0.053 M/sec                    ( +-  0.78% )
+         2,554,755      cycles                    #    1.688 GHz                      ( +-  9.07% )  (92.78%)
+         1,763,805      stalled-cycles-frontend   #   69.04% frontend cycles idle     ( +- 11.23% )
+         1,384,520      stalled-cycles-backend    #   54.19% backend cycles idle      ( +- 11.78% )
+         1,379,204      instructions              #    0.54  insn per cycle         
+                                                  #    1.28  stalled cycles per insn  ( +-  3.50% )
+           290,055      branches                  #  191.655 M/sec                    ( +-  3.17% )
+     <not counted>      branch-misses                                                 ( +- 66.97% )  (7.22%)
+
+          0.001772 +- 0.000254 seconds time elapsed  ( +- 14.31% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 16' (10 runs):
+
+              2.03 msec task-clock                #    0.942 CPUs utilized            ( +-  8.10% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 11.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                98      page-faults               #    0.048 M/sec                    ( +-  0.50% )
+         3,629,267      cycles                    #    1.789 GHz                      ( +-  6.33% )  (81.52%)
+         2,500,168      stalled-cycles-frontend   #   68.89% frontend cycles idle     ( +-  7.89% )
+         1,939,035      stalled-cycles-backend    #   53.43% backend cycles idle      ( +-  8.50% )
+         1,932,805      instructions              #    0.53  insn per cycle         
+                                                  #    1.29  stalled cycles per insn  ( +-  2.49% )
+           406,262      branches                  #  200.254 M/sec                    ( +-  2.19% )
+     <not counted>      branch-misses                                                 ( +- 42.84% )  (18.48%)
+
+          0.002154 +- 0.000151 seconds time elapsed  ( +-  7.00% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 512 32' (10 runs):
+
+              3.23 msec task-clock                #    1.030 CPUs utilized            ( +-  2.02% )
+                 4      context-switches          #    0.001 M/sec                    ( +- 23.86% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.040 M/sec                    ( +-  0.26% )
+         5,406,915      cycles                    #    1.672 GHz                      ( +-  2.05% )  (81.72%)
+         3,737,685      stalled-cycles-frontend   #   69.13% frontend cycles idle     ( +-  1.23% )
+         2,839,182      stalled-cycles-backend    #   52.51% backend cycles idle      ( +-  1.55% )
+         2,988,035      instructions              #    0.55  insn per cycle         
+                                                  #    1.25  stalled cycles per insn  ( +-  0.23% )
+           630,176      branches                  #  194.853 M/sec                    ( +-  0.21% )
+             6,851      branch-misses             #    1.09% of all branches          ( +- 37.00% )  (18.28%)
+
+         0.0031396 +- 0.0000554 seconds time elapsed  ( +-  1.76% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 1' (10 runs):
+
+              0.71 msec task-clock                #    0.604 CPUs utilized            ( +-  5.10% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.093 M/sec                    ( +-  0.90% )
+         1,306,071      cycles                    #    1.848 GHz                      ( +-  1.36% )  (75.04%)
+           868,120      stalled-cycles-frontend   #   66.47% frontend cycles idle     ( +-  1.51% )
+           694,014      stalled-cycles-backend    #   53.14% backend cycles idle      ( +-  1.81% )
+           834,873      instructions              #    0.64  insn per cycle         
+                                                  #    1.04  stalled cycles per insn  ( +-  0.59% )
+           176,244      branches                  #  249.418 M/sec                    ( +-  0.55% )
+             2,539      branch-misses             #    1.44% of all branches          ( +- 54.46% )  (24.96%)
+
+         0.0011707 +- 0.0000498 seconds time elapsed  ( +-  4.25% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 2' (10 runs):
+
+              0.88 msec task-clock                #    0.657 CPUs utilized            ( +-  6.81% )
+                 1      context-switches          #    0.001 M/sec                    ( +-  9.09% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                69      page-faults               #    0.079 M/sec                    ( +-  0.86% )
+         1,483,701      cycles                    #    1.696 GHz                      ( +-  1.30% )  (86.68%)
+           987,805      stalled-cycles-frontend   #   66.58% frontend cycles idle     ( +-  1.80% )
+           790,117      stalled-cycles-backend    #   53.25% backend cycles idle      ( +-  2.20% )
+           904,862      instructions              #    0.61  insn per cycle         
+                                                  #    1.09  stalled cycles per insn  ( +-  0.66% )
+           190,803      branches                  #  218.053 M/sec                    ( +-  0.58% )
+     <not counted>      branch-misses                                                 ( +- 66.81% )  (13.32%)
+
+         0.0013328 +- 0.0000923 seconds time elapsed  ( +-  6.93% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 4' (10 runs):
+
+              1.20 msec task-clock                #    0.706 CPUs utilized            ( +-  3.09% )
+                 2      context-switches          #    0.001 M/sec                    ( +- 27.80% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.060 M/sec                    ( +-  0.79% )
+         1,737,765      cycles                    #    1.449 GHz                      ( +-  1.27% )  (90.02%)
+         1,159,741      stalled-cycles-frontend   #   66.74% frontend cycles idle     ( +-  1.43% )
+           917,265      stalled-cycles-backend    #   52.78% backend cycles idle      ( +-  1.74% )
+         1,031,498      instructions              #    0.59  insn per cycle         
+                                                  #    1.12  stalled cycles per insn  ( +-  0.42% )
+           217,772      branches                  #  181.573 M/sec                    ( +-  0.38% )
+     <not counted>      branch-misses                                                 ( +- 70.72% )  (9.98%)
+
+         0.0016990 +- 0.0000451 seconds time elapsed  ( +-  2.66% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 8' (10 runs):
+
+              1.18 msec task-clock                #    0.806 CPUs utilized            ( +-  2.20% )
+                 3      context-switches          #    0.003 M/sec                    ( +- 14.91% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                80      page-faults               #    0.068 M/sec                    ( +-  0.58% )
+         2,353,139      cycles                    #    1.989 GHz                      ( +-  1.87% )  (82.90%)
+         1,608,261      stalled-cycles-frontend   #   68.35% frontend cycles idle     ( +-  2.48% )
+         1,264,776      stalled-cycles-backend    #   53.75% backend cycles idle      ( +-  3.03% )
+         1,327,642      instructions              #    0.56  insn per cycle         
+                                                  #    1.21  stalled cycles per insn  ( +-  0.47% )
+           280,172      branches                  #  236.802 M/sec                    ( +-  0.45% )
+             3,339      branch-misses             #    1.19% of all branches          ( +- 51.02% )  (17.10%)
+
+         0.0014680 +- 0.0000250 seconds time elapsed  ( +-  1.70% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 16' (10 runs):
+
+              2.14 msec task-clock                #    0.916 CPUs utilized            ( +-  5.11% )
+                 3      context-switches          #    0.002 M/sec                    ( +- 11.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                98      page-faults               #    0.046 M/sec                    ( +-  0.51% )
+         3,501,776      cycles                    #    1.638 GHz                      ( +-  3.60% )  (58.10%)
+         2,330,092      stalled-cycles-frontend   #   66.54% frontend cycles idle     ( +-  1.83% )
+         1,797,272      stalled-cycles-backend    #   51.32% backend cycles idle      ( +-  2.19% )
+         1,886,173      instructions              #    0.54  insn per cycle         
+                                                  #    1.24  stalled cycles per insn  ( +-  0.57% )
+           397,461      branches                  #  185.899 M/sec                    ( +-  0.52% )
+             5,967      branch-misses             #    1.50% of all branches          ( +- 34.80% )  (41.90%)
+
+         0.0023337 +- 0.0000945 seconds time elapsed  ( +-  4.05% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 1024 32' (10 runs):
+
+              4.11 msec task-clock                #    1.041 CPUs utilized            ( +-  4.08% )
+                 5      context-switches          #    0.001 M/sec                    ( +- 26.33% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.032 M/sec                    ( +-  0.34% )
+         5,865,573      cycles                    #    1.427 GHz                      ( +-  4.28% )  (57.45%)
+         3,960,129      stalled-cycles-frontend   #   67.51% frontend cycles idle     ( +-  5.06% )
+         3,020,384      stalled-cycles-backend    #   51.49% backend cycles idle      ( +-  5.59% )
+         3,041,163      instructions              #    0.52  insn per cycle         
+                                                  #    1.30  stalled cycles per insn  ( +-  1.71% )
+           640,807      branches                  #  155.855 M/sec                    ( +-  1.52% )
+     <not counted>      branch-misses                                                 ( +- 22.14% )  (42.55%)
+
+          0.003949 +- 0.000147 seconds time elapsed  ( +-  3.72% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 1' (10 runs):
+
+              0.69 msec task-clock                #    0.593 CPUs utilized            ( +-  6.35% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.095 M/sec                    ( +-  0.71% )
+         1,300,918      cycles                    #    1.877 GHz                      ( +-  1.10% )  (98.93%)
+           856,669      stalled-cycles-frontend   #   65.85% frontend cycles idle     ( +-  1.46% )
+           683,681      stalled-cycles-backend    #   52.55% backend cycles idle      ( +-  1.75% )
+           832,437      instructions              #    0.64  insn per cycle         
+                                                  #    1.03  stalled cycles per insn  ( +-  0.62% )
+           175,811      branches                  #  253.618 M/sec                    ( +-  0.56% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (1.07%)
+
+         0.0011689 +- 0.0000666 seconds time elapsed  ( +-  5.70% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 2' (10 runs):
+
+              0.73 msec task-clock                #    0.635 CPUs utilized            ( +-  1.87% )
+                 1      context-switches          #    0.002 M/sec                    ( +- 11.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.091 M/sec                    ( +-  0.50% )
+         1,431,722      cycles                    #    1.955 GHz                      ( +-  1.17% )
+           951,535      stalled-cycles-frontend   #   66.46% frontend cycles idle     ( +-  1.56% )
+           757,816      stalled-cycles-backend    #   52.93% backend cycles idle      ( +-  1.89% )
+           887,130      instructions              #    0.62  insn per cycle         
+                                                  #    1.07  stalled cycles per insn  ( +-  0.44% )
+           187,522      branches                  #  256.059 M/sec                    ( +-  0.35% )
+     <not counted>      branch-misses                                                 (0.00%)
+
+         0.0011530 +- 0.0000236 seconds time elapsed  ( +-  2.04% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 4' (10 runs):
+
+              0.97 msec task-clock                #    0.711 CPUs utilized            ( +-  6.59% )
+                 2      context-switches          #    0.002 M/sec                    ( +- 33.33% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.074 M/sec                    ( +-  0.92% )
+         1,735,621      cycles                    #    1.788 GHz                      ( +-  1.72% )  (78.51%)
+         1,161,574      stalled-cycles-frontend   #   66.93% frontend cycles idle     ( +-  1.82% )
+           919,412      stalled-cycles-backend    #   52.97% backend cycles idle      ( +-  2.18% )
+         1,026,033      instructions              #    0.59  insn per cycle         
+                                                  #    1.13  stalled cycles per insn  ( +-  0.64% )
+           216,750      branches                  #  223.275 M/sec                    ( +-  0.60% )
+     <not counted>      branch-misses                                                 ( +- 52.72% )  (21.49%)
+
+         0.0013647 +- 0.0000821 seconds time elapsed  ( +-  6.02% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 8' (10 runs):
+
+              1.77 msec task-clock                #    0.832 CPUs utilized            ( +-  8.10% )
+                 5      context-switches          #    0.003 M/sec                    ( +- 20.55% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                80      page-faults               #    0.046 M/sec                    ( +-  0.70% )
+         2,519,879      cycles                    #    1.426 GHz                      ( +-  8.24% )  (94.70%)
+         1,745,737      stalled-cycles-frontend   #   69.28% frontend cycles idle     ( +- 10.26% )
+         1,362,958      stalled-cycles-backend    #   54.09% backend cycles idle      ( +- 10.87% )
+         1,400,057      instructions              #    0.56  insn per cycle         
+                                                  #    1.25  stalled cycles per insn  ( +-  2.89% )
+           293,895      branches                  #  166.312 M/sec                    ( +-  2.53% )
+     <not counted>      branch-misses                                                 ( +- 67.61% )  (5.30%)
+
+          0.002125 +- 0.000141 seconds time elapsed  ( +-  6.63% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 16' (10 runs):
+
+              1.34 msec task-clock                #    0.914 CPUs utilized            ( +-  9.21% )
+                 6      context-switches          #    0.004 M/sec                    ( +- 19.59% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.073 M/sec                    ( +-  0.50% )
+         3,795,198      cycles                    #    2.836 GHz                      ( +-  8.66% )  (91.24%)
+         2,710,774      stalled-cycles-frontend   #   71.43% frontend cycles idle     ( +- 10.94% )
+         2,145,914      stalled-cycles-backend    #   56.54% backend cycles idle      ( +- 12.20% )
+         1,930,623      instructions              #    0.51  insn per cycle         
+                                                  #    1.40  stalled cycles per insn  ( +-  2.56% )
+           406,361      branches                  #  303.676 M/sec                    ( +-  2.31% )
+     <not counted>      branch-misses                                                 ( +- 66.68% )  (8.76%)
+
+          0.001463 +- 0.000130 seconds time elapsed  ( +-  8.87% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 2048 32' (10 runs):
+
+              3.02 msec task-clock                #    1.037 CPUs utilized            ( +-  2.17% )
+                 4      context-switches          #    0.001 M/sec                    ( +- 15.60% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.043 M/sec                    ( +-  0.39% )
+         5,684,704      cycles                    #    1.881 GHz                      ( +-  1.47% )  (43.55%)
+         3,796,408      stalled-cycles-frontend   #   66.78% frontend cycles idle     ( +-  1.67% )
+         2,889,925      stalled-cycles-backend    #   50.84% backend cycles idle      ( +-  2.06% )
+         2,994,424      instructions              #    0.53  insn per cycle         
+                                                  #    1.27  stalled cycles per insn  ( +-  0.36% )
+           631,821      branches                  #  209.044 M/sec                    ( +-  0.37% )
+            11,612      branch-misses             #    1.84% of all branches          ( +- 22.83% )  (56.45%)
+
+         0.0029141 +- 0.0000388 seconds time elapsed  ( +-  1.33% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 1' (10 runs):
+
+              0.69 msec task-clock                #    0.601 CPUs utilized            ( +-  2.73% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.097 M/sec                    ( +-  1.03% )
+         1,342,284      cycles                    #    1.947 GHz                      ( +-  2.49% )  (82.45%)
+           890,892      stalled-cycles-frontend   #   66.37% frontend cycles idle     ( +-  2.93% )
+           715,444      stalled-cycles-backend    #   53.30% backend cycles idle      ( +-  3.54% )
+           843,415      instructions              #    0.63  insn per cycle         
+                                                  #    1.06  stalled cycles per insn  ( +-  0.57% )
+           178,074      branches                  #  258.233 M/sec                    ( +-  0.55% )
+     <not counted>      branch-misses                                                 ( +- 52.52% )  (17.55%)
+
+         0.0011483 +- 0.0000310 seconds time elapsed  ( +-  2.70% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 2' (10 runs):
+
+              1.09 msec task-clock                #    0.641 CPUs utilized            ( +-  3.77% )
+                 1      context-switches          #    0.001 M/sec                    ( +- 16.67% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.062 M/sec                    ( +-  0.83% )
+         1,442,641      cycles                    #    1.319 GHz                      ( +-  1.78% )  (75.02%)
+           957,745      stalled-cycles-frontend   #   66.39% frontend cycles idle     ( +-  1.66% )
+           761,838      stalled-cycles-backend    #   52.81% backend cycles idle      ( +-  1.95% )
+           899,806      instructions              #    0.62  insn per cycle         
+                                                  #    1.06  stalled cycles per insn  ( +-  0.47% )
+           189,959      branches                  #  173.639 M/sec                    ( +-  0.44% )
+     <not counted>      branch-misses                                                 ( +- 42.69% )  (24.98%)
+
+         0.0017060 +- 0.0000588 seconds time elapsed  ( +-  3.45% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 4' (10 runs):
+
+              0.94 msec task-clock                #    0.714 CPUs utilized            ( +-  5.95% )
+                 2      context-switches          #    0.003 M/sec                    ( +- 25.76% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.077 M/sec                    ( +-  0.89% )
+         1,750,450      cycles                    #    1.865 GHz                      ( +-  1.58% )  (85.72%)
+         1,187,139      stalled-cycles-frontend   #   67.82% frontend cycles idle     ( +-  2.01% )
+           942,320      stalled-cycles-backend    #   53.83% backend cycles idle      ( +-  2.39% )
+         1,033,265      instructions              #    0.59  insn per cycle         
+                                                  #    1.15  stalled cycles per insn  ( +-  0.61% )
+           218,198      branches                  #  232.532 M/sec                    ( +-  0.56% )
+             2,017      branch-misses             #    0.92% of all branches          ( +- 67.25% )  (14.28%)
+
+         0.0013134 +- 0.0000732 seconds time elapsed  ( +-  5.57% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 8' (10 runs):
+
+              1.22 msec task-clock                #    0.818 CPUs utilized            ( +-  2.92% )
+                 3      context-switches          #    0.003 M/sec                    ( +- 12.82% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                79      page-faults               #    0.065 M/sec                    ( +-  0.47% )
+         2,325,055      cycles                    #    1.907 GHz                      ( +-  1.68% )  (79.88%)
+         1,588,070      stalled-cycles-frontend   #   68.30% frontend cycles idle     ( +-  1.89% )
+         1,242,404      stalled-cycles-backend    #   53.44% backend cycles idle      ( +-  2.20% )
+         1,313,941      instructions              #    0.57  insn per cycle         
+                                                  #    1.21  stalled cycles per insn  ( +-  0.52% )
+           277,752      branches                  #  227.853 M/sec                    ( +-  0.53% )
+             3,184      branch-misses             #    1.15% of all branches          ( +- 52.52% )  (20.12%)
+
+         0.0014894 +- 0.0000279 seconds time elapsed  ( +-  1.87% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 16' (10 runs):
+
+              2.53 msec task-clock                #    0.930 CPUs utilized            ( +-  3.98% )
+                 6      context-switches          #    0.002 M/sec                    ( +- 32.58% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                98      page-faults               #    0.039 M/sec                    ( +-  0.63% )
+         3,397,459      cycles                    #    1.342 GHz                      ( +-  3.80% )  (53.22%)
+         2,313,351      stalled-cycles-frontend   #   68.09% frontend cycles idle     ( +-  2.65% )
+         1,775,675      stalled-cycles-backend    #   52.26% backend cycles idle      ( +-  3.08% )
+         1,890,729      instructions              #    0.56  insn per cycle         
+                                                  #    1.22  stalled cycles per insn  ( +-  0.64% )
+           399,600      branches                  #  157.837 M/sec                    ( +-  0.72% )
+             8,707      branch-misses             #    2.18% of all branches          ( +- 19.87% )  (46.78%)
+
+         0.0027210 +- 0.0000883 seconds time elapsed  ( +-  3.24% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 4096 32' (10 runs):
+
+              2.10 msec task-clock                #    1.035 CPUs utilized            ( +-  2.29% )
+                 6      context-switches          #    0.003 M/sec                    ( +- 16.13% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               130      page-faults               #    0.062 M/sec                    ( +-  0.37% )
+         5,839,652      cycles                    #    2.776 GHz                      ( +-  1.80% )  (91.98%)
+         4,156,551      stalled-cycles-frontend   #   71.18% frontend cycles idle     ( +-  2.38% )
+         3,247,252      stalled-cycles-backend    #   55.61% backend cycles idle      ( +-  2.85% )
+         3,003,341      instructions              #    0.51  insn per cycle         
+                                                  #    1.38  stalled cycles per insn  ( +-  0.35% )
+           633,294      branches                  #  301.080 M/sec                    ( +-  0.37% )
+     <not counted>      branch-misses                                                 ( +- 51.88% )  (8.02%)
+
+         0.0020321 +- 0.0000534 seconds time elapsed  ( +-  2.63% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 1' (10 runs):
+
+              0.77 msec task-clock                #    0.599 CPUs utilized            ( +-  5.41% )
+                 1      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                66      page-faults               #    0.086 M/sec                    ( +-  0.80% )
+         1,305,340      cycles                    #    1.694 GHz                      ( +-  1.69% )  (85.26%)
+           871,414      stalled-cycles-frontend   #   66.76% frontend cycles idle     ( +-  1.81% )
+           696,907      stalled-cycles-backend    #   53.39% backend cycles idle      ( +-  2.19% )
+           839,677      instructions              #    0.64  insn per cycle         
+                                                  #    1.04  stalled cycles per insn  ( +-  0.60% )
+           177,071      branches                  #  229.812 M/sec                    ( +-  0.54% )
+     <not counted>      branch-misses                                                 ( +- 52.12% )  (14.74%)
+
+         0.0012857 +- 0.0000659 seconds time elapsed  ( +-  5.13% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 2' (10 runs):
+
+              0.80 msec task-clock                #    0.649 CPUs utilized            ( +-  2.90% )
+                 1      context-switches          #    0.002 M/sec                    ( +- 11.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                68      page-faults               #    0.085 M/sec                    ( +-  0.49% )
+         1,490,906      cycles                    #    1.868 GHz                      ( +-  2.26% )  (90.89%)
+           989,442      stalled-cycles-frontend   #   66.37% frontend cycles idle     ( +-  1.80% )
+           793,923      stalled-cycles-backend    #   53.25% backend cycles idle      ( +-  2.15% )
+           894,103      instructions              #    0.60  insn per cycle         
+                                                  #    1.11  stalled cycles per insn  ( +-  0.34% )
+           188,974      branches                  #  236.728 M/sec                    ( +-  0.29% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (9.11%)
+
+         0.0012291 +- 0.0000339 seconds time elapsed  ( +-  2.76% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 4' (10 runs):
+
+              1.00 msec task-clock                #    0.718 CPUs utilized            ( +-  5.65% )
+                 2      context-switches          #    0.002 M/sec                    ( +- 23.28% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                72      page-faults               #    0.072 M/sec                    ( +-  0.59% )
+         1,825,037      cycles                    #    1.823 GHz                      ( +-  4.28% )  (77.75%)
+         1,175,113      stalled-cycles-frontend   #   64.39% frontend cycles idle     ( +-  1.87% )
+           932,265      stalled-cycles-backend    #   51.08% backend cycles idle      ( +-  2.20% )
+         1,030,796      instructions              #    0.56  insn per cycle         
+                                                  #    1.14  stalled cycles per insn  ( +-  0.61% )
+           217,768      branches                  #  217.474 M/sec                    ( +-  0.54% )
+     <not counted>      branch-misses                                                 ( +- 51.31% )  (22.25%)
+
+         0.0013949 +- 0.0000737 seconds time elapsed  ( +-  5.28% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 8' (10 runs):
+
+              1.48 msec task-clock                #    0.795 CPUs utilized            ( +-  4.40% )
+                 3      context-switches          #    0.002 M/sec                    ( +-  8.99% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                80      page-faults               #    0.054 M/sec                    ( +-  0.62% )
+         2,269,538      cycles                    #    1.533 GHz                      ( +-  2.28% )  (84.10%)
+         1,565,049      stalled-cycles-frontend   #   68.96% frontend cycles idle     ( +-  1.76% )
+         1,221,868      stalled-cycles-backend    #   53.84% backend cycles idle      ( +-  2.17% )
+         1,331,382      instructions              #    0.59  insn per cycle         
+                                                  #    1.18  stalled cycles per insn  ( +-  0.42% )
+           280,740      branches                  #  189.650 M/sec                    ( +-  0.35% )
+             2,070      branch-misses             #    0.74% of all branches          ( +- 66.67% )  (15.90%)
+
+         0.0018610 +- 0.0000808 seconds time elapsed  ( +-  4.34% )
+
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 16' (10 runs):
+
+              1.95 msec task-clock                #    0.926 CPUs utilized            ( +-  6.87% )
+                 4      context-switches          #    0.002 M/sec                    ( +- 16.14% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                97      page-faults               #    0.050 M/sec                    ( +-  0.55% )
+         3,434,064      cycles                    #    1.763 GHz                      ( +-  2.15% )  (77.52%)
+         2,329,672      stalled-cycles-frontend   #   67.84% frontend cycles idle     ( +-  1.97% )
+         1,800,674      stalled-cycles-backend    #   52.44% backend cycles idle      ( +-  2.35% )
+         1,877,206      instructions              #    0.55  insn per cycle         
+                                                  #    1.24  stalled cycles per insn  ( +-  0.45% )
+           396,051      branches                  #  203.323 M/sec                    ( +-  0.45% )
+     <not counted>      branch-misses                                                 ( +- 41.72% )  (22.48%)
+
+          0.002104 +- 0.000111 seconds time elapsed  ( +-  5.29% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_pth -2.5 1.5 -2.0 2.0 8192 32' (10 runs):
+
+              2.84 msec task-clock                #    1.032 CPUs utilized            ( +-  0.91% )
+                 3      context-switches          #    0.001 M/sec                    ( +- 17.31% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               131      page-faults               #    0.046 M/sec                    ( +-  0.42% )
+         4,811,491      cycles                    #    1.695 GHz                      ( +-  7.85% )  (42.80%)
+         3,793,156      stalled-cycles-frontend   #   78.84% frontend cycles idle     ( +-  1.23% )
+         2,895,337      stalled-cycles-backend    #   60.18% backend cycles idle      ( +-  1.51% )
+         2,979,223      instructions              #    0.62  insn per cycle         
+                                                  #    1.27  stalled cycles per insn  ( +-  0.29% )
+           628,491      branches                  #  221.388 M/sec                    ( +-  0.26% )
+             9,710      branch-misses             #    1.54% of all branches          ( +- 27.61% )  (57.20%)
+
+         0.0027507 +- 0.0000291 seconds time elapsed  ( +-  1.06% )
+

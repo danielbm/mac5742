@@ -3,7 +3,7 @@ OUTPUT=mandelbrot
 IMAGE=.ppm
 
 CC=gcc
-CC_OPT=-std=c11 -O3
+CC_OPT=-std=c11 -Wall
 
 CC_OMP=-fopenmp
 CC_PTH=-pthread
