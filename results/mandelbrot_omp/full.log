@@ -1,125 +1,125 @@
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 1' (10 runs):
 
-              0.79 msec task-clock                #    0.536 CPUs utilized            ( +-  6.01% )
-                 0      context-switches          #    0.000 K/sec                  
+              0.86 msec task-clock                #    0.013 CPUs utilized            ( +-  1.22% )
+                 4      context-switches          #    0.005 M/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.096 M/sec                    ( +-  0.41% )
-         1,560,316      cycles                    #    1.969 GHz                      ( +-  3.20% )  (81.67%)
-         1,045,591      stalled-cycles-frontend   #   67.01% frontend cycles idle     ( +-  1.64% )
-           754,779      stalled-cycles-backend    #   48.37% backend cycles idle      ( +-  2.13% )
-         1,169,557      instructions              #    0.75  insn per cycle         
-                                                  #    0.89  stalled cycles per insn  ( +-  0.18% )
-           231,436      branches                  #  292.078 M/sec                    ( +-  0.18% )
-             1,988      branch-misses             #    0.86% of all branches          ( +- 66.78% )  (18.33%)
+                82      page-faults               #    0.095 M/sec                    ( +-  0.26% )
+         2,276,768      cycles                    #    2.651 GHz                      ( +-  3.25% )  (92.74%)
+         1,498,010      stalled-cycles-frontend   #   65.80% frontend cycles idle     ( +-  2.64% )
+         1,155,061      stalled-cycles-backend    #   50.73% backend cycles idle      ( +-  3.38% )
+         1,448,764      instructions              #    0.64  insn per cycle         
+                                                  #    1.03  stalled cycles per insn  ( +-  0.42% )
+           278,058      branches                  #  323.775 M/sec                    ( +-  0.25% )
+     <not counted>      branch-misses                                                 ( +-100.00% )  (7.26%)
 
-          0.001479 +- 0.000314 seconds time elapsed  ( +- 21.26% )
-
-
- Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 2' (10 runs):
-
-              1.32 msec task-clock                #    0.744 CPUs utilized            ( +-  5.87% )
-                 0      context-switches          #    0.000 K/sec                  
-                 0      cpu-migrations            #    0.000 K/sec                  
-                78      page-faults               #    0.059 M/sec                    ( +-  0.47% )
-         1,988,191      cycles                    #    1.511 GHz                      ( +-  1.08% )  (84.41%)
-         1,325,006      stalled-cycles-frontend   #   66.64% frontend cycles idle     ( +-  1.24% )
-           978,082      stalled-cycles-backend    #   49.19% backend cycles idle      ( +-  1.54% )
-         1,299,794      instructions              #    0.65  insn per cycle         
-                                                  #    1.02  stalled cycles per insn  ( +-  0.27% )
-           261,675      branches                  #  198.816 M/sec                    ( +-  0.27% )
-             3,756      branch-misses             #    1.44% of all branches          ( +- 41.58% )  (15.59%)
-
-         0.0017695 +- 0.0000945 seconds time elapsed  ( +-  5.34% )
-
-
- Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 4' (10 runs):
-
-              1.65 msec task-clock                #    1.050 CPUs utilized            ( +-  5.53% )
-                 0      context-switches          #    0.000 K/sec                  
-                 0      cpu-migrations            #    0.000 K/sec                  
-                83      page-faults               #    0.050 M/sec                    ( +-  0.46% )
-         3,044,178      cycles                    #    1.850 GHz                      ( +-  1.51% )  (76.24%)
-         2,052,214      stalled-cycles-frontend   #   67.41% frontend cycles idle     ( +-  1.25% )
-         1,537,449      stalled-cycles-backend    #   50.50% backend cycles idle      ( +-  1.48% )
-         1,704,142      instructions              #    0.56  insn per cycle         
-                                                  #    1.20  stalled cycles per insn  ( +-  0.43% )
-           368,705      branches                  #  224.040 M/sec                    ( +-  0.51% )
-             2,935      branch-misses             #    0.80% of all branches          ( +- 49.11% )  (23.76%)
-
-         0.0015669 +- 0.0000946 seconds time elapsed  ( +-  6.03% )
-
-
- Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 8' (10 runs):
-
-              3.92 msec task-clock                #    2.071 CPUs utilized            ( +- 13.73% )
-                 0      context-switches          #    0.000 K/sec                  
-                 0      cpu-migrations            #    0.000 K/sec                  
-                91      page-faults               #    0.023 M/sec                    ( +-  0.29% )
-         7,008,282      cycles                    #    1.789 GHz                      ( +- 15.80% )  (80.65%)
-         4,814,000      stalled-cycles-frontend   #   68.69% frontend cycles idle     ( +- 15.64% )
-         3,631,573      stalled-cycles-backend    #   51.82% backend cycles idle      ( +- 15.84% )
-         3,251,618      instructions              #    0.46  insn per cycle         
-                                                  #    1.48  stalled cycles per insn  ( +- 11.06% )
-           788,865      branches                  #  201.405 M/sec                    ( +- 12.97% )
-     <not counted>      branch-misses                                                 ( +- 67.50% )  (19.35%)
-
-          0.001891 +- 0.000103 seconds time elapsed  ( +-  5.44% )
+           0.06517 +- 0.00880 seconds time elapsed  ( +- 13.51% )
 
 Some events weren't counted. Try disabling the NMI watchdog:
 	echo 0 > /proc/sys/kernel/nmi_watchdog
 	perf stat ...
 	echo 1 > /proc/sys/kernel/nmi_watchdog
 
+ Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 2' (10 runs):
+
+              6.19 msec task-clock                #    0.078 CPUs utilized            ( +-  0.51% )
+                 5      context-switches          #    0.824 K/sec                    ( +-  1.96% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                82      page-faults               #    0.013 M/sec                    ( +-  0.45% )
+         7,329,647      cycles                    #    1.184 GHz                      ( +-  0.90% )  (51.97%)
+         5,072,298      stalled-cycles-frontend   #   69.20% frontend cycles idle     ( +-  0.35% )  (96.39%)
+         3,760,253      stalled-cycles-backend    #   51.30% backend cycles idle      ( +-  0.45% )
+         3,694,938      instructions              #    0.50  insn per cycle         
+                                                  #    1.37  stalled cycles per insn  ( +-  0.11% )
+           911,069      branches                  #  147.169 M/sec                    ( +-  0.08% )
+             9,565      branch-misses             #    1.05% of all branches          ( +- 34.28% )  (51.63%)
+
+            0.0794 +- 0.0142 seconds time elapsed  ( +- 17.87% )
+
+
+ Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 4' (10 runs):
+
+             14.67 msec task-clock                #    0.264 CPUs utilized            ( +-  2.63% )
+                 7      context-switches          #    0.484 K/sec                    ( +-  1.41% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                87      page-faults               #    0.006 M/sec                    ( +-  0.55% )
+        17,204,390      cycles                    #    1.173 GHz                      ( +-  1.93% )  (33.13%)
+        12,517,245      stalled-cycles-frontend   #   72.76% frontend cycles idle     ( +-  0.62% )  (93.98%)
+         9,188,086      stalled-cycles-backend    #   53.41% backend cycles idle      ( +-  0.27% )
+         8,277,856      instructions              #    0.48  insn per cycle         
+                                                  #    1.51  stalled cycles per insn  ( +-  0.19% )
+         2,209,779      branches                  #  150.650 M/sec                    ( +-  0.19% )
+             7,822      branch-misses             #    0.35% of all branches          ( +- 25.80% )  (72.89%)
+
+           0.05565 +- 0.00147 seconds time elapsed  ( +-  2.64% )
+
+
+ Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 8' (10 runs):
+
+             31.10 msec task-clock                #    0.146 CPUs utilized            ( +-  4.42% )
+                12      context-switches          #    0.389 K/sec                    ( +-  3.36% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                96      page-faults               #    0.003 M/sec                    ( +-  0.39% )
+        39,170,038      cycles                    #    1.259 GHz                      ( +-  2.05% )  (28.93%)
+        27,666,305      stalled-cycles-frontend   #   70.63% frontend cycles idle     ( +-  0.29% )  (95.83%)
+        20,325,416      stalled-cycles-backend    #   51.89% backend cycles idle      ( +-  0.25% )
+        17,783,561      instructions              #    0.45  insn per cycle         
+                                                  #    1.56  stalled cycles per insn  ( +-  0.15% )
+         4,900,949      branches                  #  157.581 M/sec                    ( +-  0.15% )
+             8,760      branch-misses             #    0.18% of all branches          ( +- 16.20% )  (75.24%)
+
+            0.2132 +- 0.0827 seconds time elapsed  ( +- 38.79% )
+
+
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 16' (10 runs):
 
-              9.09 msec task-clock                #    4.155 CPUs utilized            ( +-  1.50% )
-                 0      context-switches          #    0.011 K/sec                    ( +-100.00% )
+             72.33 msec task-clock                #    1.024 CPUs utilized            ( +-  3.45% )
+                19      context-switches          #    0.268 K/sec                    ( +-  1.14% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               108      page-faults               #    0.012 M/sec                    ( +-  0.45% )
-        15,660,874      cycles                    #    1.722 GHz                      ( +-  2.06% )  (74.95%)
-        10,621,788      stalled-cycles-frontend   #   67.82% frontend cycles idle     ( +-  1.17% )
-         7,999,226      stalled-cycles-backend    #   51.08% backend cycles idle      ( +-  1.23% )
-         6,763,761      instructions              #    0.43  insn per cycle         
-                                                  #    1.57  stalled cycles per insn  ( +-  0.81% )
-         1,751,288      branches                  #  192.585 M/sec                    ( +-  0.88% )
-             2,730      branch-misses             #    0.16% of all branches          ( +- 50.99% )  (25.05%)
+               112      page-faults               #    0.002 M/sec                    ( +-  0.44% )
+        88,702,981      cycles                    #    1.226 GHz                      ( +-  1.94% )  (38.62%)
+        62,520,132      stalled-cycles-frontend   #   70.48% frontend cycles idle     ( +-  1.61% )  (86.72%)
+        45,844,609      stalled-cycles-backend    #   51.68% backend cycles idle      ( +-  1.70% )  (99.97%)
+        39,438,277      instructions              #    0.44  insn per cycle         
+                                                  #    1.59  stalled cycles per insn  ( +-  1.48% )
+        11,041,653      branches                  #  152.665 M/sec                    ( +-  1.50% )
+            14,948      branch-misses             #    0.14% of all branches          ( +- 14.73% )  (74.68%)
 
-         0.0021884 +- 0.0000269 seconds time elapsed  ( +-  1.23% )
+            0.0706 +- 0.0111 seconds time elapsed  ( +- 15.65% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 16 32' (10 runs):
 
-            118.89 msec task-clock                #   21.001 CPUs utilized            ( +-  8.21% )
-                24      context-switches          #    0.204 K/sec                    ( +- 19.26% )
-                 4      cpu-migrations            #    0.035 K/sec                    ( +- 18.03% )
-               142      page-faults               #    0.001 M/sec                    ( +-  0.36% )
-       312,549,876      cycles                    #    2.629 GHz                      ( +- 10.18% )  (32.78%)
-       235,572,922      stalled-cycles-frontend   #   75.37% frontend cycles idle     ( +-  9.74% )  (97.88%)
-       181,401,369      stalled-cycles-backend    #   58.04% backend cycles idle      ( +-  9.73% )
-       114,769,244      instructions              #    0.37  insn per cycle         
-                                                  #    2.05  stalled cycles per insn  ( +-  9.50% )
-        32,508,746      branches                  #  273.426 M/sec                    ( +-  9.58% )
-            11,928      branch-misses             #    0.04% of all branches          ( +- 13.37% )  (69.33%)
+            238.40 msec task-clock                #    3.656 CPUs utilized            ( +-  4.62% )
+                41      context-switches          #    0.170 K/sec                    ( +-  3.12% )
+                 7      cpu-migrations            #    0.028 K/sec                    ( +-  8.63% )
+               145      page-faults               #    0.610 K/sec                    ( +-  0.26% )
+       465,967,684      cycles                    #    1.955 GHz                      ( +-  5.95% )  (61.98%)
+       324,369,396      stalled-cycles-frontend   #   69.61% frontend cycles idle     ( +-  5.35% )  (57.85%)
+       232,711,653      stalled-cycles-backend    #   49.94% backend cycles idle      ( +-  5.65% )  (87.67%)
+       154,802,910      instructions              #    0.33  insn per cycle         
+                                                  #    2.10  stalled cycles per insn  ( +-  4.81% )  (99.95%)
+        43,938,388      branches                  #  184.308 M/sec                    ( +-  4.84% )
+            31,167      branch-misses             #    0.07% of all branches          ( +-  7.34% )  (92.50%)
 
-          0.005661 +- 0.000370 seconds time elapsed  ( +-  6.54% )
+           0.06521 +- 0.00877 seconds time elapsed  ( +- 13.45% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 1' (10 runs):
 
-              1.35 msec task-clock                #    0.705 CPUs utilized            ( +-  4.70% )
-                 0      context-switches          #    0.000 K/sec                  
+              2.04 msec task-clock                #    0.019 CPUs utilized            ( +-  7.19% )
+                 4      context-switches          #    0.002 M/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-                77      page-faults               #    0.057 M/sec                    ( +-  0.60% )
-         2,076,195      cycles                    #    1.537 GHz                      ( +-  0.74% )  (88.14%)
-         1,369,853      stalled-cycles-frontend   #   65.98% frontend cycles idle     ( +-  0.83% )
-           811,366      stalled-cycles-backend    #   39.08% backend cycles idle      ( +-  1.29% )
-         1,656,583      instructions              #    0.80  insn per cycle         
-                                                  #    0.83  stalled cycles per insn  ( +-  0.14% )
-           288,575      branches                  #  213.640 M/sec                    ( +-  0.18% )
-     <not counted>      branch-misses                                                 ( +- 55.59% )  (11.86%)
+                87      page-faults               #    0.043 M/sec                    ( +-  0.42% )
+         2,652,291      cycles                    #    1.300 GHz                      ( +-  6.23% )  (72.84%)
+         1,822,077      stalled-cycles-frontend   #   68.70% frontend cycles idle     ( +-  0.71% )
+         1,200,291      stalled-cycles-backend    #   45.25% backend cycles idle      ( +-  1.01% )
+         2,330,729      instructions              #    0.88  insn per cycle         
+                                                  #    0.78  stalled cycles per insn  ( +-  0.12% )
+           397,887      branches                  #  195.003 M/sec                    ( +-  0.12% )
+     <not counted>      branch-misses                                                 ( +- 41.26% )  (27.16%)
 
-         0.0019159 +- 0.0000832 seconds time elapsed  ( +-  4.34% )
+            0.1079 +- 0.0198 seconds time elapsed  ( +- 18.31% )
 
 Some events weren't counted. Try disabling the NMI watchdog:
 	echo 0 > /proc/sys/kernel/nmi_watchdog
@@ -128,917 +128,901 @@ Some events weren't counted. Try disabling the NMI watchdog:
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 2' (10 runs):
 
-              1.64 msec task-clock                #    0.853 CPUs utilized            ( +-  2.80% )
-                 0      context-switches          #    0.000 K/sec                  
+              6.55 msec task-clock                #    0.025 CPUs utilized            ( +-  3.10% )
+                 5      context-switches          #    0.779 K/sec                    ( +-  1.96% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                78      page-faults               #    0.047 M/sec                    ( +-  0.54% )
-         2,443,131      cycles                    #    1.493 GHz                      ( +-  2.81% )  (82.11%)
-         1,690,566      stalled-cycles-frontend   #   69.20% frontend cycles idle     ( +-  1.57% )
-         1,067,715      stalled-cycles-backend    #   43.70% backend cycles idle      ( +-  2.30% )
-         1,793,968      instructions              #    0.73  insn per cycle         
-                                                  #    0.94  stalled cycles per insn  ( +-  0.29% )
-           322,378      branches                  #  197.069 M/sec                    ( +-  0.36% )
-             3,106      branch-misses             #    0.96% of all branches          ( +- 51.19% )  (17.89%)
+                89      page-faults               #    0.014 M/sec                    ( +-  0.49% )
+         7,981,869      cycles                    #    1.219 GHz                      ( +-  0.89% )  (45.91%)
+         5,518,028      stalled-cycles-frontend   #   69.13% frontend cycles idle     ( +-  0.40% )  (92.09%)
+         3,913,506      stalled-cycles-backend    #   49.03% backend cycles idle      ( +-  0.45% )
+         4,590,200      instructions              #    0.58  insn per cycle         
+                                                  #    1.20  stalled cycles per insn  ( +-  0.05% )
+         1,037,442      branches                  #  158.451 M/sec                    ( +-  0.04% )
+             7,679      branch-misses             #    0.74% of all branches          ( +- 24.43% )  (62.00%)
 
-         0.0019187 +- 0.0000540 seconds time elapsed  ( +-  2.81% )
+            0.2655 +- 0.0733 seconds time elapsed  ( +- 27.60% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 4' (10 runs):
 
-              2.22 msec task-clock                #    1.238 CPUs utilized            ( +-  4.73% )
-                 0      context-switches          #    0.045 K/sec                    ( +-100.00% )
+             15.71 msec task-clock                #    0.237 CPUs utilized            ( +-  2.06% )
+                 7      context-switches          #    0.471 K/sec                    ( +-  2.99% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                83      page-faults               #    0.037 M/sec                    ( +-  0.49% )
-         3,966,959      cycles                    #    1.786 GHz                      ( +-  1.32% )  (84.97%)
-         2,666,243      stalled-cycles-frontend   #   67.21% frontend cycles idle     ( +-  1.30% )
-         1,819,465      stalled-cycles-backend    #   45.87% backend cycles idle      ( +-  1.71% )
-         2,366,681      instructions              #    0.60  insn per cycle         
-                                                  #    1.13  stalled cycles per insn  ( +-  0.50% )
-           476,491      branches                  #  214.522 M/sec                    ( +-  0.60% )
-     <not counted>      branch-misses                                                 ( +- 56.30% )  (15.03%)
+                94      page-faults               #    0.006 M/sec                    ( +-  0.29% )
+        19,438,086      cycles                    #    1.238 GHz                      ( +-  2.39% )  (34.36%)
+        13,100,009      stalled-cycles-frontend   #   67.39% frontend cycles idle     ( +-  0.35% )  (92.19%)
+         9,527,040      stalled-cycles-backend    #   49.01% backend cycles idle      ( +-  0.18% )
+         9,373,399      instructions              #    0.48  insn per cycle         
+                                                  #    1.40  stalled cycles per insn  ( +-  0.06% )
+         2,391,838      branches                  #  152.273 M/sec                    ( +-  0.04% )
+             8,119      branch-misses             #    0.34% of all branches          ( +- 20.32% )  (73.45%)
 
-          0.001795 +- 0.000109 seconds time elapsed  ( +-  6.09% )
+           0.06622 +- 0.00965 seconds time elapsed  ( +- 14.58% )
 
-Some events weren't counted. Try disabling the NMI watchdog:
-	echo 0 > /proc/sys/kernel/nmi_watchdog
-	perf stat ...
-	echo 1 > /proc/sys/kernel/nmi_watchdog
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 8' (10 runs):
 
-              4.75 msec task-clock                #    2.076 CPUs utilized            ( +-  1.61% )
-                 0      context-switches          #    0.000 K/sec                  
+             34.00 msec task-clock                #    0.421 CPUs utilized            ( +-  2.59% )
+                12      context-switches          #    0.350 K/sec                    ( +-  5.38% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                92      page-faults               #    0.019 M/sec                    ( +-  0.57% )
-         6,887,615      cycles                    #    1.450 GHz                      ( +-  2.11% )  (61.26%)
-         4,802,752      stalled-cycles-frontend   #   69.73% frontend cycles idle     ( +-  1.71% )
-         3,435,658      stalled-cycles-backend    #   49.88% backend cycles idle      ( +-  1.86% )
-         3,684,232      instructions              #    0.53  insn per cycle         
-                                                  #    1.30  stalled cycles per insn  ( +-  1.24% )
-           833,363      branches                  #  175.439 M/sec                    ( +-  1.56% )
-             4,870      branch-misses             #    0.58% of all branches          ( +- 41.13% )  (38.74%)
+               102      page-faults               #    0.003 M/sec                    ( +-  0.38% )
+        40,745,679      cycles                    #    1.198 GHz                      ( +-  1.18% )  (33.35%)
+        28,943,974      stalled-cycles-frontend   #   71.04% frontend cycles idle     ( +-  0.60% )  (89.45%)
+        21,082,698      stalled-cycles-backend    #   51.74% backend cycles idle      ( +-  0.51% )  (99.95%)
+        19,115,225      instructions              #    0.47  insn per cycle         
+                                                  #    1.51  stalled cycles per insn  ( +-  0.14% )
+         5,153,006      branches                  #  151.560 M/sec                    ( +-  0.14% )
+            12,302      branch-misses             #    0.24% of all branches          ( +- 14.24% )  (77.26%)
 
-         0.0022883 +- 0.0000461 seconds time elapsed  ( +-  2.01% )
+            0.0808 +- 0.0125 seconds time elapsed  ( +- 15.47% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 16' (10 runs):
 
-             10.65 msec task-clock                #    4.668 CPUs utilized            ( +-  5.89% )
-                 0      context-switches          #    0.000 K/sec                  
+             65.20 msec task-clock                #    0.849 CPUs utilized            ( +-  4.12% )
+                20      context-switches          #    0.307 K/sec                    ( +-  2.69% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               109      page-faults               #    0.010 M/sec                    ( +-  0.20% )
-        18,880,349      cycles                    #    1.773 GHz                      ( +-  4.17% )  (62.75%)
-        12,913,421      stalled-cycles-frontend   #   68.40% frontend cycles idle     ( +-  5.77% )
-         9,556,182      stalled-cycles-backend    #   50.61% backend cycles idle      ( +-  5.97% )
-         8,347,301      instructions              #    0.44  insn per cycle         
-                                                  #    1.55  stalled cycles per insn  ( +-  4.55% )
-         2,121,240      branches                  #  199.226 M/sec                    ( +-  5.10% )
-             4,641      branch-misses             #    0.22% of all branches          ( +- 42.24% )  (37.25%)
+               120      page-faults               #    0.002 M/sec                    ( +-  0.55% )
+        96,246,026      cycles                    #    1.476 GHz                      ( +-  2.92% )  (33.43%)
+        64,185,207      stalled-cycles-frontend   #   66.69% frontend cycles idle     ( +-  1.69% )  (85.79%)
+        47,269,122      stalled-cycles-backend    #   49.11% backend cycles idle      ( +-  1.33% )
+        40,920,089      instructions              #    0.43  insn per cycle         
+                                                  #    1.57  stalled cycles per insn  ( +-  0.76% )
+        11,337,216      branches                  #  173.875 M/sec                    ( +-  0.78% )
+            17,019      branch-misses             #    0.15% of all branches          ( +- 15.35% )  (80.78%)
 
-          0.002281 +- 0.000107 seconds time elapsed  ( +-  4.68% )
+            0.0768 +- 0.0128 seconds time elapsed  ( +- 16.68% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 32 32' (10 runs):
 
-            119.60 msec task-clock                #   20.968 CPUs utilized            ( +-  8.35% )
-                19      context-switches          #    0.159 K/sec                    ( +- 13.29% )
-                 4      cpu-migrations            #    0.038 K/sec                    ( +- 17.29% )
-               142      page-faults               #    0.001 M/sec                    ( +-  0.24% )
-       286,474,154      cycles                    #    2.395 GHz                      ( +-  7.96% )  (41.23%)
-       226,876,461      stalled-cycles-frontend   #   79.20% frontend cycles idle     ( +-  6.11% )  (94.61%)
-       173,588,619      stalled-cycles-backend    #   60.59% backend cycles idle      ( +-  6.22% )
-       110,492,652      instructions              #    0.39  insn per cycle         
-                                                  #    2.05  stalled cycles per insn  ( +-  6.18% )
-        31,184,600      branches                  #  260.735 M/sec                    ( +-  6.26% )
-            16,344      branch-misses             #    0.05% of all branches          ( +- 33.49% )  (64.16%)
+            234.29 msec task-clock                #    2.913 CPUs utilized            ( +-  6.97% )
+                45      context-switches          #    0.193 K/sec                    ( +-  5.59% )
+                 7      cpu-migrations            #    0.029 K/sec                    ( +-  9.28% )
+               153      page-faults               #    0.653 K/sec                    ( +-  0.31% )
+       420,463,757      cycles                    #    1.795 GHz                      ( +-  8.60% )  (54.16%)
+       282,233,400      stalled-cycles-frontend   #   67.12% frontend cycles idle     ( +-  7.38% )  (68.38%)
+       210,698,626      stalled-cycles-backend    #   50.11% backend cycles idle      ( +-  6.85% )  (93.00%)
+       140,944,674      instructions              #    0.34  insn per cycle         
+                                                  #    2.00  stalled cycles per insn  ( +-  6.79% )
+        39,801,741      branches                  #  169.881 M/sec                    ( +-  6.87% )
+            29,480      branch-misses             #    0.07% of all branches          ( +-  5.60% )  (84.47%)
 
-          0.005704 +- 0.000459 seconds time elapsed  ( +-  8.05% )
+            0.0804 +- 0.0103 seconds time elapsed  ( +- 12.76% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 1' (10 runs):
 
-              1.32 msec task-clock                #    0.815 CPUs utilized            ( +-  0.35% )
-                 0      context-switches          #    0.000 K/sec                  
+              4.48 msec task-clock                #    0.068 CPUs utilized            ( +-  2.01% )
+                 4      context-switches          #    0.938 K/sec                    ( +-  3.17% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.058 M/sec                    ( +-  0.55% )
-         3,971,408      cycles                    #    2.998 GHz                      ( +-  0.58% )  (85.71%)
-         2,758,135      stalled-cycles-frontend   #   69.45% frontend cycles idle     ( +-  0.92% )
-         1,147,548      stalled-cycles-backend    #   28.90% backend cycles idle      ( +-  2.11% )
-         3,535,740      instructions              #    0.89  insn per cycle         
-                                                  #    0.78  stalled cycles per insn  ( +-  0.09% )
-           506,913      branches                  #  382.677 M/sec                    ( +-  0.12% )
-     <not counted>      branch-misses                                                 ( +- 51.15% )  (14.29%)
+               117      page-faults               #    0.026 M/sec                    ( +-  0.53% )
+         5,523,323      cycles                    #    1.233 GHz                      ( +-  2.33% )  (36.94%)
+         3,395,159      stalled-cycles-frontend   #   61.47% frontend cycles idle     ( +-  0.91% )  (96.43%)
+         1,628,927      stalled-cycles-backend    #   29.49% backend cycles idle      ( +-  1.19% )
+         5,813,516      instructions              #    1.05  insn per cycle         
+                                                  #    0.58  stalled cycles per insn  ( +-  0.06% )
+           874,999      branches                  #  195.387 M/sec                    ( +-  0.07% )
+            13,568      branch-misses             #    1.55% of all branches          ( +- 10.28% )  (66.62%)
 
-         0.0016254 +- 0.0000115 seconds time elapsed  ( +-  0.71% )
+           0.06547 +- 0.00875 seconds time elapsed  ( +- 13.36% )
 
-Some events weren't counted. Try disabling the NMI watchdog:
-	echo 0 > /proc/sys/kernel/nmi_watchdog
-	perf stat ...
-	echo 1 > /proc/sys/kernel/nmi_watchdog
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 2' (10 runs):
 
-              2.96 msec task-clock                #    1.139 CPUs utilized            ( +-  3.54% )
-                 0      context-switches          #    0.101 K/sec                    ( +- 50.92% )
-                 0      cpu-migrations            #    0.034 K/sec                    ( +-100.00% )
-                77      page-faults               #    0.026 M/sec                    ( +-  0.61% )
-         4,507,206      cycles                    #    1.525 GHz                      ( +-  0.87% )  (78.79%)
-         3,136,252      stalled-cycles-frontend   #   69.58% frontend cycles idle     ( +-  0.93% )
-         1,448,590      stalled-cycles-backend    #   32.14% backend cycles idle      ( +-  1.78% )
-         3,722,121      instructions              #    0.83  insn per cycle         
-                                                  #    0.84  stalled cycles per insn  ( +-  0.26% )
-           552,656      branches                  #  186.929 M/sec                    ( +-  0.43% )
-             5,476      branch-misses             #    0.99% of all branches          ( +- 30.15% )  (21.21%)
+              8.96 msec task-clock                #    0.039 CPUs utilized            ( +-  2.13% )
+                 5      context-switches          #    0.581 K/sec                    ( +-  2.56% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               120      page-faults               #    0.013 M/sec                    ( +-  0.19% )
+        10,904,155      cycles                    #    1.217 GHz                      ( +-  0.69% )  (48.15%)
+         7,246,964      stalled-cycles-frontend   #   66.46% frontend cycles idle     ( +-  0.43% )  (87.93%)
+         4,450,576      stalled-cycles-backend    #   40.82% backend cycles idle      ( +-  0.54% )
+         8,147,229      instructions              #    0.75  insn per cycle         
+                                                  #    0.89  stalled cycles per insn  ( +-  0.09% )
+         1,537,620      branches                  #  171.656 M/sec                    ( +-  0.11% )
+            12,005      branch-misses             #    0.78% of all branches          ( +- 12.66% )  (63.91%)
 
-         0.0025963 +- 0.0000993 seconds time elapsed  ( +-  3.82% )
+            0.2286 +- 0.0870 seconds time elapsed  ( +- 38.06% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 4' (10 runs):
 
-              3.74 msec task-clock                #    1.822 CPUs utilized            ( +-  2.14% )
-                 0      context-switches          #    0.053 K/sec                    ( +- 66.67% )
+             20.11 msec task-clock                #    0.094 CPUs utilized            ( +-  0.87% )
+                 8      context-switches          #    0.378 K/sec                    ( +-  2.91% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                83      page-faults               #    0.022 M/sec                    ( +-  0.38% )
-         7,389,262      cycles                    #    1.975 GHz                      ( +-  1.26% )  (83.09%)
-         4,951,869      stalled-cycles-frontend   #   67.01% frontend cycles idle     ( +-  0.44% )
-         2,835,967      stalled-cycles-backend    #   38.38% backend cycles idle      ( +-  0.68% )
-         4,862,889      instructions              #    0.66  insn per cycle         
-                                                  #    1.02  stalled cycles per insn  ( +-  0.17% )
-           869,753      branches                  #  232.484 M/sec                    ( +-  0.27% )
-     <not counted>      branch-misses                                                 ( +- 47.02% )  (16.91%)
+               124      page-faults               #    0.006 M/sec                    ( +-  0.30% )
+        23,960,116      cycles                    #    1.191 GHz                      ( +-  1.28% )  (38.29%)
+        15,979,157      stalled-cycles-frontend   #   66.69% frontend cycles idle     ( +-  1.43% )  (77.94%)
+        11,048,682      stalled-cycles-backend    #   46.11% backend cycles idle      ( +-  1.28% )  (99.91%)
+        13,707,157      instructions              #    0.57  insn per cycle         
+                                                  #    1.17  stalled cycles per insn  ( +-  0.54% )
+         3,115,030      branches                  #  154.888 M/sec                    ( +-  0.68% )
+            13,116      branch-misses             #    0.42% of all branches          ( +- 10.26% )  (83.86%)
 
-         0.0020532 +- 0.0000432 seconds time elapsed  ( +-  2.10% )
+            0.2142 +- 0.0661 seconds time elapsed  ( +- 30.84% )
 
-Some events weren't counted. Try disabling the NMI watchdog:
-	echo 0 > /proc/sys/kernel/nmi_watchdog
-	perf stat ...
-	echo 1 > /proc/sys/kernel/nmi_watchdog
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 8' (10 runs):
 
-              6.06 msec task-clock                #    2.932 CPUs utilized            ( +-  3.52% )
-                 0      context-switches          #    0.000 K/sec                  
+             39.55 msec task-clock                #    0.357 CPUs utilized            ( +-  2.40% )
+                12      context-switches          #    0.308 K/sec                    ( +-  3.83% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                90      page-faults               #    0.015 M/sec                    ( +-  0.68% )
-        12,983,992      cycles                    #    2.142 GHz                      ( +-  4.08% )  (68.73%)
-         9,096,309      stalled-cycles-frontend   #   70.06% frontend cycles idle     ( +-  3.84% )
-         5,994,553      stalled-cycles-backend    #   46.17% backend cycles idle      ( +-  4.53% )
-         7,382,603      instructions              #    0.57  insn per cycle         
-                                                  #    1.23  stalled cycles per insn  ( +-  1.78% )
-         1,569,041      branches                  #  258.797 M/sec                    ( +-  2.37% )
-             9,355      branch-misses             #    0.60% of all branches          ( +- 52.36% )  (31.27%)
+               133      page-faults               #    0.003 M/sec                    ( +-  0.19% )
+        49,906,934      cycles                    #    1.262 GHz                      ( +-  1.84% )  (38.19%)
+        33,252,439      stalled-cycles-frontend   #   66.63% frontend cycles idle     ( +-  1.14% )  (70.80%)
+        23,715,947      stalled-cycles-backend    #   47.52% backend cycles idle      ( +-  1.18% )
+        24,569,991      instructions              #    0.49  insn per cycle         
+                                                  #    1.35  stalled cycles per insn  ( +-  0.84% )
+         6,196,596      branches                  #  156.675 M/sec                    ( +-  0.96% )
+            16,122      branch-misses             #    0.26% of all branches          ( +-  6.22% )  (91.02%)
 
-         0.0020678 +- 0.0000809 seconds time elapsed  ( +-  3.91% )
+            0.1107 +- 0.0212 seconds time elapsed  ( +- 19.11% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 16' (10 runs):
 
-             17.92 msec task-clock                #    5.809 CPUs utilized            ( +-  7.63% )
-                 0      context-switches          #    0.000 K/sec                  
+             76.06 msec task-clock                #    1.161 CPUs utilized            ( +-  5.31% )
+                20      context-switches          #    0.256 K/sec                    ( +-  1.38% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               108      page-faults               #    0.006 M/sec                    ( +-  0.37% )
-        25,857,778      cycles                    #    1.443 GHz                      ( +-  2.29% )  (64.25%)
-        18,365,202      stalled-cycles-frontend   #   71.02% frontend cycles idle     ( +-  5.18% )
-        12,954,125      stalled-cycles-backend    #   50.10% backend cycles idle      ( +-  5.47% )
-        12,853,999      instructions              #    0.50  insn per cycle         
-                                                  #    1.43  stalled cycles per insn  ( +-  4.13% )
-         3,090,009      branches                  #  172.402 M/sec                    ( +-  4.90% )
-     <not counted>      branch-misses                                                 ( +- 58.71% )  (35.75%)
+               150      page-faults               #    0.002 M/sec                    ( +-  0.24% )
+        99,324,317      cycles                    #    1.306 GHz                      ( +-  1.22% )  (42.34%)
+        69,019,730      stalled-cycles-frontend   #   69.49% frontend cycles idle     ( +-  1.81% )  (69.38%)
+        49,967,774      stalled-cycles-backend    #   50.31% backend cycles idle      ( +-  1.44% )  (99.92%)
+        46,471,246      instructions              #    0.47  insn per cycle         
+                                                  #    1.49  stalled cycles per insn  ( +-  1.04% )
+        12,409,841      branches                  #  163.167 M/sec                    ( +-  1.11% )
+            20,718      branch-misses             #    0.17% of all branches          ( +- 10.37% )  (88.36%)
 
-          0.003086 +- 0.000232 seconds time elapsed  ( +-  7.53% )
+           0.06552 +- 0.00915 seconds time elapsed  ( +- 13.96% )
 
-Some events weren't counted. Try disabling the NMI watchdog:
-	echo 0 > /proc/sys/kernel/nmi_watchdog
-	perf stat ...
-	echo 1 > /proc/sys/kernel/nmi_watchdog
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 64 32' (10 runs):
 
-            112.64 msec task-clock                #   21.034 CPUs utilized            ( +-  4.86% )
-                12      context-switches          #    0.102 K/sec                    ( +- 23.56% )
-                 4      cpu-migrations            #    0.035 K/sec                    ( +- 16.86% )
-               142      page-faults               #    0.001 M/sec                    ( +-  0.32% )
-       301,970,324      cycles                    #    2.681 GHz                      ( +-  3.25% )  (38.33%)
-       223,938,652      stalled-cycles-frontend   #   74.16% frontend cycles idle     ( +-  3.20% )  (91.09%)
-       171,446,225      stalled-cycles-backend    #   56.78% backend cycles idle      ( +-  2.97% )
-       109,310,861      instructions              #    0.36  insn per cycle         
-                                                  #    2.05  stalled cycles per insn  ( +-  2.88% )
-        30,527,596      branches                  #  271.030 M/sec                    ( +-  2.93% )
-            70,512      branch-misses             #    0.23% of all branches          ( +- 78.97% )  (70.58%)
+            228.90 msec task-clock                #    3.016 CPUs utilized            ( +-  4.25% )
+                39      context-switches          #    0.172 K/sec                    ( +-  3.41% )
+                 6      cpu-migrations            #    0.028 K/sec                    ( +- 12.37% )
+               184      page-faults               #    0.802 K/sec                    ( +-  0.23% )
+       394,954,395      cycles                    #    1.725 GHz                      ( +-  7.14% )  (61.76%)
+       287,857,058      stalled-cycles-frontend   #   72.88% frontend cycles idle     ( +-  6.71% )  (58.91%)
+       202,965,938      stalled-cycles-backend    #   51.39% backend cycles idle      ( +-  6.57% )  (89.78%)
+       139,380,313      instructions              #    0.35  insn per cycle         
+                                                  #    2.07  stalled cycles per insn  ( +-  6.15% )  (99.98%)
+        38,846,170      branches                  #  169.711 M/sec                    ( +-  6.30% )
+            32,375      branch-misses             #    0.08% of all branches          ( +-  7.27% )  (89.54%)
 
-          0.005355 +- 0.000345 seconds time elapsed  ( +-  6.44% )
+           0.07588 +- 0.00903 seconds time elapsed  ( +- 11.90% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 1' (10 runs):
 
-              5.89 msec task-clock                #    0.927 CPUs utilized            ( +-  3.87% )
-                 0      context-switches          #    0.000 K/sec                  
+             12.45 msec task-clock                #    0.089 CPUs utilized            ( +-  1.75% )
+                 4      context-switches          #    0.321 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.013 M/sec                    ( +-  0.69% )
-        10,962,268      cycles                    #    1.863 GHz                      ( +-  2.45% )  (37.63%)
-         8,149,102      stalled-cycles-frontend   #   74.34% frontend cycles idle     ( +-  0.53% )  (88.48%)
-         2,310,351      stalled-cycles-backend    #   21.08% backend cycles idle      ( +-  0.64% )
-        10,958,212      instructions              #    1.00  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.04% )
-         1,370,753      branches                  #  232.919 M/sec                    ( +-  0.06% )
-             7,036      branch-misses             #    0.51% of all branches          ( +- 11.90% )  (73.88%)
+               237      page-faults               #    0.019 M/sec                    ( +-  0.23% )
+        15,433,647      cycles                    #    1.239 GHz                      ( +-  0.90% )  (68.11%)
+         8,495,801      stalled-cycles-frontend   #   55.05% frontend cycles idle     ( +-  1.38% )  (66.57%)
+         3,064,508      stalled-cycles-backend    #   19.86% backend cycles idle      ( +-  1.03% )  (82.07%)
+        19,565,553      instructions              #    1.27  insn per cycle         
+                                                  #    0.43  stalled cycles per insn  ( +-  0.27% )  (99.01%)
+         2,760,518      branches                  #  221.673 M/sec                    ( +-  0.03% )
+            14,356      branch-misses             #    0.52% of all branches          ( +-  6.66% )  (83.25%)
 
-          0.006350 +- 0.000245 seconds time elapsed  ( +-  3.85% )
+            0.1405 +- 0.0281 seconds time elapsed  ( +- 20.04% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 2' (10 runs):
 
-              7.23 msec task-clock                #    1.579 CPUs utilized            ( +-  1.44% )
-                 0      context-switches          #    0.000 K/sec                  
+             17.78 msec task-clock                #    0.121 CPUs utilized            ( +-  1.38% )
+                 5      context-switches          #    0.281 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-                79      page-faults               #    0.011 M/sec                    ( +-  0.48% )
-        12,264,409      cycles                    #    1.696 GHz                      ( +-  1.89% )  (56.86%)
-         8,596,336      stalled-cycles-frontend   #   70.09% frontend cycles idle     ( +-  0.67% )
-         2,742,094      stalled-cycles-backend    #   22.36% backend cycles idle      ( +-  1.83% )
-        11,221,750      instructions              #    0.91  insn per cycle         
-                                                  #    0.77  stalled cycles per insn  ( +-  0.08% )
-         1,438,584      branches                  #  198.893 M/sec                    ( +-  0.16% )
-             8,728      branch-misses             #    0.61% of all branches          ( +- 11.01% )  (43.14%)
+               240      page-faults               #    0.013 M/sec                    ( +-  0.19% )
+        21,687,636      cycles                    #    1.219 GHz                      ( +-  0.99% )  (62.25%)
+        12,921,841      stalled-cycles-frontend   #   59.58% frontend cycles idle     ( +-  1.54% )  (60.36%)
+         5,685,518      stalled-cycles-backend    #   26.22% backend cycles idle      ( +-  1.89% )  (87.42%)
+        21,968,343      instructions              #    1.01  insn per cycle         
+                                                  #    0.59  stalled cycles per insn  ( +-  0.31% )  (99.12%)
+         3,474,150      branches                  #  195.348 M/sec                    ( +-  0.04% )
+            14,766      branch-misses             #    0.43% of all branches          ( +-  4.99% )  (89.97%)
 
-         0.0045821 +- 0.0000642 seconds time elapsed  ( +-  1.40% )
+            0.1473 +- 0.0185 seconds time elapsed  ( +- 12.57% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 4' (10 runs):
 
-             12.37 msec task-clock                #    2.840 CPUs utilized            ( +-  3.76% )
-                 0      context-switches          #    0.024 K/sec                    ( +- 71.15% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                84      page-faults               #    0.007 M/sec                    ( +-  0.36% )
-        19,143,471      cycles                    #    1.548 GHz                      ( +-  7.89% )  (46.99%)
-        13,970,799      stalled-cycles-frontend   #   72.98% frontend cycles idle     ( +-  0.56% )
-         6,837,464      stalled-cycles-backend    #   35.72% backend cycles idle      ( +-  0.90% )
-        14,742,646      instructions              #    0.77  insn per cycle         
-                                                  #    0.95  stalled cycles per insn  ( +-  0.33% )
-         2,435,342      branches                  #  196.882 M/sec                    ( +-  0.56% )
-            22,186      branch-misses             #    0.91% of all branches          ( +- 38.62% )  (53.01%)
+             32.57 msec task-clock                #    0.149 CPUs utilized            ( +-  2.67% )
+                 8      context-switches          #    0.243 K/sec                    ( +-  4.79% )
+                 0      cpu-migrations            #    0.003 K/sec                    ( +-100.00% )
+               245      page-faults               #    0.008 M/sec                    ( +-  0.15% )
+        40,836,289      cycles                    #    1.254 GHz                      ( +-  0.58% )  (59.87%)
+        26,222,446      stalled-cycles-frontend   #   64.21% frontend cycles idle     ( +-  0.56% )  (60.16%)
+        15,514,575      stalled-cycles-backend    #   37.99% backend cycles idle      ( +-  0.68% )  (88.35%)
+        30,313,158      instructions              #    0.74  insn per cycle         
+                                                  #    0.87  stalled cycles per insn  ( +-  0.20% )  (99.97%)
+         5,823,855      branches                  #  178.796 M/sec                    ( +-  0.31% )
+            15,874      branch-misses             #    0.27% of all branches          ( +-  4.50% )  (91.61%)
 
-          0.004355 +- 0.000154 seconds time elapsed  ( +-  3.54% )
+            0.2183 +- 0.0710 seconds time elapsed  ( +- 32.53% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 8' (10 runs):
 
-             23.84 msec task-clock                #    5.427 CPUs utilized            ( +-  3.00% )
-                 2      context-switches          #    0.105 K/sec                    ( +- 35.90% )
+             59.62 msec task-clock                #    0.525 CPUs utilized            ( +-  1.73% )
+                13      context-switches          #    0.215 K/sec                    ( +-  5.31% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                91      page-faults               #    0.004 M/sec                    ( +-  0.49% )
-        42,492,205      cycles                    #    1.782 GHz                      ( +-  2.55% )  (37.87%)
-        27,308,775      stalled-cycles-frontend   #   64.27% frontend cycles idle     ( +-  1.89% )  (98.83%)
-        17,005,314      stalled-cycles-backend    #   40.02% backend cycles idle      ( +-  2.33% )
-        23,438,522      instructions              #    0.55  insn per cycle         
-                                                  #    1.17  stalled cycles per insn  ( +-  1.50% )
-         4,898,022      branches                  #  205.428 M/sec                    ( +-  2.04% )
-             9,848      branch-misses             #    0.20% of all branches          ( +- 16.82% )  (63.31%)
+               252      page-faults               #    0.004 M/sec                    ( +-  0.17% )
+        74,862,643      cycles                    #    1.256 GHz                      ( +-  0.50% )  (74.41%)
+        49,782,502      stalled-cycles-frontend   #   66.50% frontend cycles idle     ( +-  1.54% )  (48.67%)
+        32,448,822      stalled-cycles-backend    #   43.34% backend cycles idle      ( +-  2.41% )  (78.38%)
+        45,228,523      instructions              #    0.60  insn per cycle         
+                                                  #    1.10  stalled cycles per insn  ( +-  0.89% )  (99.86%)
+        10,067,182      branches                  #  168.857 M/sec                    ( +-  1.13% )
+            23,995      branch-misses             #    0.24% of all branches          ( +-  3.64% )  (98.53%)
 
-          0.004393 +- 0.000156 seconds time elapsed  ( +-  3.56% )
+            0.1136 +- 0.0128 seconds time elapsed  ( +- 11.24% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 16' (10 runs):
 
-             33.73 msec task-clock                #    8.908 CPUs utilized            ( +-  2.77% )
-                 0      context-switches          #    0.012 K/sec                    ( +-100.00% )
+             94.98 msec task-clock                #    0.571 CPUs utilized            ( +-  2.84% )
+                21      context-switches          #    0.220 K/sec                    ( +-  5.26% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               109      page-faults               #    0.003 M/sec                    ( +-  0.28% )
-        59,572,186      cycles                    #    1.766 GHz                      ( +-  3.04% )  (40.38%)
-        39,074,948      stalled-cycles-frontend   #   65.59% frontend cycles idle     ( +-  2.23% )
-        25,918,624      stalled-cycles-backend    #   43.51% backend cycles idle      ( +-  2.62% )
-        29,838,886      instructions              #    0.50  insn per cycle         
-                                                  #    1.31  stalled cycles per insn  ( +-  1.71% )
-         6,681,349      branches                  #  198.100 M/sec                    ( +-  2.18% )
-            34,007      branch-misses             #    0.51% of all branches          ( +- 56.44% )  (59.62%)
+               269      page-faults               #    0.003 M/sec                    ( +-  0.19% )
+       129,508,271      cycles                    #    1.364 GHz                      ( +-  2.60% )  (53.14%)
+        89,885,126      stalled-cycles-frontend   #   69.40% frontend cycles idle     ( +-  2.68% )  (60.90%)
+        61,959,673      stalled-cycles-backend    #   47.84% backend cycles idle      ( +-  1.63% )  (95.22%)
+        69,160,892      instructions              #    0.53  insn per cycle         
+                                                  #    1.30  stalled cycles per insn  ( +-  0.95% )
+        16,852,133      branches                  #  177.431 M/sec                    ( +-  1.12% )
+            25,899      branch-misses             #    0.15% of all branches          ( +-  6.28% )  (90.74%)
 
-          0.003786 +- 0.000110 seconds time elapsed  ( +-  2.90% )
+            0.1664 +- 0.0290 seconds time elapsed  ( +- 17.44% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 128 32' (10 runs):
 
-            108.02 msec task-clock                #   21.084 CPUs utilized            ( +-  5.35% )
-                10      context-switches          #    0.092 K/sec                    ( +- 15.54% )
-                 3      cpu-migrations            #    0.028 K/sec                    ( +-  7.03% )
-               142      page-faults               #    0.001 M/sec                    ( +-  0.22% )
-       275,872,110      cycles                    #    2.554 GHz                      ( +-  5.47% )  (35.81%)
-       215,160,889      stalled-cycles-frontend   #   77.99% frontend cycles idle     ( +-  4.52% )  (99.11%)
-       162,010,068      stalled-cycles-backend    #   58.73% backend cycles idle      ( +-  4.57% )
-       110,091,869      instructions              #    0.40  insn per cycle         
-                                                  #    1.95  stalled cycles per insn  ( +-  4.19% )
-        29,499,601      branches                  #  273.088 M/sec                    ( +-  4.47% )
-            17,603      branch-misses             #    0.06% of all branches          ( +- 16.12% )  (65.09%)
+            246.96 msec task-clock                #    2.476 CPUs utilized            ( +-  3.72% )
+                41      context-switches          #    0.164 K/sec                    ( +-  3.82% )
+                 6      cpu-migrations            #    0.026 K/sec                    ( +- 12.53% )
+               304      page-faults               #    0.001 M/sec                    ( +-  0.16% )
+       453,012,833      cycles                    #    1.834 GHz                      ( +-  4.96% )  (63.00%)
+       292,797,741      stalled-cycles-frontend   #   64.63% frontend cycles idle     ( +-  6.20% )  (57.18%)
+       224,200,548      stalled-cycles-backend    #   49.49% backend cycles idle      ( +-  5.45% )  (87.49%)
+       162,286,523      instructions              #    0.36  insn per cycle         
+                                                  #    1.80  stalled cycles per insn  ( +-  4.54% )  (99.68%)
+        43,431,864      branches                  #  175.869 M/sec                    ( +-  4.89% )
+            34,769      branch-misses             #    0.08% of all branches          ( +-  4.12% )  (92.33%)
 
-          0.005123 +- 0.000259 seconds time elapsed  ( +-  5.05% )
+           0.09972 +- 0.00969 seconds time elapsed  ( +-  9.72% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 1' (10 runs):
 
-             15.87 msec task-clock                #    0.975 CPUs utilized            ( +-  4.18% )
-                 0      context-switches          #    0.013 K/sec                    ( +- 66.67% )
+             27.92 msec task-clock                #    0.097 CPUs utilized            ( +-  1.56% )
+                 4      context-switches          #    0.158 K/sec                    ( +-  3.71% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.005 M/sec                    ( +-  0.41% )
-        40,774,861      cycles                    #    2.570 GHz                      ( +-  2.09% )  (74.81%)
-        30,435,752      stalled-cycles-frontend   #   74.64% frontend cycles idle     ( +-  1.65% )  (74.81%)
-         6,890,166      stalled-cycles-backend    #   16.90% backend cycles idle      ( +-  4.87% )  (62.23%)
-        39,070,359      instructions              #    0.96  insn per cycle         
-                                                  #    0.78  stalled cycles per insn  ( +-  1.92% )  (86.90%)
-         4,774,934      branches                  #  300.955 M/sec                    ( +-  0.50% )  (97.85%)
-            15,961      branch-misses             #    0.33% of all branches          ( +-  4.55% )  (90.30%)
+               719      page-faults               #    0.026 M/sec                    ( +-  0.03% )
+        60,030,979      cycles                    #    2.150 GHz                      ( +-  0.44% )  (80.67%)
+        35,468,731      stalled-cycles-frontend   #   59.08% frontend cycles idle     ( +-  0.73% )  (85.50%)
+         8,327,375      stalled-cycles-backend    #   13.87% backend cycles idle      ( +-  4.05% )  (71.45%)
+        73,480,785      instructions              #    1.22  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  1.02% )  (85.73%)
+        10,216,872      branches                  #  365.921 M/sec                    ( +-  0.76% )  (84.21%)
+            22,887      branch-misses             #    0.22% of all branches          ( +-  5.82% )  (78.17%)
 
-          0.016265 +- 0.000696 seconds time elapsed  ( +-  4.28% )
+            0.2874 +- 0.0716 seconds time elapsed  ( +- 24.91% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 2' (10 runs):
 
-             18.02 msec task-clock                #    1.850 CPUs utilized            ( +-  5.09% )
-                 0      context-switches          #    0.022 K/sec                    ( +- 40.82% )
+             33.84 msec task-clock                #    0.247 CPUs utilized            ( +-  2.63% )
+                 5      context-switches          #    0.148 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-                78      page-faults               #    0.004 M/sec                    ( +-  0.60% )
-        38,474,480      cycles                    #    2.135 GHz                      ( +-  3.19% )  (56.14%)
-        32,575,366      stalled-cycles-frontend   #   84.67% frontend cycles idle     ( +-  2.42% )  (63.68%)
-         7,459,294      stalled-cycles-backend    #   19.39% backend cycles idle      ( +-  0.76% )  (91.82%)
-        41,114,441      instructions              #    1.07  insn per cycle         
-                                                  #    0.79  stalled cycles per insn  ( +-  0.08% )
-         4,946,444      branches                  #  274.436 M/sec                    ( +-  0.16% )
-            17,194      branch-misses             #    0.35% of all branches          ( +-  6.61% )  (88.36%)
+               720      page-faults               #    0.021 M/sec                    ( +-  0.06% )
+        66,157,052      cycles                    #    1.955 GHz                      ( +-  1.25% )  (84.39%)
+        38,123,304      stalled-cycles-frontend   #   57.63% frontend cycles idle     ( +-  4.54% )  (80.18%)
+        11,730,774      stalled-cycles-backend    #   17.73% backend cycles idle      ( +-  5.69% )  (55.13%)
+        71,935,539      instructions              #    1.09  insn per cycle         
+                                                  #    0.53  stalled cycles per insn  ( +-  2.74% )  (77.56%)
+        11,080,869      branches                  #  327.468 M/sec                    ( +-  0.68% )  (88.90%)
+            27,964      branch-misses             #    0.25% of all branches          ( +-  3.96% )  (91.39%)
 
-          0.009744 +- 0.000525 seconds time elapsed  ( +-  5.39% )
+            0.1368 +- 0.0133 seconds time elapsed  ( +-  9.73% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 4' (10 runs):
 
-             27.01 msec task-clock                #    2.555 CPUs utilized            ( +-  5.69% )
-                 3      context-switches          #    0.107 K/sec                    ( +- 14.03% )
+             51.93 msec task-clock                #    0.344 CPUs utilized            ( +-  4.06% )
+                10      context-switches          #    0.187 K/sec                    ( +-  2.68% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                83      page-faults               #    0.003 M/sec                    ( +-  0.61% )
-        51,016,813      cycles                    #    1.889 GHz                      ( +-  1.68% )  (51.82%)
-        38,728,400      stalled-cycles-frontend   #   75.91% frontend cycles idle     ( +-  1.44% )  (73.06%)
-        13,477,943      stalled-cycles-backend    #   26.42% backend cycles idle      ( +-  1.60% )  (91.04%)
-        45,822,461      instructions              #    0.90  insn per cycle         
-                                                  #    0.85  stalled cycles per insn  ( +-  0.13% )  (99.42%)
-         6,268,297      branches                  #  232.042 M/sec                    ( +-  0.13% )
-            18,518      branch-misses             #    0.30% of all branches          ( +-  6.62% )  (84.08%)
+               725      page-faults               #    0.014 M/sec                    ( +-  0.08% )
+        85,670,147      cycles                    #    1.650 GHz                      ( +-  0.48% )  (90.06%)
+        50,973,435      stalled-cycles-frontend   #   59.50% frontend cycles idle     ( +-  3.54% )  (75.12%)
+        24,225,989      stalled-cycles-backend    #   28.28% backend cycles idle      ( +-  3.96% )  (50.75%)
+        88,071,400      instructions              #    1.03  insn per cycle         
+                                                  #    0.58  stalled cycles per insn  ( +-  2.30% )  (79.90%)
+        13,979,677      branches                  #  269.189 M/sec                    ( +-  0.72% )  (89.90%)
+            29,764      branch-misses             #    0.21% of all branches          ( +-  1.79% )  (94.16%)
 
-          0.010571 +- 0.000699 seconds time elapsed  ( +-  6.61% )
+            0.1510 +- 0.0181 seconds time elapsed  ( +- 11.97% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 8' (10 runs):
 
-             33.00 msec task-clock                #    3.889 CPUs utilized            ( +-  4.17% )
-                 8      context-switches          #    0.227 K/sec                    ( +-  6.05% )
+             82.42 msec task-clock                #    0.285 CPUs utilized            ( +-  2.71% )
+                19      context-switches          #    0.235 K/sec                    ( +-  4.93% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                92      page-faults               #    0.003 M/sec                    ( +-  0.44% )
-        77,276,118      cycles                    #    2.342 GHz                      ( +-  1.79% )  (45.99%)
-        53,462,036      stalled-cycles-frontend   #   69.18% frontend cycles idle     ( +-  0.67% )  (90.72%)
-        25,515,900      stalled-cycles-backend    #   33.02% backend cycles idle      ( +-  1.32% )  (99.46%)
-        56,423,740      instructions              #    0.73  insn per cycle         
-                                                  #    0.95  stalled cycles per insn  ( +-  0.43% )
-         9,287,054      branches                  #  281.455 M/sec                    ( +-  0.76% )
-            19,597      branch-misses             #    0.21% of all branches          ( +-  6.40% )  (63.84%)
+               733      page-faults               #    0.009 M/sec                    ( +-  0.06% )
+       127,790,981      cycles                    #    1.551 GHz                      ( +-  1.16% )  (89.83%)
+        82,931,826      stalled-cycles-frontend   #   64.90% frontend cycles idle     ( +-  1.96% )  (71.75%)
+        44,059,913      stalled-cycles-backend    #   34.48% backend cycles idle      ( +-  2.54% )  (49.62%)
+       106,297,678      instructions              #    0.83  insn per cycle         
+                                                  #    0.78  stalled cycles per insn  ( +-  1.25% )  (82.86%)
+        18,938,118      branches                  #  229.787 M/sec                    ( +-  0.74% )  (92.94%)
+            34,712      branch-misses             #    0.18% of all branches          ( +-  1.83% )  (95.85%)
 
-          0.008485 +- 0.000439 seconds time elapsed  ( +-  5.17% )
+            0.2890 +- 0.0666 seconds time elapsed  ( +- 23.04% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 16' (10 runs):
 
-             63.80 msec task-clock                #    8.996 CPUs utilized            ( +-  5.51% )
-                14      context-switches          #    0.221 K/sec                    ( +-  5.74% )
+            149.97 msec task-clock                #    0.991 CPUs utilized            ( +-  2.00% )
+                33      context-switches          #    0.223 K/sec                    ( +-  1.35% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               108      page-faults               #    0.002 M/sec                    ( +-  0.33% )
-       116,257,859      cycles                    #    1.822 GHz                      ( +-  3.68% )  (37.39%)
-        88,376,246      stalled-cycles-frontend   #   76.02% frontend cycles idle     ( +-  1.08% )  (92.87%)
-        50,968,810      stalled-cycles-backend    #   43.84% backend cycles idle      ( +-  0.66% )  (99.94%)
-        76,062,275      instructions              #    0.65  insn per cycle         
-                                                  #    1.16  stalled cycles per insn  ( +-  0.26% )
-        14,850,459      branches                  #  232.752 M/sec                    ( +-  0.38% )
-            23,043      branch-misses             #    0.16% of all branches          ( +-  7.91% )  (69.81%)
+               750      page-faults               #    0.005 M/sec                    ( +-  0.07% )
+       218,844,838      cycles                    #    1.459 GHz                      ( +-  0.52% )  (94.30%)
+       142,151,577      stalled-cycles-frontend   #   64.96% frontend cycles idle     ( +-  1.19% )  (74.94%)
+        86,195,402      stalled-cycles-backend    #   39.39% backend cycles idle      ( +-  2.51% )  (42.54%)
+       147,545,250      instructions              #    0.67  insn per cycle         
+                                                  #    0.96  stalled cycles per insn  ( +-  2.01% )  (80.85%)
+        29,950,665      branches                  #  199.713 M/sec                    ( +-  0.71% )  (89.57%)
+            43,631      branch-misses             #    0.15% of all branches          ( +-  1.54% )  (98.65%)
 
-          0.007092 +- 0.000437 seconds time elapsed  ( +-  6.16% )
+            0.1514 +- 0.0116 seconds time elapsed  ( +-  7.70% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 256 32' (10 runs):
 
-            119.47 msec task-clock                #   20.875 CPUs utilized            ( +-  5.04% )
-                12      context-switches          #    0.099 K/sec                    ( +- 21.65% )
-                 3      cpu-migrations            #    0.023 K/sec                    ( +- 10.38% )
-               142      page-faults               #    0.001 M/sec                    ( +-  0.28% )
-       299,049,232      cycles                    #    2.503 GHz                      ( +-  2.99% )  (32.43%)
-       231,590,178      stalled-cycles-frontend   #   77.44% frontend cycles idle     ( +-  2.61% )  (90.66%)
-       161,490,945      stalled-cycles-backend    #   54.00% backend cycles idle      ( +-  2.87% )
-       135,620,236      instructions              #    0.45  insn per cycle         
-                                                  #    1.71  stalled cycles per insn  ( +-  2.24% )
-        31,758,896      branches                  #  265.836 M/sec                    ( +-  2.73% )
-            31,246      branch-misses             #    0.10% of all branches          ( +-  7.88% )  (76.91%)
+            278.53 msec task-clock                #    1.802 CPUs utilized            ( +-  2.87% )
+                54      context-switches          #    0.192 K/sec                    ( +-  3.82% )
+                 9      cpu-migrations            #    0.031 K/sec                    ( +- 11.24% )
+               785      page-faults               #    0.003 M/sec                    ( +-  0.06% )
+       507,415,081      cycles                    #    1.822 GHz                      ( +-  0.84% )  (90.44%)
+       343,340,846      stalled-cycles-frontend   #   67.66% frontend cycles idle     ( +-  3.46% )  (68.81%)
+       250,399,549      stalled-cycles-backend    #   49.35% backend cycles idle      ( +-  5.44% )  (45.68%)
+       240,885,922      instructions              #    0.47  insn per cycle         
+                                                  #    1.43  stalled cycles per insn  ( +-  1.74% )  (82.04%)
+        54,946,139      branches                  #  197.274 M/sec                    ( +-  0.79% )  (95.88%)
+            53,494      branch-misses             #    0.10% of all branches          ( +-  1.08% )  (99.18%)
 
-          0.005723 +- 0.000361 seconds time elapsed  ( +-  6.30% )
+            0.1545 +- 0.0131 seconds time elapsed  ( +-  8.50% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 1' (10 runs):
 
-             57.39 msec task-clock                #    0.993 CPUs utilized            ( +-  6.94% )
-                 0      context-switches          #    0.000 K/sec                  
+             82.03 msec task-clock                #    0.261 CPUs utilized            ( +-  0.98% )
+                10      context-switches          #    0.122 K/sec                    ( +-  2.11% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                77      page-faults               #    0.001 M/sec                    ( +-  0.30% )
-       156,473,638      cycles                    #    2.726 GHz                      ( +-  0.51% )  (79.66%)
-       116,384,925      stalled-cycles-frontend   #   74.38% frontend cycles idle     ( +-  0.27% )  (83.73%)
-        26,182,401      stalled-cycles-backend    #   16.73% backend cycles idle      ( +-  0.80% )  (69.34%)
-       157,986,434      instructions              #    1.01  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.37% )  (84.67%)
-        18,374,886      branches                  #  320.155 M/sec                    ( +-  0.22% )  (84.93%)
-            49,861      branch-misses             #    0.27% of all branches          ( +-  1.20% )  (82.33%)
+             2,638      page-faults               #    0.032 M/sec                    ( +-  0.02% )
+       221,095,528      cycles                    #    2.695 GHz                      ( +-  0.33% )  (80.36%)
+       127,092,183      stalled-cycles-frontend   #   57.48% frontend cycles idle     ( +-  0.46% )  (82.28%)
+        30,920,312      stalled-cycles-backend    #   13.99% backend cycles idle      ( +-  1.18% )  (69.57%)
+       282,209,484      instructions              #    1.28  insn per cycle         
+                                                  #    0.45  stalled cycles per insn  ( +-  0.48% )  (85.15%)
+        40,560,764      branches                  #  494.474 M/sec                    ( +-  0.55% )  (84.91%)
+            69,988      branch-misses             #    0.17% of all branches          ( +-  1.73% )  (82.88%)
 
-           0.05780 +- 0.00398 seconds time elapsed  ( +-  6.89% )
+            0.3143 +- 0.0690 seconds time elapsed  ( +- 21.95% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 2' (10 runs):
 
-             54.18 msec task-clock                #    1.956 CPUs utilized            ( +-  1.24% )
-                 0      context-switches          #    0.002 K/sec                    ( +-100.00% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                79      page-faults               #    0.001 M/sec                    ( +-  0.44% )
-       159,281,650      cycles                    #    2.940 GHz                      ( +-  0.84% )  (80.31%)
-       117,406,624      stalled-cycles-frontend   #   73.71% frontend cycles idle     ( +-  0.72% )  (85.06%)
-        27,585,020      stalled-cycles-backend    #   17.32% backend cycles idle      ( +-  1.04% )  (70.48%)
-       159,092,859      instructions              #    1.00  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.31% )  (85.24%)
-        18,617,001      branches                  #  343.638 M/sec                    ( +-  0.19% )  (85.24%)
-            48,751      branch-misses             #    0.26% of all branches          ( +-  2.90% )  (78.92%)
+             86.05 msec task-clock                #    0.269 CPUs utilized            ( +-  0.81% )
+                11      context-switches          #    0.129 K/sec                    ( +-  2.49% )
+                 1      cpu-migrations            #    0.007 K/sec                    ( +- 44.44% )
+             2,640      page-faults               #    0.031 M/sec                    ( +-  0.02% )
+       234,751,278      cycles                    #    2.728 GHz                      ( +-  0.24% )  (81.66%)
+       138,895,349      stalled-cycles-frontend   #   59.17% frontend cycles idle     ( +-  0.40% )  (82.60%)
+        38,567,016      stalled-cycles-backend    #   16.43% backend cycles idle      ( +-  0.95% )  (69.36%)
+       288,500,143      instructions              #    1.23  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.63% )  (84.20%)
+        42,345,173      branches                  #  492.110 M/sec                    ( +-  0.76% )  (83.51%)
+            71,637      branch-misses             #    0.17% of all branches          ( +-  1.23% )  (82.87%)
 
-          0.027702 +- 0.000343 seconds time elapsed  ( +-  1.24% )
+            0.3202 +- 0.0705 seconds time elapsed  ( +- 22.03% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 4' (10 runs):
 
-             68.21 msec task-clock                #    2.335 CPUs utilized            ( +-  2.90% )
-                 2      context-switches          #    0.035 K/sec                    ( +-  9.21% )
+            109.75 msec task-clock                #    0.434 CPUs utilized            ( +-  1.06% )
+                16      context-switches          #    0.150 K/sec                    ( +-  3.53% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                84      page-faults               #    0.001 M/sec                    ( +-  0.48% )
-       175,639,714      cycles                    #    2.575 GHz                      ( +-  0.90% )  (72.40%)
-       125,441,756      stalled-cycles-frontend   #   71.42% frontend cycles idle     ( +-  0.57% )  (82.52%)
-        34,130,358      stalled-cycles-backend    #   19.43% backend cycles idle      ( +-  1.22% )  (76.57%)
-       162,046,906      instructions              #    0.92  insn per cycle         
-                                                  #    0.77  stalled cycles per insn  ( +-  0.92% )  (88.29%)
-        19,486,084      branches                  #  285.659 M/sec                    ( +-  0.38% )  (88.29%)
-            48,769      branch-misses             #    0.25% of all branches          ( +-  1.29% )  (80.22%)
+             2,645      page-faults               #    0.024 M/sec                    ( +-  0.02% )
+       266,107,444      cycles                    #    2.425 GHz                      ( +-  0.79% )  (83.06%)
+       157,556,726      stalled-cycles-frontend   #   59.21% frontend cycles idle     ( +-  1.35% )  (83.65%)
+        51,412,889      stalled-cycles-backend    #   19.32% backend cycles idle      ( +-  1.48% )  (70.55%)
+       288,204,129      instructions              #    1.08  insn per cycle         
+                                                  #    0.55  stalled cycles per insn  ( +-  0.49% )  (84.06%)
+        45,031,340      branches                  #  410.315 M/sec                    ( +-  1.19% )  (80.46%)
+            77,056      branch-misses             #    0.17% of all branches          ( +-  1.76% )  (82.29%)
 
-          0.029210 +- 0.000823 seconds time elapsed  ( +-  2.82% )
+            0.2531 +- 0.0136 seconds time elapsed  ( +-  5.39% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 8' (10 runs):
 
-             80.68 msec task-clock                #    3.189 CPUs utilized            ( +-  4.97% )
-                 7      context-switches          #    0.084 K/sec                    ( +-  3.67% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                92      page-faults               #    0.001 M/sec                    ( +-  0.43% )
-       195,133,983      cycles                    #    2.419 GHz                      ( +-  1.27% )  (69.95%)
-       144,521,652      stalled-cycles-frontend   #   74.06% frontend cycles idle     ( +-  1.33% )  (81.99%)
-        48,687,556      stalled-cycles-backend    #   24.95% backend cycles idle      ( +-  0.98% )  (75.92%)
-       171,978,962      instructions              #    0.88  insn per cycle         
-                                                  #    0.84  stalled cycles per insn  ( +-  1.05% )  (89.11%)
-        22,402,508      branches                  #  277.672 M/sec                    ( +-  0.41% )  (90.72%)
-            54,792      branch-misses             #    0.24% of all branches          ( +-  2.36% )  (81.42%)
+            131.30 msec task-clock                #    0.504 CPUs utilized            ( +-  1.51% )
+                25      context-switches          #    0.193 K/sec                    ( +-  1.67% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +-100.00% )
+             2,654      page-faults               #    0.020 M/sec                    ( +-  0.01% )
+       311,103,032      cycles                    #    2.369 GHz                      ( +-  0.76% )  (84.47%)
+       185,581,778      stalled-cycles-frontend   #   59.65% frontend cycles idle     ( +-  1.34% )  (86.18%)
+        69,361,482      stalled-cycles-backend    #   22.30% backend cycles idle      ( +-  2.12% )  (71.03%)
+       314,527,725      instructions              #    1.01  insn per cycle         
+                                                  #    0.59  stalled cycles per insn  ( +-  1.87% )  (83.19%)
+        52,674,646      branches                  #  401.166 M/sec                    ( +-  0.91% )  (77.89%)
+            81,755      branch-misses             #    0.16% of all branches          ( +-  1.24% )  (80.44%)
 
-          0.025298 +- 0.000909 seconds time elapsed  ( +-  3.59% )
+            0.2605 +- 0.0134 seconds time elapsed  ( +-  5.13% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 16' (10 runs):
 
-             97.36 msec task-clock                #    5.910 CPUs utilized            ( +-  4.29% )
-                16      context-switches          #    0.159 K/sec                    ( +-  1.73% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-               109      page-faults               #    0.001 M/sec                    ( +-  0.52% )
-       245,039,648      cycles                    #    2.517 GHz                      ( +-  1.92% )  (62.16%)
-       179,926,506      stalled-cycles-frontend   #   73.43% frontend cycles idle     ( +-  0.78% )  (80.54%)
-        74,290,088      stalled-cycles-backend    #   30.32% backend cycles idle      ( +-  0.80% )  (83.51%)
-       194,696,997      instructions              #    0.79  insn per cycle         
-                                                  #    0.92  stalled cycles per insn  ( +-  1.09% )  (95.95%)
-        29,251,510      branches                  #  300.443 M/sec                    ( +-  0.24% )  (99.87%)
-            60,365      branch-misses             #    0.21% of all branches          ( +-  2.97% )  (73.92%)
+            177.59 msec task-clock                #    0.695 CPUs utilized            ( +-  2.32% )
+                42      context-switches          #    0.238 K/sec                    ( +-  2.69% )
+                 0      cpu-migrations            #    0.002 K/sec                    ( +- 71.15% )
+             2,670      page-faults               #    0.015 M/sec                    ( +-  0.02% )
+       400,854,485      cycles                    #    2.257 GHz                      ( +-  0.62% )  (84.55%)
+       252,432,556      stalled-cycles-frontend   #   62.97% frontend cycles idle     ( +-  0.91% )  (88.62%)
+       116,824,984      stalled-cycles-backend    #   29.14% backend cycles idle      ( +-  2.56% )  (74.90%)
+       360,258,850      instructions              #    0.90  insn per cycle         
+                                                  #    0.70  stalled cycles per insn  ( +-  1.44% )  (82.66%)
+        64,112,679      branches                  #  361.016 M/sec                    ( +-  0.88% )  (72.61%)
+            90,167      branch-misses             #    0.14% of all branches          ( +-  1.54% )  (79.32%)
 
-          0.016473 +- 0.000556 seconds time elapsed  ( +-  3.37% )
+            0.2556 +- 0.0125 seconds time elapsed  ( +-  4.90% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 512 32' (10 runs):
 
-            159.53 msec task-clock                #   16.354 CPUs utilized            ( +-  0.59% )
-                34      context-switches          #    0.210 K/sec                    ( +-  2.32% )
-                 7      cpu-migrations            #    0.043 K/sec                    ( +-  7.84% )
-               143      page-faults               #    0.895 K/sec                    ( +-  0.34% )
-       463,988,688      cycles                    #    2.908 GHz                      ( +-  1.11% )  (46.56%)
-       344,011,065      stalled-cycles-frontend   #   74.14% frontend cycles idle     ( +-  0.79% )  (87.42%)
-       200,750,776      stalled-cycles-backend    #   43.27% backend cycles idle      ( +-  0.94% )  (99.73%)
-       266,249,433      instructions              #    0.57  insn per cycle         
-                                                  #    1.29  stalled cycles per insn  ( +-  0.37% )
-        48,978,968      branches                  #  307.018 M/sec                    ( +-  0.58% )
-            70,700      branch-misses             #    0.14% of all branches          ( +-  2.57% )  (66.29%)
+            327.63 msec task-clock                #    0.963 CPUs utilized            ( +-  1.30% )
+                78      context-switches          #    0.238 K/sec                    ( +-  2.02% )
+                 7      cpu-migrations            #    0.022 K/sec                    ( +- 13.52% )
+             2,704      page-faults               #    0.008 M/sec                    ( +-  0.01% )
+       714,063,814      cycles                    #    2.179 GHz                      ( +-  0.85% )  (88.21%)
+       503,359,209      stalled-cycles-frontend   #   70.49% frontend cycles idle     ( +-  0.53% )  (95.15%)
+       311,150,027      stalled-cycles-backend    #   43.57% backend cycles idle      ( +-  0.99% )  (76.85%)
+       470,096,069      instructions              #    0.66  insn per cycle         
+                                                  #    1.07  stalled cycles per insn  ( +-  0.89% )  (80.18%)
+        95,489,439      branches                  #  291.455 M/sec                    ( +-  0.84% )  (62.26%)
+           108,119      branch-misses             #    0.11% of all branches          ( +-  1.66% )  (77.52%)
 
-          0.009755 +- 0.000247 seconds time elapsed  ( +-  2.53% )
+            0.3400 +- 0.0560 seconds time elapsed  ( +- 16.46% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 1' (10 runs):
 
-            279.20 msec task-clock                #    0.998 CPUs utilized            ( +- 12.06% )
-                 0      context-switches          #    0.001 K/sec                    ( +- 40.82% )
+            306.31 msec task-clock                #    0.522 CPUs utilized            ( +-  5.19% )
+                20      context-switches          #    0.066 K/sec                    ( +-  3.21% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.272 K/sec                    ( +-  0.60% )
-       622,164,448      cycles                    #    2.228 GHz                      ( +-  0.21% )  (82.79%)
-       455,832,995      stalled-cycles-frontend   #   73.27% frontend cycles idle     ( +-  0.09% )  (83.36%)
-       100,179,818      stalled-cycles-backend    #   16.10% backend cycles idle      ( +-  0.35% )  (67.09%)
-       631,973,151      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.14% )  (83.62%)
-        73,591,348      branches                  #  263.583 M/sec                    ( +-  0.15% )  (83.67%)
-           172,559      branch-misses             #    0.23% of all branches          ( +-  0.69% )  (83.10%)
+             8,785      page-faults               #    0.029 M/sec                    ( +-  0.01% )
+       870,281,731      cycles                    #    2.841 GHz                      ( +-  0.13% )  (82.83%)
+       520,564,115      stalled-cycles-frontend   #   59.82% frontend cycles idle     ( +-  0.18% )  (83.32%)
+       152,092,786      stalled-cycles-backend    #   17.48% backend cycles idle      ( +-  0.35% )  (66.86%)
+     1,176,500,298      instructions              #    1.35  insn per cycle         
+                                                  #    0.44  stalled cycles per insn  ( +-  0.28% )  (83.47%)
+       160,460,588      branches                  #  523.845 M/sec                    ( +-  0.46% )  (83.85%)
+           223,889      branch-misses             #    0.14% of all branches          ( +-  0.73% )  (83.14%)
 
-            0.2797 +- 0.0337 seconds time elapsed  ( +- 12.04% )
+            0.5868 +- 0.0774 seconds time elapsed  ( +- 13.19% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 2' (10 runs):
 
-            215.35 msec task-clock                #    1.946 CPUs utilized            ( +-  3.95% )
-                 1      context-switches          #    0.006 K/sec                    ( +- 38.89% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 50.92% )
-                79      page-faults               #    0.366 K/sec                    ( +-  0.55% )
-       626,927,286      cycles                    #    2.911 GHz                      ( +-  0.28% )  (81.66%)
-       459,377,035      stalled-cycles-frontend   #   73.27% frontend cycles idle     ( +-  0.21% )  (83.12%)
-       102,948,779      stalled-cycles-backend    #   16.42% backend cycles idle      ( +-  0.52% )  (68.20%)
-       630,185,263      instructions              #    1.01  insn per cycle         
-                                                  #    0.73  stalled cycles per insn  ( +-  0.22% )  (84.22%)
-        73,883,122      branches                  #  343.082 M/sec                    ( +-  0.23% )  (84.22%)
-           177,360      branch-misses             #    0.24% of all branches          ( +-  0.93% )  (82.80%)
+            315.16 msec task-clock                #    0.702 CPUs utilized            ( +-  3.92% )
+                27      context-switches          #    0.086 K/sec                    ( +-  5.45% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+             8,787      page-faults               #    0.028 M/sec                    ( +-  0.01% )
+       908,275,676      cycles                    #    2.882 GHz                      ( +-  0.19% )  (82.33%)
+       554,549,422      stalled-cycles-frontend   #   61.06% frontend cycles idle     ( +-  0.23% )  (83.21%)
+       169,466,588      stalled-cycles-backend    #   18.66% backend cycles idle      ( +-  0.53% )  (67.00%)
+     1,180,333,701      instructions              #    1.30  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  ( +-  0.17% )  (83.47%)
+       162,814,365      branches                  #  516.615 M/sec                    ( +-  0.19% )  (83.95%)
+           224,610      branch-misses             #    0.14% of all branches          ( +-  0.68% )  (83.52%)
 
-           0.11064 +- 0.00557 seconds time elapsed  ( +-  5.04% )
+            0.4488 +- 0.0455 seconds time elapsed  ( +- 10.14% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 4' (10 runs):
 
-            241.72 msec task-clock                #    2.163 CPUs utilized            ( +- 11.00% )
-                 3      context-switches          #    0.014 K/sec                    ( +- 14.32% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 66.67% )
-                83      page-faults               #    0.342 K/sec                    ( +-  0.41% )
-       639,157,336      cycles                    #    2.644 GHz                      ( +-  0.67% )  (81.19%)
-       470,787,806      stalled-cycles-frontend   #   73.66% frontend cycles idle     ( +-  0.32% )  (81.75%)
-       107,275,569      stalled-cycles-backend    #   16.78% backend cycles idle      ( +-  0.89% )  (68.04%)
-       634,536,549      instructions              #    0.99  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.43% )  (84.67%)
-        74,790,839      branches                  #  309.416 M/sec                    ( +-  0.37% )  (85.32%)
-           172,924      branch-misses             #    0.23% of all branches          ( +-  0.60% )  (83.70%)
+            421.76 msec task-clock                #    0.760 CPUs utilized            ( +-  7.52% )
+                33      context-switches          #    0.079 K/sec                    ( +-  5.27% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 33.33% )
+             8,791      page-faults               #    0.021 M/sec                    ( +-  0.01% )
+       932,365,803      cycles                    #    2.211 GHz                      ( +-  0.28% )  (82.41%)
+       567,248,483      stalled-cycles-frontend   #   60.84% frontend cycles idle     ( +-  0.41% )  (83.28%)
+       184,462,488      stalled-cycles-backend    #   19.78% backend cycles idle      ( +-  1.57% )  (66.96%)
+     1,191,436,867      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.33% )  (83.58%)
+       165,526,936      branches                  #  392.463 M/sec                    ( +-  0.25% )  (83.68%)
+           229,535      branch-misses             #    0.14% of all branches          ( +-  0.96% )  (83.67%)
 
-            0.1117 +- 0.0134 seconds time elapsed  ( +- 12.00% )
+            0.5551 +- 0.0412 seconds time elapsed  ( +-  7.43% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 8' (10 runs):
 
-            258.89 msec task-clock                #    2.710 CPUs utilized            ( +-  7.76% )
-                 9      context-switches          #    0.035 K/sec                    ( +-  8.45% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                92      page-faults               #    0.354 K/sec                    ( +-  0.56% )
-       665,720,110      cycles                    #    2.571 GHz                      ( +-  0.72% )  (77.11%)
-       488,836,358      stalled-cycles-frontend   #   73.43% frontend cycles idle     ( +-  0.31% )  (83.26%)
-       125,125,316      stalled-cycles-backend    #   18.80% backend cycles idle      ( +-  0.88% )  (71.16%)
-       643,939,393      instructions              #    0.97  insn per cycle         
-                                                  #    0.76  stalled cycles per insn  ( +-  0.53% )  (85.73%)
-        77,118,537      branches                  #  297.887 M/sec                    ( +-  0.33% )  (85.82%)
-           176,358      branch-misses             #    0.23% of all branches          ( +-  0.74% )  (82.63%)
+            392.08 msec task-clock                #    0.819 CPUs utilized            ( +-  6.57% )
+                41      context-switches          #    0.105 K/sec                    ( +-  4.03% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 71.15% )
+             8,800      page-faults               #    0.022 M/sec                    ( +-  0.01% )
+       971,398,877      cycles                    #    2.478 GHz                      ( +-  0.35% )  (80.74%)
+       602,406,685      stalled-cycles-frontend   #   62.01% frontend cycles idle     ( +-  0.48% )  (81.46%)
+       209,509,279      stalled-cycles-backend    #   21.57% backend cycles idle      ( +-  0.80% )  (67.99%)
+     1,207,599,695      instructions              #    1.24  insn per cycle         
+                                                  #    0.50  stalled cycles per insn  ( +-  0.49% )  (84.43%)
+       168,423,543      branches                  #  429.569 M/sec                    ( +-  0.46% )  (85.56%)
+           227,401      branch-misses             #    0.14% of all branches          ( +-  0.78% )  (84.25%)
 
-            0.0955 +- 0.0114 seconds time elapsed  ( +- 11.97% )
+            0.4785 +- 0.0533 seconds time elapsed  ( +- 11.13% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 16' (10 runs):
 
-            254.58 msec task-clock                #    5.218 CPUs utilized            ( +-  2.79% )
-                16      context-switches          #    0.062 K/sec                    ( +-  3.92% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 66.67% )
-               108      page-faults               #    0.424 K/sec                    ( +-  0.31% )
-       721,960,712      cycles                    #    2.836 GHz                      ( +-  0.73% )  (74.33%)
-       524,626,013      stalled-cycles-frontend   #   72.67% frontend cycles idle     ( +-  0.56% )  (82.26%)
-       154,855,638      stalled-cycles-backend    #   21.45% backend cycles idle      ( +-  0.79% )  (73.03%)
-       660,431,604      instructions              #    0.91  insn per cycle         
-                                                  #    0.79  stalled cycles per insn  ( +-  0.60% )  (87.15%)
-        82,887,943      branches                  #  325.582 M/sec                    ( +-  0.42% )  (89.02%)
-           185,113      branch-misses             #    0.22% of all branches          ( +-  0.32% )  (81.37%)
+            407.03 msec task-clock                #    0.949 CPUs utilized            ( +-  1.47% )
+                59      context-switches          #    0.146 K/sec                    ( +-  2.04% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
+             8,818      page-faults               #    0.022 M/sec                    ( +-  0.00% )
+     1,083,791,991      cycles                    #    2.663 GHz                      ( +-  0.50% )  (77.31%)
+       681,921,790      stalled-cycles-frontend   #   62.92% frontend cycles idle     ( +-  0.38% )  (79.75%)
+       259,311,681      stalled-cycles-backend    #   23.93% backend cycles idle      ( +-  1.19% )  (69.51%)
+     1,232,247,163      instructions              #    1.14  insn per cycle         
+                                                  #    0.55  stalled cycles per insn  ( +-  0.64% )  (85.97%)
+       176,085,614      branches                  #  432.607 M/sec                    ( +-  0.31% )  (87.73%)
+           237,521      branch-misses             #    0.13% of all branches          ( +-  0.66% )  (85.70%)
 
-          0.048793 +- 0.000726 seconds time elapsed  ( +-  1.49% )
+            0.4287 +- 0.0549 seconds time elapsed  ( +- 12.80% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 1024 32' (10 runs):
 
-            330.63 msec task-clock                #   11.531 CPUs utilized            ( +-  2.36% )
-                33      context-switches          #    0.100 K/sec                    ( +-  2.57% )
-                 3      cpu-migrations            #    0.009 K/sec                    ( +- 15.80% )
-               142      page-faults               #    0.430 K/sec                    ( +-  0.36% )
-       955,624,082      cycles                    #    2.890 GHz                      ( +-  0.47% )  (67.75%)
-       715,957,578      stalled-cycles-frontend   #   74.92% frontend cycles idle     ( +-  0.65% )  (82.26%)
-       318,381,060      stalled-cycles-backend    #   33.32% backend cycles idle      ( +-  1.65% )  (76.44%)
-       724,338,201      instructions              #    0.76  insn per cycle         
-                                                  #    0.99  stalled cycles per insn  ( +-  1.16% )  (88.90%)
-       103,095,583      branches                  #  311.816 M/sec                    ( +-  0.75% )  (92.08%)
-           202,777      branch-misses             #    0.20% of all branches          ( +-  1.49% )  (81.46%)
+            585.82 msec task-clock                #    1.390 CPUs utilized            ( +-  3.86% )
+                88      context-switches          #    0.150 K/sec                    ( +-  1.52% )
+                 8      cpu-migrations            #    0.014 K/sec                    ( +-  9.59% )
+             8,852      page-faults               #    0.015 M/sec                    ( +-  0.01% )
+     1,473,812,426      cycles                    #    2.516 GHz                      ( +-  0.58% )  (72.67%)
+       997,330,560      stalled-cycles-frontend   #   67.67% frontend cycles idle     ( +-  0.69% )  (77.43%)
+       494,873,557      stalled-cycles-backend    #   33.58% backend cycles idle      ( +-  1.30% )  (73.35%)
+     1,298,195,072      instructions              #    0.88  insn per cycle         
+                                                  #    0.77  stalled cycles per insn  ( +-  0.54% )  (88.65%)
+       201,164,792      branches                  #  343.392 M/sec                    ( +-  0.38% )  (90.47%)
+           246,601      branch-misses             #    0.12% of all branches          ( +-  0.90% )  (86.08%)
 
-          0.028672 +- 0.000671 seconds time elapsed  ( +-  2.34% )
+            0.4215 +- 0.0607 seconds time elapsed  ( +- 14.39% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 1' (10 runs):
 
-            981.64 msec task-clock                #    1.000 CPUs utilized            ( +-  4.82% )
-                 1      context-switches          #    0.001 K/sec                    ( +- 11.75% )
+          1,225.01 msec task-clock                #    0.778 CPUs utilized            ( +-  3.78% )
+               109      context-switches          #    0.089 K/sec                    ( +-  2.93% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                76      page-faults               #    0.077 K/sec                    ( +-  0.34% )
-     2,471,493,962      cycles                    #    2.518 GHz                      ( +-  0.06% )  (83.21%)
-     1,808,748,487      stalled-cycles-frontend   #   73.18% frontend cycles idle     ( +-  0.04% )  (83.23%)
-       398,947,359      stalled-cycles-backend    #   16.14% backend cycles idle      ( +-  0.17% )  (66.64%)
-     2,527,570,019      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.05% )  (83.36%)
-       294,323,512      branches                  #  299.828 M/sec                    ( +-  0.05% )  (83.53%)
-           610,426      branch-misses             #    0.21% of all branches          ( +-  0.16% )  (83.38%)
+            33,373      page-faults               #    0.027 M/sec                    ( +-  0.00% )
+     3,465,979,458      cycles                    #    2.829 GHz                      ( +-  0.17% )  (83.25%)
+     2,063,052,156      stalled-cycles-frontend   #   59.52% frontend cycles idle     ( +-  0.25% )  (83.28%)
+       598,514,038      stalled-cycles-backend    #   17.27% backend cycles idle      ( +-  0.85% )  (66.74%)
+     4,688,111,700      instructions              #    1.35  insn per cycle         
+                                                  #    0.44  stalled cycles per insn  ( +-  0.14% )  (83.39%)
+       641,911,047      branches                  #  524.004 M/sec                    ( +-  0.13% )  (83.40%)
+           797,854      branch-misses             #    0.12% of all branches          ( +-  0.48% )  (83.33%)
 
-            0.9821 +- 0.0473 seconds time elapsed  ( +-  4.82% )
+            1.5751 +- 0.0605 seconds time elapsed  ( +-  3.84% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 2' (10 runs):
 
-            969.77 msec task-clock                #    1.848 CPUs utilized            ( +-  7.17% )
-                 4      context-switches          #    0.004 K/sec                    ( +-  9.05% )
-                 1      cpu-migrations            #    0.001 K/sec                  
-                78      page-faults               #    0.080 K/sec                    ( +-  0.69% )
-     2,484,668,151      cycles                    #    2.562 GHz                      ( +-  0.09% )  (83.07%)
-     1,818,133,769      stalled-cycles-frontend   #   73.17% frontend cycles idle     ( +-  0.05% )  (83.25%)
-       404,227,458      stalled-cycles-backend    #   16.27% backend cycles idle      ( +-  0.17% )  (66.86%)
-     2,528,316,519      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.09% )  (83.47%)
-       294,323,398      branches                  #  303.497 M/sec                    ( +-  0.07% )  (83.59%)
-           614,656      branch-misses             #    0.21% of all branches          ( +-  0.22% )  (83.23%)
+          1,524.72 msec task-clock                #    1.160 CPUs utilized            ( +-  5.20% )
+               155      context-switches          #    0.101 K/sec                    ( +- 10.63% )
+                 1      cpu-migrations            #    0.001 K/sec                    ( +- 11.11% )
+            34,342      page-faults               #    0.023 M/sec                    ( +-  2.81% )
+     3,636,894,899      cycles                    #    2.385 GHz                      ( +-  0.44% )  (83.34%)
+     2,218,819,390      stalled-cycles-frontend   #   61.01% frontend cycles idle     ( +-  0.53% )  (83.26%)
+       683,825,980      stalled-cycles-backend    #   18.80% backend cycles idle      ( +-  1.43% )  (66.63%)
+     4,704,377,115      instructions              #    1.29  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  ( +-  0.20% )  (83.33%)
+       652,928,301      branches                  #  428.228 M/sec                    ( +-  0.16% )  (83.37%)
+           812,716      branch-misses             #    0.12% of all branches          ( +-  1.05% )  (83.39%)
 
-            0.5247 +- 0.0454 seconds time elapsed  ( +-  8.66% )
+            1.3143 +- 0.0711 seconds time elapsed  ( +-  5.41% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 4' (10 runs):
 
-            979.05 msec task-clock                #    1.955 CPUs utilized            ( +-  6.42% )
-                 6      context-switches          #    0.006 K/sec                    ( +-  7.34% )
-                 1      cpu-migrations            #    0.001 K/sec                    ( +- 11.11% )
-                83      page-faults               #    0.085 K/sec                    ( +-  0.60% )
-     2,498,123,243      cycles                    #    2.552 GHz                      ( +-  0.13% )  (82.72%)
-     1,824,561,359      stalled-cycles-frontend   #   73.04% frontend cycles idle     ( +-  0.12% )  (83.37%)
-       410,715,112      stalled-cycles-backend    #   16.44% backend cycles idle      ( +-  0.08% )  (67.24%)
-     2,526,140,778      instructions              #    1.01  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.12% )  (83.66%)
-       295,159,092      branches                  #  301.475 M/sec                    ( +-  0.12% )  (83.70%)
-           615,508      branch-misses             #    0.21% of all branches          ( +-  0.28% )  (82.97%)
+          1,560.57 msec task-clock                #    1.182 CPUs utilized            ( +-  5.40% )
+                82      context-switches          #    0.052 K/sec                    ( +-  5.62% )
+                 1      cpu-migrations            #    0.001 K/sec                    ( +-  9.09% )
+            33,380      page-faults               #    0.021 M/sec                    ( +-  0.00% )
+     3,621,905,060      cycles                    #    2.321 GHz                      ( +-  0.12% )  (83.31%)
+     2,202,722,864      stalled-cycles-frontend   #   60.82% frontend cycles idle     ( +-  0.14% )  (83.12%)
+       672,454,371      stalled-cycles-backend    #   18.57% backend cycles idle      ( +-  0.54% )  (66.50%)
+     4,720,007,852      instructions              #    1.30  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  ( +-  0.11% )  (83.38%)
+       654,544,496      branches                  #  419.426 M/sec                    ( +-  0.06% )  (83.57%)
+           807,116      branch-misses             #    0.12% of all branches          ( +-  0.37% )  (83.50%)
 
-            0.5007 +- 0.0425 seconds time elapsed  ( +-  8.50% )
+            1.3200 +- 0.0744 seconds time elapsed  ( +-  5.63% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 8' (10 runs):
 
-          1,039.92 msec task-clock                #    2.527 CPUs utilized            ( +-  7.51% )
-                 9      context-switches          #    0.009 K/sec                    ( +-  6.77% )
+          1,440.44 msec task-clock                #    1.230 CPUs utilized            ( +-  5.70% )
+                93      context-switches          #    0.065 K/sec                    ( +-  1.54% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                90      page-faults               #    0.086 K/sec                    ( +-  0.42% )
-     2,511,934,547      cycles                    #    2.416 GHz                      ( +-  0.25% )  (82.27%)
-     1,845,787,840      stalled-cycles-frontend   #   73.48% frontend cycles idle     ( +-  0.12% )  (82.42%)
-       417,443,352      stalled-cycles-backend    #   16.62% backend cycles idle      ( +-  0.41% )  (66.83%)
-     2,540,713,728      instructions              #    1.01  insn per cycle         
-                                                  #    0.73  stalled cycles per insn  ( +-  0.22% )  (83.80%)
-       298,277,171      branches                  #  286.827 M/sec                    ( +-  0.21% )  (84.57%)
-           623,278      branch-misses             #    0.21% of all branches          ( +-  0.43% )  (83.91%)
+            33,389      page-faults               #    0.023 M/sec                    ( +-  0.00% )
+     3,660,149,563      cycles                    #    2.541 GHz                      ( +-  0.26% )  (83.43%)
+     2,232,032,852      stalled-cycles-frontend   #   60.98% frontend cycles idle     ( +-  0.30% )  (83.29%)
+       694,328,572      stalled-cycles-backend    #   18.97% backend cycles idle      ( +-  1.26% )  (66.24%)
+     4,721,292,387      instructions              #    1.29  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  ( +-  0.31% )  (83.25%)
+       658,478,733      branches                  #  457.138 M/sec                    ( +-  0.17% )  (83.59%)
+           811,401      branch-misses             #    0.12% of all branches          ( +-  0.49% )  (83.45%)
 
-            0.4115 +- 0.0392 seconds time elapsed  ( +-  9.54% )
+            1.1715 +- 0.0662 seconds time elapsed  ( +-  5.65% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 16' (10 runs):
 
-            996.22 msec task-clock                #    4.267 CPUs utilized            ( +-  8.07% )
-                19      context-switches          #    0.019 K/sec                    ( +-  6.62% )
+          1,512.87 msec task-clock                #    1.493 CPUs utilized            ( +-  4.25% )
+               117      context-switches          #    0.077 K/sec                    ( +-  4.81% )
                  0      cpu-migrations            #    0.000 K/sec                  
-               108      page-faults               #    0.109 K/sec                    ( +-  0.45% )
-     2,580,244,242      cycles                    #    2.590 GHz                      ( +-  0.29% )  (80.94%)
-     1,892,883,870      stalled-cycles-frontend   #   73.36% frontend cycles idle     ( +-  0.26% )  (81.37%)
-       451,797,318      stalled-cycles-backend    #   17.51% backend cycles idle      ( +-  0.53% )  (67.83%)
-     2,566,554,859      instructions              #    0.99  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.32% )  (84.47%)
-       303,300,902      branches                  #  304.453 M/sec                    ( +-  0.27% )  (85.36%)
-           631,777      branch-misses             #    0.21% of all branches          ( +-  0.31% )  (84.50%)
+            33,404      page-faults               #    0.022 M/sec                    ( +-  0.00% )
+     3,789,702,061      cycles                    #    2.505 GHz                      ( +-  0.56% )  (83.47%)
+     2,341,893,051      stalled-cycles-frontend   #   61.80% frontend cycles idle     ( +-  0.75% )  (82.88%)
+       761,170,326      stalled-cycles-backend    #   20.09% backend cycles idle      ( +-  1.34% )  (65.71%)
+     4,772,369,964      instructions              #    1.26  insn per cycle         
+                                                  #    0.49  stalled cycles per insn  ( +-  0.33% )  (83.05%)
+       668,153,891      branches                  #  441.647 M/sec                    ( +-  0.30% )  (84.03%)
+           815,328      branch-misses             #    0.12% of all branches          ( +-  0.39% )  (83.91%)
 
-            0.2335 +- 0.0277 seconds time elapsed  ( +- 11.88% )
+            1.0134 +- 0.0532 seconds time elapsed  ( +-  5.25% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 2048 32' (10 runs):
 
-          1,101.93 msec task-clock                #    9.127 CPUs utilized            ( +-  7.69% )
-                36      context-switches          #    0.033 K/sec                    ( +-  3.31% )
-                 6      cpu-migrations            #    0.005 K/sec                    ( +- 19.03% )
-               143      page-faults               #    0.129 K/sec                    ( +-  0.37% )
-     2,900,541,284      cycles                    #    2.632 GHz                      ( +-  0.83% )  (78.97%)
-     2,168,270,034      stalled-cycles-frontend   #   74.75% frontend cycles idle     ( +-  0.66% )  (80.30%)
-       656,529,687      stalled-cycles-backend    #   22.63% backend cycles idle      ( +-  1.63% )  (69.22%)
-     2,610,123,716      instructions              #    0.90  insn per cycle         
-                                                  #    0.83  stalled cycles per insn  ( +-  0.32% )  (85.52%)
-       324,103,979      branches                  #  294.123 M/sec                    ( +-  0.37% )  (86.67%)
-           650,112      branch-misses             #    0.20% of all branches          ( +-  0.67% )  (84.85%)
+          1,672.99 msec task-clock                #    1.895 CPUs utilized            ( +-  4.66% )
+               160      context-switches          #    0.095 K/sec                    ( +-  3.41% )
+                12      cpu-migrations            #    0.007 K/sec                    ( +-  8.75% )
+            33,440      page-faults               #    0.020 M/sec                    ( +-  0.00% )
+     4,340,791,000      cycles                    #    2.595 GHz                      ( +-  0.36% )  (83.58%)
+     2,818,970,332      stalled-cycles-frontend   #   64.94% frontend cycles idle     ( +-  0.60% )  (82.25%)
+     1,054,785,798      stalled-cycles-backend    #   24.30% backend cycles idle      ( +-  1.63% )  (65.65%)
+     4,887,461,842      instructions              #    1.13  insn per cycle         
+                                                  #    0.58  stalled cycles per insn  ( +-  0.48% )  (83.54%)
+       695,633,606      branches                  #  415.803 M/sec                    ( +-  0.48% )  (84.20%)
+           830,478      branch-misses             #    0.12% of all branches          ( +-  0.45% )  (84.30%)
 
-            0.1207 +- 0.0143 seconds time elapsed  ( +- 11.86% )
+            0.8829 +- 0.0559 seconds time elapsed  ( +-  6.33% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 1' (10 runs):
 
-          3,221.16 msec task-clock                #    1.000 CPUs utilized            ( +-  2.20% )
-                 4      context-switches          #    0.001 K/sec                    ( +-  9.71% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 50.92% )
-                80      page-faults               #    0.025 K/sec                    ( +-  3.25% )
-     9,880,299,625      cycles                    #    3.067 GHz                      ( +-  0.01% )  (83.31%)
-     7,223,810,722      stalled-cycles-frontend   #   73.11% frontend cycles idle     ( +-  0.02% )  (83.31%)
-     1,585,724,284      stalled-cycles-backend    #   16.05% backend cycles idle      ( +-  0.07% )  (66.68%)
-    10,112,426,613      instructions              #    1.02  insn per cycle         
-                                                  #    0.71  stalled cycles per insn  ( +-  0.01% )  (83.35%)
-     1,175,693,132      branches                  #  364.991 M/sec                    ( +-  0.01% )  (83.36%)
-         2,246,022      branch-misses             #    0.19% of all branches          ( +-  0.06% )  (83.33%)
+          4,431.83 msec task-clock                #    0.865 CPUs utilized            ( +-  1.03% )
+               308      context-switches          #    0.069 K/sec                    ( +-  2.87% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
+           131,808      page-faults               #    0.030 M/sec                    ( +-  0.00% )
+    13,916,149,528      cycles                    #    3.140 GHz                      ( +-  0.08% )  (83.31%)
+     8,300,718,968      stalled-cycles-frontend   #   59.65% frontend cycles idle     ( +-  0.12% )  (83.30%)
+     2,426,930,547      stalled-cycles-backend    #   17.44% backend cycles idle      ( +-  0.33% )  (66.68%)
+    18,801,130,134      instructions              #    1.35  insn per cycle         
+                                                  #    0.44  stalled cycles per insn  ( +-  0.02% )  (83.34%)
+     2,574,402,910      branches                  #  580.889 M/sec                    ( +-  0.03% )  (83.38%)
+         2,906,830      branch-misses             #    0.11% of all branches          ( +-  0.14% )  (83.33%)
 
-            3.2218 +- 0.0709 seconds time elapsed  ( +-  2.20% )
+            5.1225 +- 0.0556 seconds time elapsed  ( +-  1.08% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 2' (10 runs):
 
-          3,448.46 msec task-clock                #    1.860 CPUs utilized            ( +-  1.66% )
-                11      context-switches          #    0.003 K/sec                    ( +- 14.42% )
-                 1      cpu-migrations            #    0.000 K/sec                  
-                96      page-faults               #    0.028 K/sec                    ( +-  0.38% )
-     9,896,654,626      cycles                    #    2.870 GHz                      ( +-  0.03% )  (83.24%)
-     7,245,117,944      stalled-cycles-frontend   #   73.21% frontend cycles idle     ( +-  0.02% )  (83.29%)
-     1,602,823,164      stalled-cycles-backend    #   16.20% backend cycles idle      ( +-  0.05% )  (66.76%)
-    10,112,395,632      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.02% )  (83.39%)
-     1,176,352,915      branches                  #  341.124 M/sec                    ( +-  0.03% )  (83.40%)
-         2,256,076      branch-misses             #    0.19% of all branches          ( +-  0.07% )  (83.31%)
+          5,251.23 msec task-clock                #    1.169 CPUs utilized            ( +-  1.18% )
+               330      context-switches          #    0.063 K/sec                    ( +-  7.06% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 16.67% )
+           257,584      page-faults               #    0.049 M/sec                    ( +-  1.31% )
+    15,027,769,180      cycles                    #    2.862 GHz                      ( +-  1.17% )  (83.31%)
+     9,200,116,503      stalled-cycles-frontend   #   61.22% frontend cycles idle     ( +-  1.42% )  (83.33%)
+     3,000,789,782      stalled-cycles-backend    #   19.97% backend cycles idle      ( +-  3.55% )  (66.70%)
+    19,104,266,369      instructions              #    1.27  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.46% )  (83.35%)
+     2,665,268,323      branches                  #  507.551 M/sec                    ( +-  0.66% )  (83.33%)
+         3,141,842      branch-misses             #    0.12% of all branches          ( +-  4.60% )  (83.32%)
 
-            1.8543 +- 0.0220 seconds time elapsed  ( +-  1.19% )
+            4.4917 +- 0.0770 seconds time elapsed  ( +-  1.71% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 4' (10 runs):
 
-          3,358.08 msec task-clock                #    2.010 CPUs utilized            ( +-  2.31% )
-                 9      context-switches          #    0.003 K/sec                    ( +-  5.74% )
-                 1      cpu-migrations            #    0.000 K/sec                    ( +- 11.11% )
-               105      page-faults               #    0.031 K/sec                    ( +-  0.40% )
-     9,913,455,803      cycles                    #    2.952 GHz                      ( +-  0.03% )  (83.21%)
-     7,252,169,658      stalled-cycles-frontend   #   73.15% frontend cycles idle     ( +-  0.03% )  (83.22%)
-     1,604,805,857      stalled-cycles-backend    #   16.19% backend cycles idle      ( +-  0.08% )  (66.64%)
-    10,117,460,798      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.04% )  (83.38%)
-     1,177,106,918      branches                  #  350.530 M/sec                    ( +-  0.02% )  (83.53%)
-         2,255,403      branch-misses             #    0.19% of all branches          ( +-  0.07% )  (83.39%)
+          5,493.70 msec task-clock                #    1.255 CPUs utilized            ( +-  1.16% )
+               331      context-switches          #    0.060 K/sec                    ( +-  7.15% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 12.56% )
+           259,314      page-faults               #    0.047 M/sec                    ( +-  0.97% )
+    14,894,680,626      cycles                    #    2.711 GHz                      ( +-  0.18% )  (83.30%)
+     9,113,760,909      stalled-cycles-frontend   #   61.19% frontend cycles idle     ( +-  0.24% )  (83.31%)
+     2,934,457,055      stalled-cycles-backend    #   19.70% backend cycles idle      ( +-  0.70% )  (66.69%)
+    19,022,798,305      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.06% )  (83.33%)
+     2,649,233,224      branches                  #  482.231 M/sec                    ( +-  0.08% )  (83.37%)
+         3,008,220      branch-misses             #    0.11% of all branches          ( +-  0.56% )  (83.34%)
 
-            1.6709 +- 0.0461 seconds time elapsed  ( +-  2.76% )
+            4.3775 +- 0.0644 seconds time elapsed  ( +-  1.47% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 8' (10 runs):
 
-          3,876.62 msec task-clock                #    2.717 CPUs utilized            ( +-  2.63% )
-                13      context-switches          #    0.003 K/sec                    ( +-  6.18% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
-               120      page-faults               #    0.031 K/sec                    ( +-  0.50% )
-     9,932,689,434      cycles                    #    2.562 GHz                      ( +-  0.05% )  (83.04%)
-     7,273,569,200      stalled-cycles-frontend   #   73.23% frontend cycles idle     ( +-  0.05% )  (83.20%)
-     1,622,207,247      stalled-cycles-backend    #   16.33% backend cycles idle      ( +-  0.15% )  (66.73%)
-    10,121,257,453      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.05% )  (83.42%)
-     1,180,505,160      branches                  #  304.519 M/sec                    ( +-  0.04% )  (83.61%)
-         2,262,709      branch-misses             #    0.19% of all branches          ( +-  0.13% )  (83.42%)
+          5,819.84 msec task-clock                #    1.395 CPUs utilized            ( +-  1.35% )
+               378      context-switches          #    0.065 K/sec                    ( +-  5.79% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 42.86% )
+           252,160      page-faults               #    0.043 M/sec                    ( +-  2.58% )
+    14,872,916,107      cycles                    #    2.556 GHz                      ( +-  0.12% )  (83.28%)
+     9,073,133,556      stalled-cycles-frontend   #   61.00% frontend cycles idle     ( +-  0.16% )  (83.35%)
+     2,893,037,038      stalled-cycles-backend    #   19.45% backend cycles idle      ( +-  0.52% )  (66.86%)
+    19,014,928,338      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.06% )  (83.38%)
+     2,651,934,168      branches                  #  455.672 M/sec                    ( +-  0.06% )  (83.27%)
+         2,989,560      branch-misses             #    0.11% of all branches          ( +-  0.38% )  (83.24%)
 
-            1.4269 +- 0.0261 seconds time elapsed  ( +-  1.83% )
+            4.1715 +- 0.0661 seconds time elapsed  ( +-  1.58% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 16' (10 runs):
 
-          4,344.70 msec task-clock                #    4.334 CPUs utilized            ( +-  0.90% )
-                26      context-switches          #    0.006 K/sec                    ( +-  5.70% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 66.67% )
-               108      page-faults               #    0.025 K/sec                    ( +-  0.37% )
-     9,989,854,864      cycles                    #    2.299 GHz                      ( +-  0.06% )  (82.92%)
-     7,329,958,393      stalled-cycles-frontend   #   73.37% frontend cycles idle     ( +-  0.07% )  (83.12%)
-     1,663,274,096      stalled-cycles-backend    #   16.65% backend cycles idle      ( +-  0.08% )  (66.80%)
-    10,135,273,503      instructions              #    1.01  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.06% )  (83.46%)
-     1,185,719,810      branches                  #  272.912 M/sec                    ( +-  0.07% )  (83.66%)
-         2,271,507      branch-misses             #    0.19% of all branches          ( +-  0.12% )  (83.49%)
+          6,257.17 msec task-clock                #    1.730 CPUs utilized            ( +-  1.62% )
+               331      context-switches          #    0.053 K/sec                    ( +-  1.92% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 53.75% )
+           189,988      page-faults               #    0.030 M/sec                    ( +-  3.44% )
+    14,823,850,985      cycles                    #    2.369 GHz                      ( +-  0.15% )  (83.26%)
+     9,066,501,764      stalled-cycles-frontend   #   61.16% frontend cycles idle     ( +-  0.20% )  (83.48%)
+     2,813,393,745      stalled-cycles-backend    #   18.98% backend cycles idle      ( +-  0.65% )  (67.03%)
+    18,941,100,335      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.05% )  (83.45%)
+     2,641,893,843      branches                  #  422.219 M/sec                    ( +-  0.06% )  (83.12%)
+         2,957,428      branch-misses             #    0.11% of all branches          ( +-  0.14% )  (83.10%)
 
-          1.002419 +- 0.000464 seconds time elapsed  ( +-  0.05% )
+            3.6160 +- 0.0886 seconds time elapsed  ( +-  2.45% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 4096 32' (10 runs):
 
-          3,587.99 msec task-clock                #    8.079 CPUs utilized            ( +-  2.47% )
-                45      context-switches          #    0.012 K/sec                    ( +-  3.80% )
-                 6      cpu-migrations            #    0.002 K/sec                    ( +- 14.73% )
-               143      page-faults               #    0.040 K/sec                    ( +-  0.26% )
-    10,520,772,042      cycles                    #    2.932 GHz                      ( +-  0.18% )  (82.26%)
-     7,776,049,427      stalled-cycles-frontend   #   73.91% frontend cycles idle     ( +-  0.16% )  (82.64%)
-     1,919,252,222      stalled-cycles-backend    #   18.24% backend cycles idle      ( +-  0.44% )  (66.65%)
-    10,217,807,865      instructions              #    0.97  insn per cycle         
-                                                  #    0.76  stalled cycles per insn  ( +-  0.09% )  (83.68%)
-     1,205,061,598      branches                  #  335.860 M/sec                    ( +-  0.08% )  (84.66%)
-         2,283,491      branch-misses             #    0.19% of all branches          ( +-  0.16% )  (83.78%)
+          6,281.45 msec task-clock                #    2.106 CPUs utilized            ( +-  2.61% )
+               469      context-switches          #    0.075 K/sec                    ( +-  4.78% )
+                14      cpu-migrations            #    0.002 K/sec                    ( +-  9.49% )
+           131,794      page-faults               #    0.021 M/sec                    ( +-  0.00% )
+    15,785,323,186      cycles                    #    2.513 GHz                      ( +-  0.10% )  (83.24%)
+    10,041,540,518      stalled-cycles-frontend   #   63.61% frontend cycles idle     ( +-  0.26% )  (83.39%)
+     3,254,049,907      stalled-cycles-backend    #   20.61% backend cycles idle      ( +-  0.56% )  (66.83%)
+    18,995,926,630      instructions              #    1.20  insn per cycle         
+                                                  #    0.53  stalled cycles per insn  ( +-  0.11% )  (83.28%)
+     2,653,055,949      branches                  #  422.364 M/sec                    ( +-  0.18% )  (83.28%)
+         2,993,937      branch-misses             #    0.11% of all branches          ( +-  0.25% )  (83.26%)
 
-            0.4441 +- 0.0352 seconds time elapsed  ( +-  7.92% )
+            2.9820 +- 0.0600 seconds time elapsed  ( +-  2.01% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 1' (10 runs):
 
-         12,251.43 msec task-clock                #    1.000 CPUs utilized            ( +-  0.60% )
-                12      context-switches          #    0.001 K/sec                    ( +- 16.96% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 33.33% )
-                84      page-faults               #    0.007 K/sec                    ( +-  3.44% )
-    39,504,366,785      cycles                    #    3.224 GHz                      ( +-  0.02% )  (83.32%)
-    28,900,142,106      stalled-cycles-frontend   #   73.16% frontend cycles idle     ( +-  0.02% )  (83.32%)
-     6,351,212,564      stalled-cycles-backend    #   16.08% backend cycles idle      ( +-  0.14% )  (66.67%)
-    40,439,789,099      instructions              #    1.02  insn per cycle         
-                                                  #    0.71  stalled cycles per insn  ( +-  0.00% )  (83.34%)
-     4,701,370,317      branches                  #  383.740 M/sec                    ( +-  0.01% )  (83.35%)
-         8,392,818      branch-misses             #    0.18% of all branches          ( +-  0.03% )  (83.34%)
+         17,175.47 msec task-clock                #    0.839 CPUs utilized            ( +-  0.32% )
+             1,117      context-switches          #    0.065 K/sec                    ( +-  4.35% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+           525,560      page-faults               #    0.031 M/sec                    ( +-  0.00% )
+    55,638,557,830      cycles                    #    3.239 GHz                      ( +-  0.11% )  (83.33%)
+    33,162,527,364      stalled-cycles-frontend   #   59.60% frontend cycles idle     ( +-  0.24% )  (83.33%)
+     9,685,262,866      stalled-cycles-backend    #   17.41% backend cycles idle      ( +-  0.32% )  (66.66%)
+    75,302,715,070      instructions              #    1.35  insn per cycle         
+                                                  #    0.44  stalled cycles per insn  ( +-  0.02% )  (83.33%)
+    10,321,924,256      branches                  #  600.969 M/sec                    ( +-  0.01% )  (83.35%)
+        10,931,529      branch-misses             #    0.11% of all branches          ( +-  0.16% )  (83.33%)
 
-           12.2530 +- 0.0739 seconds time elapsed  ( +-  0.60% )
+            20.483 +- 0.351 seconds time elapsed  ( +-  1.71% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 2' (10 runs):
 
-         12,564.00 msec task-clock                #    1.965 CPUs utilized            ( +-  0.57% )
-                12      context-switches          #    0.001 K/sec                    ( +-  6.80% )
-                 1      cpu-migrations            #    0.000 K/sec                  
-               101      page-faults               #    0.008 K/sec                    ( +-  0.38% )
-    39,547,598,789      cycles                    #    3.148 GHz                      ( +-  0.01% )  (83.32%)
-    28,937,779,847      stalled-cycles-frontend   #   73.17% frontend cycles idle     ( +-  0.01% )  (83.33%)
-     6,385,191,901      stalled-cycles-backend    #   16.15% backend cycles idle      ( +-  0.03% )  (66.68%)
-    40,442,211,779      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.01% )  (83.34%)
-     4,702,743,521      branches                  #  374.303 M/sec                    ( +-  0.01% )  (83.34%)
-         8,397,679      branch-misses             #    0.18% of all branches          ( +-  0.02% )  (83.33%)
+         19,750.85 msec task-clock                #    1.253 CPUs utilized            ( +-  0.51% )
+             1,026      context-switches          #    0.052 K/sec                    ( +- 11.87% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 17.65% )
+         1,258,262      page-faults               #    0.064 M/sec                    ( +-  3.07% )
+    62,871,997,654      cycles                    #    3.183 GHz                      ( +-  0.49% )  (83.34%)
+    38,921,062,246      stalled-cycles-frontend   #   61.91% frontend cycles idle     ( +-  0.59% )  (83.33%)
+    13,782,799,552      stalled-cycles-backend    #   21.92% backend cycles idle      ( +-  1.33% )  (66.68%)
+    77,556,828,845      instructions              #    1.23  insn per cycle         
+                                                  #    0.50  stalled cycles per insn  ( +-  0.22% )  (83.34%)
+    10,885,252,094      branches                  #  551.128 M/sec                    ( +-  0.30% )  (83.34%)
+        13,378,160      branch-misses             #    0.12% of all branches          ( +-  2.15% )  (83.32%)
 
-            6.3929 +- 0.0316 seconds time elapsed  ( +-  0.49% )
+            15.757 +- 0.303 seconds time elapsed  ( +-  1.92% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 4' (10 runs):
 
-         12,741.02 msec task-clock                #    2.106 CPUs utilized            ( +-  1.01% )
-                15      context-switches          #    0.001 K/sec                    ( +-  9.69% )
-                 4      cpu-migrations            #    0.000 K/sec                    ( +- 10.43% )
-               110      page-faults               #    0.009 K/sec                    ( +-  0.60% )
-    39,562,915,812      cycles                    #    3.105 GHz                      ( +-  0.01% )  (83.29%)
-    28,954,209,484      stalled-cycles-frontend   #   73.19% frontend cycles idle     ( +-  0.01% )  (83.31%)
-     6,392,450,674      stalled-cycles-backend    #   16.16% backend cycles idle      ( +-  0.03% )  (66.67%)
-    40,441,378,514      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.01% )  (83.35%)
-     4,704,605,076      branches                  #  369.249 M/sec                    ( +-  0.01% )  (83.38%)
-         8,402,264      branch-misses             #    0.18% of all branches          ( +-  0.03% )  (83.36%)
+         19,338.14 msec task-clock                #    1.267 CPUs utilized            ( +-  0.69% )
+             1,752      context-switches          #    0.091 K/sec                    ( +-  4.13% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +-  9.09% )
+         1,158,201      page-faults               #    0.060 M/sec                    ( +-  0.96% )
+    60,852,471,534      cycles                    #    3.147 GHz                      ( +-  0.18% )  (83.33%)
+    37,437,392,739      stalled-cycles-frontend   #   61.52% frontend cycles idle     ( +-  0.23% )  (83.33%)
+    12,621,457,824      stalled-cycles-backend    #   20.74% backend cycles idle      ( +-  0.57% )  (66.66%)
+    76,581,169,945      instructions              #    1.26  insn per cycle         
+                                                  #    0.49  stalled cycles per insn  ( +-  0.07% )  (83.33%)
+    10,694,362,135      branches                  #  553.019 M/sec                    ( +-  0.09% )  (83.34%)
+        11,930,109      branch-misses             #    0.11% of all branches          ( +-  0.56% )  (83.34%)
 
-            6.0511 +- 0.0678 seconds time elapsed  ( +-  1.12% )
+            15.265 +- 0.374 seconds time elapsed  ( +-  2.45% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 8' (10 runs):
 
-         12,751.26 msec task-clock                #    2.690 CPUs utilized            ( +-  1.66% )
-                30      context-switches          #    0.002 K/sec                    ( +- 10.37% )
-                 4      cpu-migrations            #    0.000 K/sec                    ( +- 15.09% )
-               134      page-faults               #    0.011 K/sec                    ( +-  0.64% )
-    39,581,690,196      cycles                    #    3.104 GHz                      ( +-  0.01% )  (83.23%)
-    28,964,114,461      stalled-cycles-frontend   #   73.18% frontend cycles idle     ( +-  0.01% )  (83.30%)
-     6,396,585,958      stalled-cycles-backend    #   16.16% backend cycles idle      ( +-  0.03% )  (66.73%)
-    40,456,801,345      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.01% )  (83.38%)
-     4,706,219,206      branches                  #  369.079 M/sec                    ( +-  0.01% )  (83.40%)
-         8,416,779      branch-misses             #    0.18% of all branches          ( +-  0.08% )  (83.34%)
+         18,957.82 msec task-clock                #    1.484 CPUs utilized            ( +-  0.79% )
+             1,290      context-switches          #    0.068 K/sec                    ( +-  6.12% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 26.03% )
+           995,990      page-faults               #    0.053 M/sec                    ( +-  1.98% )
+    59,225,022,943      cycles                    #    3.124 GHz                      ( +-  0.16% )  (83.33%)
+    36,175,121,541      stalled-cycles-frontend   #   61.08% frontend cycles idle     ( +-  0.20% )  (83.34%)
+    11,553,103,714      stalled-cycles-backend    #   19.51% backend cycles idle      ( +-  0.51% )  (66.65%)
+    75,973,602,589      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.05% )  (83.33%)
+    10,571,551,585      branches                  #  557.635 M/sec                    ( +-  0.07% )  (83.33%)
+        11,200,657      branch-misses             #    0.11% of all branches          ( +-  0.33% )  (83.34%)
 
-            4.7404 +- 0.0808 seconds time elapsed  ( +-  1.70% )
+            12.778 +- 0.104 seconds time elapsed  ( +-  0.82% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 16' (10 runs):
 
-         13,815.58 msec task-clock                #    4.622 CPUs utilized            ( +-  1.47% )
-                43      context-switches          #    0.003 K/sec                    ( +-  7.19% )
-                 1      cpu-migrations            #    0.000 K/sec                    ( +- 44.44% )
-               163      page-faults               #    0.012 K/sec                    ( +-  1.75% )
-    39,686,397,224      cycles                    #    2.873 GHz                      ( +-  0.04% )  (83.19%)
-    29,058,005,720      stalled-cycles-frontend   #   73.22% frontend cycles idle     ( +-  0.06% )  (83.22%)
-     6,448,916,517      stalled-cycles-backend    #   16.25% backend cycles idle      ( +-  0.11% )  (66.67%)
-    40,483,499,130      instructions              #    1.02  insn per cycle         
-                                                  #    0.72  stalled cycles per insn  ( +-  0.02% )  (83.38%)
-     4,714,617,666      branches                  #  341.254 M/sec                    ( +-  0.02% )  (83.48%)
-         8,425,594      branch-misses             #    0.18% of all branches          ( +-  0.03% )  (83.44%)
+         19,986.39 msec task-clock                #    1.778 CPUs utilized            ( +-  0.48% )
+             1,424      context-switches          #    0.071 K/sec                    ( +-  7.51% )
+                 3      cpu-migrations            #    0.000 K/sec                    ( +- 15.71% )
+           803,590      page-faults               #    0.040 M/sec                    ( +-  3.98% )
+    59,057,442,071      cycles                    #    2.955 GHz                      ( +-  0.25% )  (83.32%)
+    36,253,198,392      stalled-cycles-frontend   #   61.39% frontend cycles idle     ( +-  0.34% )  (83.34%)
+    11,309,252,285      stalled-cycles-backend    #   19.15% backend cycles idle      ( +-  0.72% )  (66.66%)
+    75,710,278,997      instructions              #    1.28  insn per cycle         
+                                                  #    0.48  stalled cycles per insn  ( +-  0.06% )  (83.32%)
+    10,519,300,557      branches                  #  526.323 M/sec                    ( +-  0.09% )  (83.34%)
+        11,128,427      branch-misses             #    0.11% of all branches          ( +-  0.20% )  (83.34%)
 
-            2.9891 +- 0.0312 seconds time elapsed  ( +-  1.04% )
+            11.243 +- 0.376 seconds time elapsed  ( +-  3.34% )
 
 
  Performance counter stats for './mandelbrot_omp -2.5 1.5 -2.0 2.0 8192 32' (10 runs):
 
-         13,478.30 msec task-clock                #    8.911 CPUs utilized            ( +-  2.12% )
-                63      context-switches          #    0.005 K/sec                    ( +-  3.05% )
-                 7      cpu-migrations            #    0.000 K/sec                    ( +-  9.80% )
-               224      page-faults               #    0.017 K/sec                    ( +-  1.39% )
-    40,864,483,823      cycles                    #    3.032 GHz                      ( +-  0.02% )  (83.01%)
-    30,162,440,838      stalled-cycles-frontend   #   73.81% frontend cycles idle     ( +-  0.03% )  (83.21%)
-     7,104,221,561      stalled-cycles-backend    #   17.38% backend cycles idle      ( +-  0.11% )  (66.83%)
-    40,531,648,350      instructions              #    0.99  insn per cycle         
-                                                  #    0.74  stalled cycles per insn  ( +-  0.01% )  (83.47%)
-     4,733,515,207      branches                  #  351.195 M/sec                    ( +-  0.02% )  (83.60%)
-         8,479,359      branch-misses             #    0.18% of all branches          ( +-  0.06% )  (83.34%)
+         21,868.65 msec task-clock                #    2.154 CPUs utilized            ( +-  1.56% )
+             1,616      context-switches          #    0.074 K/sec                    ( +-  7.34% )
+                17      cpu-migrations            #    0.001 K/sec                    ( +- 12.22% )
+           617,210      page-faults               #    0.028 M/sec                    ( +-  2.76% )
+    61,747,763,521      cycles                    #    2.824 GHz                      ( +-  0.12% )  (83.36%)
+    39,147,400,766      stalled-cycles-frontend   #   63.40% frontend cycles idle     ( +-  0.15% )  (83.37%)
+    12,437,720,750      stalled-cycles-backend    #   20.14% backend cycles idle      ( +-  0.37% )  (66.67%)
+    75,601,432,462      instructions              #    1.22  insn per cycle         
+                                                  #    0.52  stalled cycles per insn  ( +-  0.05% )  (83.30%)
+    10,500,152,356      branches                  #  480.146 M/sec                    ( +-  0.04% )  (83.29%)
+        11,269,395      branch-misses             #    0.11% of all branches          ( +-  0.14% )  (83.31%)
 
-            1.5125 +- 0.0313 seconds time elapsed  ( +-  2.07% )
+            10.154 +- 0.359 seconds time elapsed  ( +-  3.53% )
 
