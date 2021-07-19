@@ -15,7 +15,7 @@ int iteration_max = 200;
 
 int image_size;
 unsigned char **image_buffer;
-unsigned char **tmp_image_buffer;
+unsigned char *image_buffer_serialized;
 
 int i_x_max;
 int i_y_max;
@@ -45,11 +45,10 @@ int colors[17][3] = {
 void allocate_image_buffer(){
     int rgb_size = 3;
     image_buffer = (unsigned char **) malloc(sizeof(unsigned char *) * image_buffer_size);
-    tmp_image_buffer = (unsigned char **) malloc(sizeof(unsigned char *) * image_buffer_size);
+    image_buffer_serialized = (unsigned char *) malloc(sizeof(unsigned char *) * 3 * image_buffer_size);
 
     for(int i = 0; i < image_buffer_size; i++){
         image_buffer[i] = (unsigned char *) malloc(sizeof(unsigned char) * rgb_size);
-        tmp_image_buffer[i] = (unsigned char *) malloc(sizeof(unsigned char) * rgb_size);
     };
 };
 
@@ -156,10 +155,7 @@ void compute_mandelbrot(int start, int end, int taskid){
                 z_y_squared = z_y * z_y;
             };
 
-            // printf("Updating pixel %d x %d\n", i_x, i_y);
-            // if ( taskid == 0) {
-                update_rgb_buffer(iteration, i_x, i_y);
-            // }
+            update_rgb_buffer(iteration, i_x, i_y);
         };
     };
 };
@@ -171,42 +167,48 @@ int main(int argc, char *argv[]){
     MPI_Init(NULL,NULL);
     int numtasks, taskid;
     MPI_Status stat;
-    // int send_message;
-    // int recv_message;
+
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
 
-
-    // printf("Hello from task %d!\n", taskid);
-    compute_mandelbrot(taskid*(image_size/numtasks), (taskid+1)*(image_size/numtasks), taskid);
+    int chunk_size = image_size / numtasks;
+    int y_start = taskid * chunk_size;
+    int y_end = (taskid+1) * chunk_size;
+    
+    compute_mandelbrot(y_start, y_end, taskid);
 
     if (taskid == 0) {
         for (int cnt = 1; cnt < numtasks; cnt++ ) {
-            // MPI_Recv(&recv_message,1,MPI_INT,MPI_ANY_SOURCE,2,MPI_COMM_WORLD, &stat);
-            // printf("Received %d from task %d!\n", recv_message, stat.MPI_SOURCE);
-            MPI_Recv(tmp_image_buffer,image_buffer_size,MPI_UNSIGNED_CHAR,MPI_ANY_SOURCE,1,MPI_COMM_WORLD, &stat);
-            printf("Received from task %d! Image size: %d. Numtasks: %d\n", stat.MPI_SOURCE, image_size, numtasks);
-            for ( int i = stat.MPI_SOURCE*(image_size/numtasks); i < (stat.MPI_SOURCE+1)*(image_size/numtasks); i++ ) {
-                // aqui ta dando SegFault na hora de acessar tmp_image_buffer[i][0]
-                // printf("Setting %d to (%d %d %d)\n", i, tmp_image_buffer[i][0], tmp_image_buffer[i][1], tmp_image_buffer[i][2]);
-                // image_buffer[i] = tmp_image_buffer[i];
-            }
+            MPI_Recv(image_buffer_serialized, 3*image_buffer_size, MPI_UNSIGNED_CHAR, MPI_ANY_SOURCE, 1, MPI_COMM_WORLD, &stat);
+            printf("Received from task %d!\n", stat.MPI_SOURCE);
             
+            //deserialize data
+            for (int y = stat.MPI_SOURCE * chunk_size; y < (stat.MPI_SOURCE+1) * chunk_size; y++) {
+                for(int x = 0; x < image_size; x++) {
+                    int index = (y * image_size) + x;
+                    image_buffer[index][0] = image_buffer_serialized[3*index];
+                    image_buffer[index][1] = image_buffer_serialized[3*index + 1];
+                    image_buffer[index][2] = image_buffer_serialized[3*index + 2];
+                }
+            }
         }
-        
-        
-         
         write_to_file();
+
     } else {
-        // send_message = taskid;
-        // printf("Sent message from task %d!\n", taskid);
-        // MPI_Send(&send_message,1,MPI_INT,0,2,MPI_COMM_WORLD);
-        MPI_Send(image_buffer,image_buffer_size,MPI_UNSIGNED_CHAR,0,1,MPI_COMM_WORLD);
-        
+        // serialize data
+        for(int y = y_start; y < y_end; y++){
+            for(int x = 0; x < image_size; x++) {
+                int index = (y * image_size) + x;
+                image_buffer_serialized[3*index] = image_buffer[index][0];
+                image_buffer_serialized[3*index + 1] = image_buffer[index][1];
+                image_buffer_serialized[3*index + 2] = image_buffer[index][2];
+            }
+        };
+
+        MPI_Send(image_buffer_serialized, 3*image_buffer_size, MPI_UNSIGNED_CHAR, 0, 1, MPI_COMM_WORLD);
     }
 
     MPI_Finalize();
 
-    
     return 0;
 };
