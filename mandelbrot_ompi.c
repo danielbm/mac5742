@@ -45,7 +45,7 @@ int colors[17][3] = {
 void allocate_image_buffer(){
     int rgb_size = 3;
     image_buffer = (unsigned char **) malloc(sizeof(unsigned char *) * image_buffer_size);
-    image_buffer_serialized = (unsigned char *) malloc(sizeof(unsigned char *) * 3 * image_buffer_size);
+    image_buffer_serialized = (unsigned char *) malloc(sizeof(unsigned char *) * rgb_size * image_buffer_size);
 
     for(int i = 0; i < image_buffer_size; i++){
         image_buffer[i] = (unsigned char *) malloc(sizeof(unsigned char) * rgb_size);
