@@ -34,12 +34,22 @@ mkdir results
 # mv *.log results/mandelbrot_ompi
 # rm output.ppm
 
+# export PMIX_MCA_gds=hash
+# mkdir results/mandelbrot_ompi_pth
+# for NUM_TASK in ${NUM_TASKS[@]}; do
+#     for NUM_THREAD in ${NUM_THREADS[@]}; do
+#         perf stat -r $MEASUREMENTS mpirun --hostfile hostfile -np $NUM_TASK mandelbrot_ompi_pth -0.188 -0.012 0.554 0.754 $SIZE $NUM_THREAD >> triple_spiral.log 2>&1
+#     done
+# done
+# mv *.log results/mandelbrot_ompi_pth
+# rm output.ppm
+
 export PMIX_MCA_gds=hash
-mkdir results/mandelbrot_ompi_pth
+mkdir results/mandelbrot_ompi_omp
 for NUM_TASK in ${NUM_TASKS[@]}; do
     for NUM_THREAD in ${NUM_THREADS[@]}; do
-        perf stat -r $MEASUREMENTS mpirun --hostfile hostfile -np $NUM_TASK mandelbrot_ompi_pth -0.188 -0.012 0.554 0.754 $SIZE $NUM_THREAD >> triple_spiral.log 2>&1
+        perf stat -r $MEASUREMENTS mpirun --hostfile hostfile -np $NUM_TASK mandelbrot_ompi_omp -0.188 -0.012 0.554 0.754 $SIZE $NUM_THREAD >> triple_spiral.log 2>&1
     done
 done
-mv *.log results/mandelbrot_ompi_pth
+mv *.log results/mandelbrot_ompi_omp
 rm output.ppm

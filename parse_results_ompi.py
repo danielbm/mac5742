@@ -9,7 +9,7 @@ result_dir = sys.argv[1]
 
 # for algo in ['mandelbrot_seq', 'mandelbrot_pth', 'mandelbrot_omp']:
 #     for file_name in ['elephant.log', 'full.log', 'seahorse.log', 'triple_spiral.log']:
-for algo in ['mandelbrot_ompi_pth']:
+for algo in ['mandelbrot_ompi_omp']:
     for file_name in ['triple_spiral.log']:
         f = open(result_dir+"/"+algo+"/"+file_name, "r")
 
