@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <mpi.h>
+#include <pthread.h>
+
+int num_threads;
 
 double c_x_min;
 double c_x_max;
@@ -54,12 +57,12 @@ void allocate_image_buffer(){
 
 void init(int argc, char *argv[]){
     if(argc < 6){
-        printf("usage: mpirun -np num_tasks mandelbrot_ompi c_x_min c_x_max c_y_min c_y_max image_size num_threads\n");
+        printf("usage: mpirun -np num_tasks mandelbrot_ompi_pth c_x_min c_x_max c_y_min c_y_max image_size num_threads\n");
         printf("examples with image_size = 11500:\n");
-        printf("    Full Picture:         mpirun -np 4 mandelbrot_ompi -2.5 1.5 -2.0 2.0 11500 2\n");
-        printf("    Seahorse Valley:      mpirun -np 4 mandelbrot_ompi -0.8 -0.7 0.05 0.15 11500 2\n");
-        printf("    Elephant Valley:      mpirun -np 4 mandelbrot_ompi 0.175 0.375 -0.1 0.1 11500 2\n");
-        printf("    Triple Spiral Valley: mpirun -np 4 mandelbrot_ompi -0.188 -0.012 0.554 0.754 11500 2\n");
+        printf("    Full Picture:         mpirun -np 4 mandelbrot_ompi_pth -2.5 1.5 -2.0 2.0 11500 2\n");
+        printf("    Seahorse Valley:      mpirun -np 4 mandelbrot_ompi_pth -0.8 -0.7 0.05 0.15 11500 2\n");
+        printf("    Elephant Valley:      mpirun -np 4 mandelbrot_ompi_pth 0.175 0.375 -0.1 0.1 11500 2\n");
+        printf("    Triple Spiral Valley: mpirun -np 4 mandelbrot_ompi_pth -0.188 -0.012 0.554 0.754 11500 2\n");
         exit(0);
     }
     else{
@@ -68,6 +71,7 @@ void init(int argc, char *argv[]){
         sscanf(argv[3], "%lf", &c_y_min);
         sscanf(argv[4], "%lf", &c_y_max);
         sscanf(argv[5], "%d", &image_size);
+        sscanf(argv[6], "%d", &num_threads);
 
         i_x_max           = image_size;
         i_y_max           = image_size;
@@ -114,7 +118,18 @@ void write_to_file(){
     fclose(file);
 };
 
-void compute_mandelbrot(int start, int end, int taskid){
+struct thread_data{
+   int  thread_id;
+   int  thread_min;
+   int  thread_max;
+};
+
+void* compute_mandelbrot(void *threadarg){
+
+    struct thread_data *data = (struct thread_data *) threadarg;
+    int start = data->thread_min;
+    int end = data->thread_max;
+
     double z_x;
     double z_y;
     double z_x_squared;
@@ -158,6 +173,8 @@ void compute_mandelbrot(int start, int end, int taskid){
             update_rgb_buffer(iteration, i_x, i_y);
         };
     };
+
+    return 0;
 };
 
 int main(int argc, char *argv[]){
@@ -174,8 +191,27 @@ int main(int argc, char *argv[]){
     int chunk_size = image_size / numtasks;
     int y_start = taskid * chunk_size;
     int y_end = (taskid+1) * chunk_size;
+
+    struct thread_data thread_data_array[num_threads];
+    pthread_t threads[num_threads];
+    for (int t = 0; t < num_threads; t++) {
+        thread_data_array[t].thread_id = t;
+        thread_data_array[t].thread_min = y_start + chunk_size/num_threads * t;
+        thread_data_array[t].thread_max = y_start + chunk_size/num_threads * (t+1);
+        int rc = pthread_create(&threads[t], NULL, compute_mandelbrot, (void *) &thread_data_array[t]);
+        if (rc) {
+            printf("ERROR; return code from pthread_create() is %d\n", rc);
+            exit(-1);
+        }
+    }
     
-    compute_mandelbrot(y_start, y_end, taskid);
+    for (int t = 0; t < num_threads; t++) {
+        int rc = pthread_join(threads[t], NULL);
+        if (rc) {
+            printf("ERROR; return code from pthread_join() is %d\n", rc);
+            exit(-1);
+        }
+    }
 
     if (taskid == 0) {
         for (int cnt = 1; cnt < numtasks; cnt++ ) {
